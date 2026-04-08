@@ -291,5 +291,3 @@ snusco-gs-credentials.json
 **/snusco-gs-credentials.json
 .env.local
 
-# Generated / large; sadrži stringove u putanjama koji mogu lažno pokrenuti GitHub secret scan
-product/scripts/combined_images.csv
