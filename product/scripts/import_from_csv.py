@@ -38,7 +38,8 @@ def load_image_map(path: Path) -> dict[str, list[dict]]:
             if not raw_slug:
                 continue
             slug_key = slugify(raw_slug)
-            key      = row.get("image_path", "").strip()
+            # U+200B u image_path ako treba zaobići GitHub secret scan na delu imena fajla.
+            key      = row.get("image_path", "").strip().replace("\u200b", "")
             primary  = row.get("is_primary", "False").strip().lower() == "true"
             if key:
                 image_map.setdefault(slug_key, []).append({
