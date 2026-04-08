@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+  redis:
+    container_name: backend-redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  backend:
+    image: 590183671695.dkr.ecr.eu-north-1.amazonaws.com/dev-snusco-backend
+    container_name: backend-ct
+    env_file:
+      - ~/snusco-backend.env
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    depends_on:
+      - redis
+
+  celery:
+    image: 590183671695.dkr.ecr.eu-north-1.amazonaws.com/dev-snusco-backend
+    container_name: celery-ct
+    restart: always
+    command: celery -A backend worker --loglevel=info
+    networks:
+      - app-network
+    depends_on:
+      - redis
+
+  celery-beat:
+    image: 590183671695.dkr.ecr.eu-north-1.amazonaws.com/dev-snusco-backend
+    container_name: celery-beat-ct
+    restart: always
+    command: celery -A backend beat --loglevel=info
+    networks:
+      - app-network
+    depends_on:
+      - backend
+      - redis
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-ct
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge

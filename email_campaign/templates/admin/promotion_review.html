@@ -1,0 +1,59 @@
+{% extends "admin/base_site.html" %} {% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  form {
+    margin-top: 20px;
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  li strong {
+    font-weight: bold;
+  }
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+<h1>Review Eligible Users for Promotion: {{ promotion.product.name }}</h1>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <ul>
+      {% for user in users %}
+      <li>
+        <strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}<br />
+        <strong>Email:</strong> {{ user.email }}<br />
+        <strong>Phone:</strong> {{ user.phone_number }}<br />
+        <strong>Total Orders:</strong> {{ user.total_orders }}<br />
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <input type="submit" name="send_emails" value="Send Emails" />
+</form>
+{% endblock %}

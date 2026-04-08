@@ -1,0 +1,73 @@
+version: "3.8"
+services:
+  redis:
+    container_name: backend-redis
+    image: "redis:latest"
+    ports:
+      - "6380:6379" # Izmenjena port mapiranja kako bi se izbegao sukob
+    networks:
+      - backend-network
+
+  backend:
+    container_name: backend-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    command: daphne -b 0.0.0.0 -p 8000 backend.asgi:application
+    restart: always
+    depends_on:
+      - redis
+    networks:
+      - backend-network
+
+  celery:
+    container_name: backend-celery
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: celery -A backend worker --loglevel=info
+    restart: always
+    depends_on:
+      - redis
+    volumes:
+      - ./:/app
+    networks:
+      - backend-network
+
+  celery-beat:
+    container_name: backend-celery-beat
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: celery -A backend beat --loglevel=info
+    restart: always
+    depends_on:
+      - redis
+      - backend
+    volumes:
+      - ./:/app
+    networks:
+      - backend-network
+
+  nginx:
+    container_name: backend-nginx
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{subject}}</title>
+  </head>
+
+  <body
+    style="
+      margin: 0 auto;
+      max-width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    "
+  >
+    <div style="margin: 0 auto">
+      <div style="text-align: center; width: 100%; background-color: #f5bc92">
+        <img
+          src=" https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/Full+icon+black.png"
+          alt="Logo"
+          style="height: 120px; display: block; margin: 0 auto; padding: 12px 0"
+        />
+      </div>
+
+      <div style="padding: 16px 0">
+        <div style="width: 100%">
+          <div style="text-align: center">
+            <h2 style="text-transform: uppercase; font-weight: 100">
+              {{title}}
+            </h2>
+            <p>{{greeting}}</p>
+
+            {% if has_subscription %}
+            <div
+              style="
+                text-align: left;
+                margin: 16px 0 20px;
+                padding: 14px 16px;
+                background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
+                border: 1px solid #c5dde8;
+                border-radius: 8px;
+                font-size: 14px;
+                line-height: 1.5;
+                color: #101828;
+              "
+            >
+              <div style="font-weight: 700; margin-bottom: 6px; color: #265488">
+                {{ subscription_banner_title }}
+              </div>
+              <div style="color: #344054">{{ subscription_banner_body }}</div>
+            </div>
+            {% endif %}
+
+            <table
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              style="margin-top: 20px; width: 100%"
+            >
+              <tr>
+                <td
+                  style="
+                    padding: 20px 0 20px 10px;
+                    border-top: 1px solid #dddddd;
+                    text-align: left;
+                  "
+                >
+                  {{order_summary}}
+                </td>
+                <td
+                  style="
+                    padding: 20px 10px 20px 0;
+                    border-top: 1px solid #dddddd;
+                    text-align: right;
+                  "
+                ></td>
+              </tr>
+              <tr>
+                <td
+                  colspan="2"
+                  style="
+                    padding: 20px 10px;
+                    border-top: 1px solid #dddddd;
+                    text-align: left;
+                    font-size: 18px;
+                    color: black;
+                    width: 100%;
+                    box-sizing: border-box;
+                  "
+                >
+                  {{order_id}} #{{ data.id }}
+                </td>
+              </tr>
+            </table>
+
+            {% for product in data.products %}
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="
+                margin-bottom: 3px;
+                border-bottom: 1px solid #cccccc;
+                background-color: #f5f5f5;
+                width: 100%;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td style="padding-left: 20px">
+                    <table style="border-collapse: collapse; width: 100%">
+                      <tbody>
+                        <tr>
+                          <td style="width: 30%">
+                            <img
+                              alt="{{ product.category }} {{ product.name }}"
+                              src="{{ product.image }}"
+                              style="
+                                width: 100%;
+                                height: 100%;
+                                max-height: 100px;
+                                max-width: 100px;
+                                background-color: #f5f5f5;
+                                object-fit: contain;
+                              "
+                            />
+                          </td>
+                          <td style="width: 70%; padding: 10px">
+                            <h3
+                              style="
+                                margin: 0;
+                                padding-top: 10px;
+                                font-size: 14px;
+                                line-height: 1.4;
+                                font-weight: 300;
+                                color: #041e42;
+                                text-transform: uppercase;
+                              "
+                            >
+                              {{ product.category }} {{ product.name }}
+                            </h3>
+
+                            <div
+                              style="
+                                margin: 0;
+                                padding: 10px 0px;
+                                font-size: 12px;
+                                line-height: 1;
+                                font-weight: 100;
+                                color: #041e42;
+                                text-transform: uppercase;
+                              "
+                            >
+                              Quantity: {{ product.quantity}}x
+                            </div>
+                            <div
+                              style="
+                                margin: 0;
+                                padding: 10px 0px;
+                                font-size: 12px;
+                                line-height: 1;
+                                font-weight: 100;
+                                color: #041e42;
+                                text-transform: uppercase;
+                              "
+                            >
+                              {{discount_price}}: {{product.discounted_price}}
+                              EUR
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {% endfor %}
+
+            <table
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              style="width: 100%; margin: 20px 0px"
+            >
+              <tr>
+                <td
+                  style="
+                    text-align: left;
+                    color: #667085;
+                    padding: 20px 0 20px 10px;
+                    border-top: 1px solid #dddddd;
+                  "
+                >
+                  {{subtotal}}
+                </td>
+                <td
+                  style="
+                    text-align: right;
+                    font-weight: 700;
+                    padding: 20px 10px 20px 0;
+                    border-top: 1px solid #dddddd;
+                    color: #101828;
+                  "
+                >
+                  {{ data.subtotal }} {{ data.currency }}
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 20px 0 20px 10px;
+                    text-align: left;
+                    color: #667085;
+                  "
+                >
+                  {{shipping}}
+                </td>
+                <td
+                  style="
+                    padding: 20px 10px 20px 0;
+                    text-align: right;
+                    font-weight: 700;
+                    color: #101828;
+                  "
+                >
+                  {{ data.shipping_cost }} {{ data.currency }}
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 20px 0 20px 10px;
+                    text-align: left;
+                    color: #667085;
+                  "
+                >
+                  {{taxes}}
+                </td>
+                <td
+                  style="
+                    padding: 20px 10px 20px 0;
+                    text-align: right;
+                    font-weight: 700;
+                    color: #101828;
+                  "
+                >
+                  0 {{ data.currency }}
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 20px 0 20px 10px;
+                    text-align: left;
+                    background-color: #f0f0f0;
+                    color: #667085;
+                  "
+                >
+                  {{total}}
+                </td>
+                <td
+                  style="
+                    padding: 20px 10px 20px 0;
+                    text-align: right;
+                    background-color: #f0f0f0;
+                    font-weight: 700;
+                    color: #101828;
+                  "
+                >
+                  {{ data.total_price }} {{ data.currency }}
+                </td>
+              </tr>
+            </table>
+
+            <div
+              style="
+                text-align: left;
+                padding: 20px 0;
+                border-top: 1px solid #dddddd;
+                text-align: left;
+                text-transform: uppercase;
+              "
+            >
+              {{payment_method}}
+            </div>
+            <div style="text-align: left; margin-bottom: 12px">
+              {{data.payment_method}}
+            </div>
+            {% if data.customer_email %}
+            <div style="text-align: left; margin-bottom: 10px; font-size: 14px; color: #333">
+              <span style="color: #667085">E-mail:</span> {{ data.customer_email }}
+            </div>
+            {% endif %}
+            <div
+              style="
+                text-align: left;
+                margin-top: 16px;
+                padding: 14px 16px;
+                background-color: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                font-size: 14px;
+                line-height: 1.55;
+                color: #101828;
+              "
+            >
+              <div style="font-weight: 600; margin-bottom: 8px; color: #344054">
+                {{ delivery_address }}
+              </div>
+              <div style="color: #475467">
+                {{ data.address.street }}{% if data.address.street_number %} {{ data.address.street_number }}{% endif %}<br />
+                {% if data.address.secondary_street %}{{ data.address.secondary_street }}<br />{% endif %}
+                {% if data.address.building_number %}<span style="color:#667085">Bldg:</span> {{ data.address.building_number }}<br />{% endif %}
+                {{ data.address.postal_code }} {{ data.address.city }}<br />
+                {{ data.address.country }}<br />
+                {% if data.address.phone_number %}
+                <span style="color:#667085">Tel:</span> {{ data.address.phone_number }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

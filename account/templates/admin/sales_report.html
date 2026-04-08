@@ -1,0 +1,59 @@
+{% extends "admin/base_site.html" %} {% block content %}
+<h1>Sales Report</h1>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="button">Generate Report</button>
+</form>
+{% if summary %}
+<h2>Summary</h2>
+<div class="summary-grid">
+  <div class="summary-item">
+    <p><strong>Cross Revenue:</strong></p>
+    <p>{{ summary.cross_revenue }}</p>
+  </div>
+  <div class="summary-item">
+    <p><strong>Shipping:</strong></p>
+    <p>{{ summary.shipping }}</p>
+  </div>
+  <div class="summary-item">
+    <p><strong>Net Revenue:</strong></p>
+    <p>{{ summary.net_revenue }}</p>
+  </div>
+  <div class="summary-item">
+    <p><strong>Max Daily Sales:</strong></p>
+    <p>{{ summary.max_sales_value }} on {{ summary.max_sales_date }}</p>
+  </div>
+  <div class="summary-item">
+    <p><strong>Min Daily Sales:</strong></p>
+    <p>{{ summary.min_sales_value }} on {{ summary.min_sales_date }}</p>
+  </div>
+  <div class="summary-item">
+    <p><strong>Median Daily Sales:</strong></p>
+    <p>{{ summary.median_sales_value }}</p>
+  </div>
+</div>
+{% endif %} {% if image_base64 %}
+<h2>Sales Data</h2>
+<img src="data:image/png;base64,{{ image_base64 }}" alt="Sales Report Graphs" />
+{% endif %} {% endblock %} {% block extrahead %}
+<style>
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .summary-item {
+    background-color: #1f1f1f;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+  }
+  .summary-item p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  .summary-item p strong {
+    font-size: 18px;
+  }
+</style>
+{% endblock %}

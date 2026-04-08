@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+
+  <body>
+    <div style="text-align: center; width: 100%">
+      <img
+        src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/snusco-bg-blue.png"
+        alt="SnusCo"
+        style="max-width: 100%; display: block; margin: 0 auto"
+      />
+    </div>
+
+    <div style="padding: 16px 0">
+      <div style="width: 100%">
+        <div style="text-align: center">
+          <img src="https://snus-s3.s3.eu-north-1.amazonaws.com/verify.png" />
+          <h2 style="text-transform: uppercase; font-weight: 200">
+            {{ code_label }}
+          </h2>
+          <h2 style="text-transform: uppercase; font-weight: bold">
+            {{ code }}
+          </h2>
+          <p>{{ body }}</p>
+
+          <h5
+            style="
+              text-transform: capitalize;
+              font-weight: 300;
+              text-align: center;
+            "
+          >
+            {{thanks}}
+          </h5>
+          <h4
+            style="
+              text-transform: capitalize;
+              font-weight: 300;
+              text-align: center;
+            "
+          >
+            {{team}}
+          </h4>
+        </div>
+        <div
+          style="
+            text-align: center;
+            background: #f3f3f3;
+            padding: 14px 0;
+            margin-top: 40px;
+          "
+        >
+          <menu style="vertical-align: middle">
+            <item style="text-align: left" href="#"
+              ><img
+                src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/facebook.png"
+                alt="Facebook"
+              />
+            </item>
+            <item style="text-align: left" href="#"
+              ><img
+                src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/instagram.png"
+                alt="Instagram"
+              />
+            </item>
+            <item style="text-align: left" href="#">
+              <img
+                src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/Youtube.png"
+                alt="YouTube"
+              />
+            </item>
+          </menu>
+
+          <p style="color: #696969">2024 © SnusCo</p>
+          <p style="color: #696969">Love Braculjevica 14, Novi Sad 21000</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

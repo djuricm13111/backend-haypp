@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ email_texts.title }}</title>
+  </head>
+  <body
+    style="
+      margin: 0 auto;
+      max-width: 600px;
+      font-family: Helvetica Neue, Arial, sans-serif;
+      color: #101828;
+    "
+  >
+    <div style="text-align: center; background-color: #f5bc92; padding: 12px 0">
+      <img
+        src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/Full+icon+black.png"
+        alt="Logo"
+        style="height: 80px"
+      />
+    </div>
+    <div style="padding: 24px 20px">
+      <h1 style="font-size: 20px; font-weight: 600; margin: 0 0 16px">
+        {{ email_texts.title }}
+      </h1>
+      <p style="margin: 0 0 12px; font-size: 15px; line-height: 1.55">
+        {{ greeting }}
+      </p>
+      <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.55; color: #475467">
+        {{ email_texts.lead }}
+      </p>
+      <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600">
+        {{ email_texts.products_intro }}
+      </p>
+      <div
+        style="
+          background: #f9fafb;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          padding: 14px 16px;
+          margin-bottom: 20px;
+          font-size: 14px;
+          line-height: 1.6;
+        "
+      >
+        {% for line in product_lines %}
+        <div style="margin-bottom: 6px">{{ line }}</div>
+        {% endfor %}
+      </div>
+      <p style="margin: 0 0 12px; font-size: 15px; line-height: 1.55">
+        {{ retry_line }}
+      </p>
+      <p style="margin: 0 0 20px; font-size: 14px; color: #667085">
+        {{ schedule_line }}
+      </p>
+      <p style="margin: 0 0 8px; font-size: 14px; line-height: 1.5; color: #475467">
+        {{ email_texts.footer }}
+      </p>
+      <p style="margin: 16px 0 0; font-size: 14px; color: #667085">
+        {{ email_texts.team }}
+      </p>
+    </div>
+  </body>
+</html>

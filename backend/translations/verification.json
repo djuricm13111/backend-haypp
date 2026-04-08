@@ -1,0 +1,51 @@
+{
+  "en": {
+    "title": "Verify your account",
+    "code_label": "Verification Code",
+    "body": "Your verification code will expire in 30 minutes. Please don’t share this code with anyone. Stay tuned for exciting updates, exclusive offers, and expert tips to make the most of your SnusCo experience.",
+    "thanks": "Best regards,",
+    "team": "The SnusCo Team"
+  },
+  "de": {
+    "title": "Bestätigen Sie Ihr Konto",
+    "code_label": "Verifizierungscode",
+    "body": "Ihr Verifizierungscode ist 30 Minuten gültig. Bitte teilen Sie diesen Code nicht mit anderen. Bleiben Sie auf dem Laufenden mit spannenden Neuigkeiten, exklusiven Angeboten und Expertentipps, um das Beste aus Ihrem SnusCo-Erlebnis herauszuholen.",
+    "thanks": "Mit freundlichen Grüßen,",
+    "team": "Das SnusCo-Team"
+  },
+  "it": {
+    "title": "Verifica il tuo account",
+    "code_label": "Codice di Verifica",
+    "body": "Il tuo codice di verifica scadrà tra 30 minuti. Ti preghiamo di non condividere questo codice con nessuno. Rimani aggiornato su novità entusiasmanti, offerte esclusive e consigli esperti per sfruttare al meglio la tua esperienza con SnusCo.",
+    "thanks": "Cordiali saluti,",
+    "team": "Il Team di SnusCo"
+  },
+  "fr": {
+    "title": "Vérifiez votre compte",
+    "code_label": "Code de vérification",
+    "body": "Votre code de vérification expirera dans 30 minutes. Veuillez ne pas partager ce code avec qui que ce soit. Restez informé des dernières nouveautés, offres exclusives et conseils d'experts pour profiter pleinement de votre expérience SnusCo.",
+    "thanks": "Cordialement,",
+    "team": "L'équipe SnusCo"
+  },
+  "hu": {
+    "title": "Ellenőrizze fiókját",
+    "code_label": "Ellenőrző kód",
+    "body": "Az ellenőrző kód 30 perc múlva lejár. Kérjük, ne ossza meg ezt a kódot senkivel. Maradjon naprakész az izgalmas hírekkel, exkluzív ajánlatokkal és szakértői tippekkel, hogy a legtöbbet hozhassa ki SnusCo élményéből.",
+    "thanks": "Üdvözlettel,",
+    "team": "A SnusCo csapat"
+  },
+  "tr": {
+    "title": "Hesabınızı doğrulayın",
+    "code_label": "Doğrulama Kodu",
+    "body": "Doğrulama kodunuz 30 dakika içinde süresi dolacak. Lütfen bu kodu kimseyle paylaşmayın. SnusCo deneyiminizden en iyi şekilde yararlanmak için heyecan verici güncellemeler, özel teklifler ve uzman ipuçlarından haberdar olun.",
+    "thanks": "Saygılarımızla,",
+    "team": "SnusCo Ekibi"
+  },
+  "sr": {
+    "title": "Verifikujte svoj nalog",
+    "code_label": "Verifikacioni kod",
+    "body": "Vaš verifikacioni kod ističe za 30 minuta. Molimo vas da ovaj kod ne delite ni sa kim. Ostanite u toku sa najnovijim vestima, ekskluzivnim ponudama i korisnim savetima kako biste maksimalno iskoristili svoje iskustvo sa SnusCo.",
+    "thanks": "Srdačan pozdrav,",
+    "team": "SnusCo tim"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "en": {
+    "subject": "Subscription order delayed — product unavailable",
+    "title": "We couldn’t place your automatic order yet",
+    "greeting": "Hi {first_name},",
+    "lead": "One or more products on your subscription aren’t available for shipment right now (out of stock or not in “in stock” status). We didn’t charge you for this cycle.",
+    "products_intro": "Affected items:",
+    "product_line": "• {name} — quantity: {quantity}",
+    "retry": "We’ll try again in {retry_days} days. Next scheduled attempt: {next_retry}.",
+    "schedule": "Your subscription interval: every {interval_days} days.",
+    "footer": "If you need help, reply to this email or visit your account subscriptions page.",
+    "team": "— The SnusCo team"
+  },
+  "de": {
+    "subject": "Abo-Bestellung verschoben — Produkt nicht verfügbar",
+    "title": "Ihre automatische Bestellung konnte noch nicht ausgelöst werden",
+    "greeting": "Hallo {first_name},",
+    "lead": "Mindestens ein Produkt in Ihrem Abonnement ist derzeit nicht versandfähig (nicht vorrätig oder nicht „auf Lager“). Für diesen Zyklus wurde nichts berechnet.",
+    "products_intro": "Betroffene Artikel:",
+    "product_line": "• {name} — Menge: {quantity}",
+    "retry": "Wir versuchen es in {retry_days} Tagen erneut. Nächster Versuch: {next_retry}.",
+    "schedule": "Ihr Abo-Intervall: alle {interval_days} Tage.",
+    "footer": "Bei Fragen antworten Sie auf diese E-Mail oder öffnen Sie Ihr Konto unter Abonnements.",
+    "team": "— Ihr SnusCo-Team"
+  },
+  "sr": {
+    "subject": "Pretplatna porudžbina odložena — proizvod nije dostupan",
+    "title": "Automatska porudžbina još nije mogla da se izvrši",
+    "greeting": "Zdravo {first_name},",
+    "lead": "Jedan ili više proizvoda u vašoj pretplati trenutno nisu dostupni za slanje (nema na stanju ili nisu u statusu „na stanju“). Za ovaj ciklus vam ništa nije naplaćeno.",
+    "products_intro": "Obuhvaćene stavke:",
+    "product_line": "• {name} — količina: {quantity}",
+    "retry": "Pokušaćemo ponovo za {retry_days} dana. Sledeći pokušaj: {next_retry}.",
+    "schedule": "Interval pretplate: svakih {interval_days} dana.",
+    "footer": "Za pomoć odgovorite na ovaj e-mail ili otvorite pretplate u nalogu.",
+    "team": "— SnusCo tim"
+  }
+}
