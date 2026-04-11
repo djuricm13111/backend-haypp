@@ -8,6 +8,49 @@ from django.utils.translation import activate
 from django.core.mail import send_mail
 
 
+def _email_subscription_freq_line(days, email_texts):
+    """Isti smisao kao PRODUCT.SUBSCRIBE_FREQ_LABEL_* u korpi."""
+    try:
+        d = int(days)
+    except (TypeError, ValueError):
+        return ""
+    if d == 14:
+        return email_texts.get("subscribe_freq_14d", "Every 14 days")
+    if d == 31:
+        return email_texts.get("subscribe_freq_31d", "Every month")
+    if d == 62:
+        return email_texts.get("subscribe_freq_62d", "Every 2 months")
+    return email_texts.get("subscription_every_n_days", "Every {days} days").format(
+        days=d
+    )
+
+
+def _annotate_order_email_subscription_lines(data, email_texts):
+    """
+    Na svakoj pretplatnoj stavci postavi subscription_freq_line;
+    vrati podnaslov za sekciju kao u korpi (jedan interval ili mixed).
+    """
+    subs = data.get("products_subscription") or []
+    if not subs:
+        return None
+    day_values = []
+    for p in subs:
+        d = p.get("subscription_interval_days")
+        p["subscription_freq_line"] = _email_subscription_freq_line(d, email_texts)
+        if d is not None:
+            try:
+                day_values.append(int(d))
+            except (TypeError, ValueError):
+                pass
+    unique = set(day_values)
+    if len(unique) > 1:
+        return email_texts.get(
+            "subscription_section_mixed_freq", "Different delivery schedules"
+        )
+    if len(unique) == 1:
+        return _email_subscription_freq_line(unique.pop(), email_texts)
+    return None
+
 
 @shared_task
 def send_verification_code(email, code, language='en'):
@@ -56,19 +99,36 @@ def send_order_confirmation_email(email, data, language='en'):
         if 'discount_price' in data:
             data['discount_price'] = round(data['discount_price'], 2)
 
+        subscription_section_subtitle = _annotate_order_email_subscription_lines(
+            data, email_texts
+        )
+
         greeting_text = email_texts['greeting'].format(first_name=data['first_name'])
 
-        subscription_banner_body = ""
+        subscription_banner_intro = ""
+        subscription_interval_days = None
+        subscription_next_date = None
         has_subscription = bool(data.get("subscription"))
+        subscription_interval_phrase = None
         if has_subscription:
             subd = data["subscription"]
-            subscription_banner_body = email_texts.get(
-                "subscription_banner_body",
-                "This order is part of your subscription: every {days} days. Next automatic order: {date}.",
-            ).format(
-                days=subd["interval_days"],
-                date=subd.get("next_order_at_display") or "—",
+            subscription_interval_days = subd.get("interval_days")
+            subscription_next_date = subd.get("next_order_at_display") or "—"
+            subscription_banner_intro = email_texts.get(
+                "subscription_banner_intro",
+                "Items marked as subscription will be reordered automatically on the schedule below.",
             )
+            d_int = subscription_interval_days
+            if d_int == 1:
+                subscription_interval_phrase = email_texts.get(
+                    "subscription_every_1_day", "Every day"
+                )
+            elif d_int is not None:
+                subscription_interval_phrase = email_texts.get(
+                    "subscription_every_n_days", "Every {days} days"
+                ).format(days=d_int)
+            else:
+                subscription_interval_phrase = "—"
 
         context = {
             'title': email_texts['title'],
@@ -77,12 +137,39 @@ def send_order_confirmation_email(email, data, language='en'):
             'subscription_banner_title': email_texts.get(
                 'subscription_banner_title', 'Auto-reorder'
             ),
-            'subscription_banner_body': subscription_banner_body,
+            'subscription_banner_intro': subscription_banner_intro,
+            'subscription_interval_days': subscription_interval_days,
+            'subscription_interval_phrase': subscription_interval_phrase,
+            'subscription_next_date': subscription_next_date,
+            'subscription_next_order_label': email_texts.get(
+                'subscription_next_order_label', 'Next automatic order'
+            ),
+            'subscription_interval_label': email_texts.get(
+                'subscription_interval_label', 'Delivery interval'
+            ),
+            'panel_your_products': email_texts.get(
+                'panel_your_products', 'Your products'
+            ),
+            'subscription_section_title': email_texts.get(
+                'subscription_section_title', 'Subscription'
+            ),
+            'subscription_section_subtitle': subscription_section_subtitle,
+            'quantity_label': email_texts.get('quantity_label', 'Quantity'),
             'order_summary': email_texts['order_summary'],
             'order_id': email_texts['order_id'],
             'subtotal': email_texts['subtotal'],
             'shipping': email_texts['shipping'],
-            'taxes': email_texts['taxes'],
+            'summary_in_total': email_texts.get('SUMMARY_IN_TOTAL', 'In total:'),
+            'summary_vat_label': email_texts.get('SUMMARY_VAT_LABEL', 'VAT'),
+            'summary_vat_included': email_texts.get('SUMMARY_VAT_INCLUDED', 'Included'),
+            'shipping_free': email_texts.get('SHIPPING_FREE', 'Free'),
+            'free_delivery_hint': (
+                email_texts.get('FREE_DELIVERY_HINT', '').format(
+                    min=int(data.get('free_shipping_threshold_eur', 50))
+                )
+                if not data.get('shipping_is_free')
+                else ''
+            ),
             'total': email_texts['total'],
             'customer_info': email_texts['customer_info'],
             'delivery_address': email_texts['delivery_address'],

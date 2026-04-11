@@ -18,7 +18,7 @@
     <div style="margin: 0 auto">
       <div style="text-align: center; width: 100%; background-color: #f5bc92">
         <img
-          src=" https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/Full+icon+black.png"
+          src="https://snus-s3.s3.eu-north-1.amazonaws.com/email_images/Full+icon+black.png"
           alt="Logo"
           style="height: 120px; display: block; margin: 0 auto; padding: 12px 0"
         />
@@ -33,24 +33,118 @@
             <p>{{greeting}}</p>
 
             {% if has_subscription %}
-            <div
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
               style="
-                text-align: left;
-                margin: 16px 0 20px;
-                padding: 14px 16px;
-                background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
-                border: 1px solid #c5dde8;
-                border-radius: 8px;
-                font-size: 14px;
-                line-height: 1.5;
-                color: #101828;
+                margin: 20px 0 8px;
+                background-color: #ffffff;
+                border: 1px solid #e5e7eb;
+                border-radius: 10px;
+                border-collapse: separate;
               "
             >
-              <div style="font-weight: 700; margin-bottom: 6px; color: #265488">
-                {{ subscription_banner_title }}
-              </div>
-              <div style="color: #344054">{{ subscription_banner_body }}</div>
-            </div>
+              <tr>
+                <td style="padding: 18px 20px 20px; text-align: left">
+                  <p
+                    style="
+                      margin: 0 0 6px;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 11px;
+                      font-weight: 700;
+                      line-height: 1.3;
+                      color: #101828;
+                      text-transform: uppercase;
+                      letter-spacing: 0.06em;
+                    "
+                  >
+                    {{ subscription_banner_title }}
+                  </p>
+                  <p
+                    style="
+                      margin: 0 0 16px;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 1.5;
+                      color: #667085;
+                    "
+                  >
+                    {{ subscription_banner_intro }}
+                  </p>
+                  <table
+                    role="presentation"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    width="100%"
+                    style="border-collapse: collapse; border-top: 1px solid #f0f2f5"
+                  >
+                    <tr>
+                      <td
+                        style="
+                          padding: 14px 8px 6px 0;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 13px;
+                          font-weight: 500;
+                          line-height: 1.4;
+                          color: #667085;
+                          vertical-align: top;
+                        "
+                      >
+                        {{ subscription_interval_label }}
+                      </td>
+                      <td
+                        style="
+                          padding: 14px 0 6px 8px;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 14px;
+                          font-weight: 600;
+                          line-height: 1.4;
+                          color: #101828;
+                          text-align: right;
+                          vertical-align: top;
+                        "
+                      >
+                        {{ subscription_interval_phrase }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          padding: 6px 8px 0 0;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 13px;
+                          font-weight: 500;
+                          line-height: 1.4;
+                          color: #667085;
+                          vertical-align: top;
+                        "
+                      >
+                        {{ subscription_next_order_label }}
+                      </td>
+                      <td
+                        style="
+                          padding: 6px 0 0 8px;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 15px;
+                          font-weight: 700;
+                          line-height: 1.35;
+                          color: #101828;
+                          text-align: right;
+                          vertical-align: top;
+                        "
+                      >
+                        {{ subscription_next_date }}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
             {% endif %}
 
             <table
@@ -95,112 +189,320 @@
               </tr>
             </table>
 
-            {% for product in data.products %}
-            <table
-              cellpadding="0"
-              cellspacing="0"
+            <div
               style="
-                margin-bottom: 3px;
-                border-bottom: 1px solid #cccccc;
-                background-color: #f5f5f5;
+                text-align: left;
                 width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
               "
             >
-              <tbody>
-                <tr>
-                  <td style="padding-left: 20px">
-                    <table style="border-collapse: collapse; width: 100%">
-                      <tbody>
-                        <tr>
-                          <td style="width: 30%">
-                            <img
-                              alt="{{ product.category }} {{ product.name }}"
-                              src="{{ product.image }}"
-                              style="
-                                width: 100%;
-                                height: 100%;
-                                max-height: 100px;
-                                max-width: 100px;
-                                background-color: #f5f5f5;
-                                object-fit: contain;
-                              "
-                            />
-                          </td>
-                          <td style="width: 70%; padding: 10px">
-                            <h3
-                              style="
-                                margin: 0;
-                                padding-top: 10px;
-                                font-size: 14px;
-                                line-height: 1.4;
-                                font-weight: 300;
-                                color: #041e42;
-                                text-transform: uppercase;
-                              "
-                            >
-                              {{ product.category }} {{ product.name }}
-                            </h3>
+            {% if data.products_regular or data.products_subscription %}
+            <p
+              style="
+                margin: 20px 0 12px;
+                padding: 0 2px 10px;
+                border-bottom: 1px solid #eaecf0;
+                font-family: Montserrat, Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1.3;
+                color: #101828;
+                text-align: left;
+              "
+            >
+              {{ panel_your_products }}
+            </p>
+            {% endif %}
 
-                            <div
-                              style="
-                                margin: 0;
-                                padding: 10px 0px;
-                                font-size: 12px;
-                                line-height: 1;
-                                font-weight: 100;
-                                color: #041e42;
-                                text-transform: uppercase;
-                              "
-                            >
-                              Quantity: {{ product.quantity}}x
-                            </div>
-                            <div
-                              style="
-                                margin: 0;
-                                padding: 10px 0px;
-                                font-size: 12px;
-                                line-height: 1;
-                                font-weight: 100;
-                                color: #041e42;
-                                text-transform: uppercase;
-                              "
-                            >
-                              {{discount_price}}: {{product.discounted_price}}
-                              EUR
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            {% endfor %}
-
+            {% for product in data.products_regular %}
             <table
+              role="presentation"
               border="0"
               cellpadding="0"
               cellspacing="0"
-              style="width: 100%; margin: 20px 0px"
+              width="100%"
+              style="border-collapse: collapse; margin: 0; background-color: #ffffff"
             >
               <tr>
                 <td
                   style="
-                    text-align: left;
-                    color: #667085;
-                    padding: 20px 0 20px 10px;
-                    border-top: 1px solid #dddddd;
+                    width: 88px;
+                    padding: 12px 10px 12px 2px;
+                    vertical-align: top;
+                    border-bottom: 2px solid #eaecf0;
                   "
                 >
-                  {{subtotal}}
+                  <div
+                    style="
+                      width: 76px;
+                      box-sizing: border-box;
+                      padding: 4px;
+                      background-color: #f2f4f7;
+                      border-radius: 6px;
+                      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+                      text-align: center;
+                    "
+                  >
+                    {% if product.image %}
+                    <img
+                      alt="{{ product.category }} · {{ product.name }}"
+                      src="{{ product.image }}"
+                      style="
+                        display: block;
+                        width: 100%;
+                        max-width: 68px;
+                        max-height: 88px;
+                        margin: 0 auto;
+                        object-fit: contain;
+                      "
+                    />
+                    {% endif %}
+                  </div>
                 </td>
                 <td
                   style="
+                    padding: 12px 4px 12px 6px;
+                    vertical-align: top;
+                    border-bottom: 2px solid #eaecf0;
+                    text-align: left;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0 0 8px;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 14px;
+                      font-weight: 600;
+                      line-height: 1.35;
+                      color: #101828;
+                      text-align: left;
+                    "
+                  >
+                    {{ product.category }}&nbsp;·&nbsp;{{ product.name }}{% if product.nicotine %} {{ product.nicotine }}MG{% endif %}
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 12px;
+                      font-weight: 500;
+                      line-height: 1.45;
+                      color: #667085;
+                      text-align: left;
+                    "
+                  >
+                    {{ quantity_label }}: {{ product.quantity }}×
+                    {% if product.discounted_price is not None %}
+                    <span style="color: #98a2b3"> · </span>
+                    {{ discount_price }} {{ product.discounted_price }} EUR
+                    {% endif %}
+                  </p>
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+
+            {% if data.products_subscription %}
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              style="border-collapse: collapse; margin: 18px 0 12px"
+            >
+              <tr>
+                <td style="width: 50%; vertical-align: middle; padding: 0 8px 0 0">
+                  <div style="border-top: 1px solid #eaecf0; font-size: 0; line-height: 0">&nbsp;</div>
+                </td>
+                <td
+                  style="
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    padding: 6px 12px;
+                    text-align: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 15px;
+                      font-weight: 700;
+                      line-height: 1.25;
+                      color: #101828;
+                    "
+                  >
+                    {{ subscription_section_title }}
+                  </div>
+                  {% if subscription_section_subtitle %}
+                  <div
+                    style="
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 12px;
+                      font-weight: 400;
+                      line-height: 1.35;
+                      color: #667085;
+                      margin-top: 4px;
+                    "
+                  >
+                    {{ subscription_section_subtitle }}
+                  </div>
+                  {% endif %}
+                </td>
+                <td style="width: 50%; vertical-align: middle; padding: 0 0 0 8px">
+                  <div style="border-top: 1px solid #eaecf0; font-size: 0; line-height: 0">&nbsp;</div>
+                </td>
+              </tr>
+            </table>
+            {% for product in data.products_subscription %}
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              style="border-collapse: collapse; margin: 0; background-color: #ffffff"
+            >
+              <tr>
+                <td
+                  style="
+                    width: 88px;
+                    padding: 12px 10px 12px 2px;
+                    vertical-align: top;
+                    border-bottom: 1px solid #eaecf0;
+                  "
+                >
+                  <div
+                    style="
+                      width: 76px;
+                      box-sizing: border-box;
+                      padding: 4px;
+                      background-color: #f2f4f7;
+                      border-radius: 6px;
+                      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+                      text-align: center;
+                    "
+                  >
+                    {% if product.image %}
+                    <img
+                      alt="{{ product.category }} · {{ product.name }}"
+                      src="{{ product.image }}"
+                      style="
+                        display: block;
+                        width: 100%;
+                        max-width: 68px;
+                        max-height: 88px;
+                        margin: 0 auto;
+                        object-fit: contain;
+                      "
+                    />
+                    {% endif %}
+                  </div>
+                </td>
+                <td
+                  style="
+                    padding: 12px 4px 12px 6px;
+                    vertical-align: top;
+                    border-bottom: 1px solid #eaecf0;
+                    text-align: left;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0 0 6px;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 14px;
+                      font-weight: 600;
+                      line-height: 1.35;
+                      color: #101828;
+                      text-align: left;
+                    "
+                  >
+                    {{ product.category }}&nbsp;·&nbsp;{{ product.name }}{% if product.nicotine %} {{ product.nicotine }}MG{% endif %}
+                  </p>
+                  {% if product.subscription_freq_line %}
+                  <p
+                    style="
+                      margin: 0 0 8px;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 11px;
+                      font-weight: 600;
+                      line-height: 1.3;
+                      color: #265488;
+                      text-transform: uppercase;
+                      letter-spacing: 0.03em;
+                      text-align: left;
+                    "
+                  >
+                    {{ product.subscription_freq_line }}
+                  </p>
+                  {% endif %}
+                  <p
+                    style="
+                      margin: 0;
+                      font-family: Montserrat, Arial, Helvetica, sans-serif;
+                      font-size: 12px;
+                      font-weight: 500;
+                      line-height: 1.45;
+                      color: #667085;
+                      text-align: left;
+                    "
+                  >
+                    {{ quantity_label }}: {{ product.quantity }}×
+                    {% if product.discounted_price is not None %}
+                    <span style="color: #98a2b3"> · </span>
+                    {{ discount_price }} {{ product.discounted_price }} EUR
+                    {% endif %}
+                  </p>
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+            {% endif %}
+            </div>
+
+            <table
+              role="presentation"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="100%"
+              style="width: 100%; margin: 24px 0 8px; border-collapse: collapse"
+            >
+              <tr>
+                <td
+                  colspan="2"
+                  style="
+                    padding: 0 0 4px;
+                    border-top: 1px solid #eaecf0;
+                    font-size: 0;
+                    line-height: 0;
+                  "
+                >
+                  &nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 10px 8px 8px 2px;
+                    text-align: left;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #667085;
+                  "
+                >
+                  {{ subtotal }}
+                </td>
+                <td
+                  style="
+                    padding: 10px 2px 8px 8px;
                     text-align: right;
-                    font-weight: 700;
-                    padding: 20px 10px 20px 0;
-                    border-top: 1px solid #dddddd;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 600;
                     color: #101828;
                   "
                 >
@@ -210,66 +512,119 @@
               <tr>
                 <td
                   style="
-                    padding: 20px 0 20px 10px;
+                    padding: 8px 8px 8px 2px;
                     text-align: left;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
                     color: #667085;
                   "
                 >
-                  {{shipping}}
+                  {{ shipping }}
                 </td>
                 <td
                   style="
-                    padding: 20px 10px 20px 0;
+                    padding: 8px 2px 8px 8px;
                     text-align: right;
-                    font-weight: 700;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 600;
                     color: #101828;
                   "
                 >
+                  {% if data.shipping_is_free %}
+                  {{ shipping_free }}
+                  {% else %}
                   {{ data.shipping_cost }} {{ data.currency }}
+                  {% endif %}
+                </td>
+              </tr>
+              {% if free_delivery_hint %}
+              <tr>
+                <td
+                  colspan="2"
+                  style="
+                    padding: 0 8px 10px 2px;
+                    text-align: left;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    line-height: 1.4;
+                    color: #98a2b3;
+                  "
+                >
+                  {{ free_delivery_hint }}
+                </td>
+              </tr>
+              {% endif %}
+              <tr>
+                <td
+                  style="
+                    padding: 8px 8px 12px 2px;
+                    text-align: left;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #667085;
+                  "
+                >
+                  {{ summary_vat_label }}
+                </td>
+                <td
+                  style="
+                    padding: 8px 2px 12px 8px;
+                    text-align: right;
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #667085;
+                  "
+                >
+                  {{ summary_vat_included }}
                 </td>
               </tr>
               <tr>
                 <td
+                  colspan="2"
                   style="
-                    padding: 20px 0 20px 10px;
-                    text-align: left;
-                    color: #667085;
+                    padding: 0;
+                    background-color: #f2f4f7;
+                    border-radius: 8px;
                   "
                 >
-                  {{taxes}}
-                </td>
-                <td
-                  style="
-                    padding: 20px 10px 20px 0;
-                    text-align: right;
-                    font-weight: 700;
-                    color: #101828;
-                  "
-                >
-                  0 {{ data.currency }}
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style="
-                    padding: 20px 0 20px 10px;
-                    text-align: left;
-                    background-color: #f0f0f0;
-                    color: #667085;
-                  "
-                >
-                  {{total}}
-                </td>
-                <td
-                  style="
-                    padding: 20px 10px 20px 0;
-                    text-align: right;
-                    background-color: #f0f0f0;
-                    font-weight: 700;
-                    color: #101828;
-                  "
-                >
-                  {{ data.total_price }} {{ data.currency }}
+                  <table
+                    role="presentation"
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    style="border-collapse: collapse"
+                  >
+                    <tr>
+                      <td
+                        style="
+                          padding: 14px 10px 14px 12px;
+                          text-align: left;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 15px;
+                          font-weight: 700;
+                          color: #101828;
+                        "
+                      >
+                        {{ summary_in_total }}
+                      </td>
+                      <td
+                        style="
+                          padding: 14px 12px 14px 10px;
+                          text-align: right;
+                          font-family: Montserrat, Arial, Helvetica, sans-serif;
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #101828;
+                        "
+                      >
+                        {{ data.total_price }} {{ data.currency }}
+                      </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>

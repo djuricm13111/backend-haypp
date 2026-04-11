@@ -13,37 +13,8 @@ from djmoney.money import Money
 from django.utils import timezone
 from decimal import Decimal
 from collections import defaultdict
-from backend.settings import DEFAULT_DOMAIN, ALLOW_FREE_DELIVERY
+from backend.settings import DEFAULT_DOMAIN
 
-
-def calculate_shipping_cost(method_code, total_quantity):
-    weight = Decimal(total_quantity) * Decimal("0.033")  # 33g po komadu
-
-    def price_per_box(w):
-        if w <= 2:
-            return Decimal('6.00')
-        elif w <= 4:
-            return Decimal('7.00')
-        elif w <= 8:
-            return Decimal('8.00')
-        elif w <= 12:
-            return Decimal('9.00')
-        elif w <= 20:
-            return Decimal('11.00')
-        elif w <= 31.5:
-            return Decimal('12.00')
-        return Decimal('0.00')
-
-    # Uvek koristi B2B logiku (max 7.8 kg po kutiji)
-    if method_code == "post_at":
-        full_boxes = int(weight // Decimal("7.8"))
-        remainder = weight % Decimal("7.8")
-        cost = full_boxes * price_per_box(Decimal("7.8"))
-        if remainder > 0:
-            cost += price_per_box(remainder)
-        return cost
-
-    return Decimal('12.00')
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -486,11 +457,6 @@ class OrderSerializer(serializers.ModelSerializer):
         return attrs
 
     def create(self, validated_data):
-        TRANSPORT_COSTS = {
-            TransportMethod.DHL_STANDARD: Money(8.9, DEFAULT_CURRENCY),
-            TransportMethod.POST_AT: Money(8.9, DEFAULT_CURRENCY),
-            TransportMethod.DHL_EXPRESS_SAVER: Money(19.9, DEFAULT_CURRENCY),
-        }
         logger.info(f"Creating order with validated data: {validated_data}")
         request = self.context['request']
         guest_email = validated_data.pop('guest_email', None)
@@ -585,17 +551,18 @@ class OrderSerializer(serializers.ModelSerializer):
             total_price = total_price * (1 - discount)
 
             # Dodato ovde
-            total_quantity = sum(item['quantity'] for item in order_items_data)
+            # Usklađeno sa frontendom (global_const.freeShippingThreshold = 50): besplatna dostava od €50 međuzbira.
+            # Ispod praga: fiksno €20 za Post/DHL Standard (ranije težinski proračun ~€12).
+            free_subtotal_threshold = Decimal("50")
+            flat_shipping_eur = Decimal("20")
+            express_shipping_eur = Decimal("24.90")
 
-            if (
-                DEFAULT_DOMAIN in ALLOW_FREE_DELIVERY
-                and transport_method == TransportMethod.POST_AT
-                and total_quantity >= 50
-            ):
+            if total_price.amount >= free_subtotal_threshold:
                 shipping_cost = Money(0, DEFAULT_CURRENCY)
+            elif transport_method == TransportMethod.DHL_EXPRESS_SAVER:
+                shipping_cost = Money(express_shipping_eur, DEFAULT_CURRENCY)
             else:
-                cost_value = calculate_shipping_cost(transport_method, total_quantity)
-                shipping_cost = Money(cost_value, DEFAULT_CURRENCY)
+                shipping_cost = Money(flat_shipping_eur, DEFAULT_CURRENCY)
 
 
             if use_points:
@@ -612,9 +579,8 @@ class OrderSerializer(serializers.ModelSerializer):
 
             order.shipping_cost = shipping_cost
             order.subtotal = total_price
-            # Dodaj porez od 20%
-            tax_amount = (total_price + shipping_cost) * Decimal("0.20")
-            order.total_price = total_price + shipping_cost + tax_amount
+            # Ukupno kao na checkout-u: međuzbir + dostava. PDV je već u cenama proizvoda (B2C, uračunat).
+            order.total_price = total_price + shipping_cost
             order.save()
 
             # Update user's last order date and total orders
