@@ -1,10 +1,24 @@
 """Payload za send_order_confirmation_email — deljeno između OrderCreateView i pretplata."""
-from collections import defaultdict
+from collections import defaultdict, deque
 
 from django.utils import formats
 
 from product.models import ProductImage
 from .models import OrderItem
+
+
+def _subscriptions_for_order(order):
+    """Sve pretplate vezane za ovu porudžbinu (više intervala); fallback na stari order.subscription."""
+    subs = list(
+        order.checkout_subscriptions.all()
+        .prefetch_related("items")
+        .order_by("id")
+    )
+    if subs:
+        return subs
+    if order.subscription_id:
+        return [order.subscription]
+    return []
 
 
 def build_order_confirmation_email_data(order):
@@ -37,12 +51,16 @@ def build_order_confirmation_email_data(order):
     else:
         data["address"] = {}
 
-    subscription_interval = None
+    subs = _subscriptions_for_order(order)
     sub_qty_by_product = defaultdict(int)
-    if order.subscription_id:
-        subscription_interval = order.subscription.interval_days
-        for si in order.subscription.items.all():
-            sub_qty_by_product[si.product_id] += int(si.quantity)
+    sub_buckets = defaultdict(deque)
+    for sub in subs:
+        interval = sub.interval_days
+        for si in sub.items.all():
+            pid = si.product_id
+            q = int(si.quantity)
+            sub_qty_by_product[pid] += q
+            sub_buckets[pid].append((q, interval))
 
     order_items = list(OrderItem.objects.filter(order=order).order_by("id"))
     total_by_product = defaultdict(int)
@@ -50,7 +68,6 @@ def build_order_confirmation_email_data(order):
         if item.product_id:
             total_by_product[item.product_id] += int(item.quantity)
 
-    # Koliko komada po proizvodu ide kao jednokratno (ostatak od ukupno − pretplata).
     reg_remaining = defaultdict(int)
     for pid, tqty in total_by_product.items():
         sq = int(sub_qty_by_product.get(pid, 0))
@@ -60,7 +77,22 @@ def build_order_confirmation_email_data(order):
     products_subscription = []
     products_regular = []
 
-    def row_from_product_item(item, qty, is_sub_line):
+    def take_sub_qty_with_intervals(pid, need_qty):
+        rows = []
+        left = need_qty
+        b = sub_buckets[pid]
+        while left > 0 and b:
+            bq, interval = b[0]
+            take = min(left, bq)
+            rows.append((take, interval))
+            if take == bq:
+                b.popleft()
+            else:
+                b[0] = (bq - take, interval)
+            left -= take
+        return rows
+
+    def row_from_product_item(item, qty, is_sub_line, interval_days=None):
         primary_image = ProductImage.objects.filter(
             product=item.product, is_primary=True
         ).first()
@@ -78,12 +110,11 @@ def build_order_confirmation_email_data(order):
         if primary_image:
             product_data["image"] = primary_image.get_image_url()
         product_data["is_subscription_line"] = is_sub_line
-        if is_sub_line and subscription_interval is not None:
-            product_data["subscription_interval_days"] = subscription_interval
+        if is_sub_line and interval_days is not None:
+            product_data["subscription_interval_days"] = int(interval_days)
         return product_data
 
     def row_from_special_item(item):
-        primary_image = None
         product_data = {
             "id": item.special_offer.id,
             "name": item.special_offer.name,
@@ -110,15 +141,12 @@ def build_order_confirmation_email_data(order):
         pid = item.product_id
         q = int(item.quantity)
 
-        # Bez pretplate ili proizvod nije u pretplati — sve jednokratno.
-        if not order.subscription_id or sub_qty_by_product.get(pid, 0) <= 0:
+        if not subs or sub_qty_by_product.get(pid, 0) <= 0:
             pd = row_from_product_item(item, q, False)
             products_data.append(pd)
             products_regular.append(pd)
             continue
 
-        # Prvo se „potroši“ jednokratni kvota po redosledu stavki (order_by id),
-        # kao redosled u order_items sa fronta (obično prvo korpa bez pretplate).
         r = reg_remaining[pid]
         reg_take = min(r, q)
         sub_take = q - reg_take
@@ -129,24 +157,36 @@ def build_order_confirmation_email_data(order):
             products_data.append(pd)
             products_regular.append(pd)
         if sub_take > 0:
-            pd = row_from_product_item(item, sub_take, True)
-            products_data.append(pd)
-            products_subscription.append(pd)
+            parts = take_sub_qty_with_intervals(pid, sub_take)
+            allocated = sum(pq for pq, _ in parts)
+            if allocated < sub_take:
+                pd = row_from_product_item(item, sub_take - allocated, False)
+                products_data.append(pd)
+                products_regular.append(pd)
+            for part_qty, int_d in parts:
+                pd = row_from_product_item(item, part_qty, True, int_d)
+                products_data.append(pd)
+                products_subscription.append(pd)
 
     data["products"] = products_data
     data["products_subscription"] = products_subscription
     data["products_regular"] = products_regular
 
-    data["subscription"] = None
-    if order.subscription_id:
-        sub = order.subscription
+    schedules = []
+    for sub in subs:
         next_at = sub.next_order_at
-        data["subscription"] = {
-            "interval_days": sub.interval_days,
-            "next_order_at_iso": next_at.isoformat() if next_at else None,
-            "next_order_at_display": (
-                formats.date_format(next_at, "SHORT_DATETIME_FORMAT") if next_at else ""
-            ),
-        }
+        schedules.append(
+            {
+                "interval_days": sub.interval_days,
+                "next_order_at_iso": next_at.isoformat() if next_at else None,
+                "next_order_at_display": (
+                    formats.date_format(next_at, "SHORT_DATETIME_FORMAT")
+                    if next_at
+                    else ""
+                ),
+            }
+        )
+    data["subscription_schedules"] = schedules
+    data["subscription"] = schedules[0] if schedules else None
 
     return data

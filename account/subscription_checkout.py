@@ -30,6 +30,7 @@ def create_subscriptions_from_checkout_order(order, user, rows):
             qty_by_product[r["product"]] += int(r["quantity"])
         sub = ProductSubscription(
             user=user,
+            checkout_order=order,
             interval_days=interval_days,
             status=SubscriptionStatus.ACTIVE,
             address_id=order.address_id,

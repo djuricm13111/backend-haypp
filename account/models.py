@@ -244,6 +244,14 @@ class SubscriptionStatus(models.TextChoices):
 
 class ProductSubscription(models.Model):
     """Ponavljajuća isporuka: prva narudžbina odmah, sledeće po intervalu (dani)."""
+    checkout_order = models.ForeignKey(
+        "Order",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="checkout_subscriptions",
+        help_text="Inicijalna porudžbina sa koje je pretplata kreirana (više pretplata po intervalu).",
+    )
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='product_subscriptions')
     interval_days = models.PositiveSmallIntegerField()
     status = models.CharField(max_length=20, choices=SubscriptionStatus.choices, default=SubscriptionStatus.ACTIVE)

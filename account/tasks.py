@@ -105,42 +105,37 @@ def send_order_confirmation_email(email, data, language='en'):
 
         greeting_text = email_texts['greeting'].format(first_name=data['first_name'])
 
-        subscription_banner_intro = ""
-        subscription_interval_days = None
-        subscription_next_date = None
-        has_subscription = bool(data.get("subscription"))
-        subscription_interval_phrase = None
+        subscription_schedules = []
+        has_subscription = bool(data.get("subscription_schedules"))
         if has_subscription:
-            subd = data["subscription"]
-            subscription_interval_days = subd.get("interval_days")
-            subscription_next_date = subd.get("next_order_at_display") or "—"
-            subscription_banner_intro = email_texts.get(
-                "subscription_banner_intro",
-                "Items marked as subscription will be reordered automatically on the schedule below.",
-            )
-            d_int = subscription_interval_days
-            if d_int == 1:
-                subscription_interval_phrase = email_texts.get(
-                    "subscription_every_1_day", "Every day"
+            for s in data["subscription_schedules"]:
+                d_int = s.get("interval_days")
+                if d_int == 1:
+                    phrase = email_texts.get(
+                        "subscription_every_1_day", "Every day"
+                    )
+                elif d_int is not None:
+                    phrase = _email_subscription_freq_line(d_int, email_texts)
+                else:
+                    phrase = "—"
+                subscription_schedules.append(
+                    {
+                        "interval_days": d_int,
+                        "interval_phrase": phrase,
+                        "next_order_at_display": s.get("next_order_at_display")
+                        or "—",
+                    }
                 )
-            elif d_int is not None:
-                subscription_interval_phrase = email_texts.get(
-                    "subscription_every_n_days", "Every {days} days"
-                ).format(days=d_int)
-            else:
-                subscription_interval_phrase = "—"
 
         context = {
             'title': email_texts['title'],
             'greeting': greeting_text,
             'has_subscription': has_subscription,
-            'subscription_banner_title': email_texts.get(
-                'subscription_banner_title', 'Auto-reorder'
+            'subscription_banner_note': email_texts.get(
+                "subscription_banner_note",
+                "Automatic re-orders apply to the subscription items below; each line shows its schedule.",
             ),
-            'subscription_banner_intro': subscription_banner_intro,
-            'subscription_interval_days': subscription_interval_days,
-            'subscription_interval_phrase': subscription_interval_phrase,
-            'subscription_next_date': subscription_next_date,
+            'subscription_schedules': subscription_schedules,
             'subscription_next_order_label': email_texts.get(
                 'subscription_next_order_label', 'Next automatic order'
             ),
