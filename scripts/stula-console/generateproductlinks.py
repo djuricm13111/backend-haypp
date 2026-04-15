@@ -113,7 +113,6 @@ try:
         "nicotine-pouches",
         "new-arrivals",
         "best-sellers",
-        "special-offers",
         "cart",
         "support",
         "blogs",

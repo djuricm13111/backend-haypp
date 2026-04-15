@@ -1,0 +1,5 @@
+# Obični proizvodi (bez mix_components) — isti ključevi kao u mixpacks.example.yaml.
+# mix_components u ovom fajlu se ignorišu.
+#   cd backend && python product/scripts/import_products_from_yaml.py --dry-run
+
+products: []

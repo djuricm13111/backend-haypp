@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, CartItem, Cart, SpecialOffer, ProductState, Category, FeaturedGroup
+from .models import Product, CartItem, Cart, ProductState, Category, FeaturedGroup
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language
 from scripts.currency_converter import convert_currency, DEFAULT_CURRENCY
@@ -18,6 +18,7 @@ class ProductSerializer(serializers.ModelSerializer):
     discounted_price = serializers.SerializerMethodField()  # New field for discounted price
     is_in_stock = serializers.SerializerMethodField()
     images = serializers.SerializerMethodField()
+    is_mix_pack = serializers.SerializerMethodField()
 
     def get_images(self, obj):
         # Pretpostavlja se da ProductImage ima metodu get_image_url
@@ -51,20 +52,42 @@ class ProductSerializer(serializers.ModelSerializer):
         return None
 
     def get_is_in_stock(self, obj):
-        return obj.state
+        return obj.display_catalog_state()
 
-    
+    def get_is_mix_pack(self, obj):
+        v = getattr(obj, "is_mix_pack", None)
+        if v is not None:
+            return bool(v)
+        return obj.mix_lines.exists()
 
     class Meta:
         model = Product
-        fields = ['id','name', 'nicotine', 'price','discounted_price', 'category_name', 'recommended', 
-                  'pouches_per_can', 'format', 'flavor', 'net_weight', 'manufacturer', 'sales_count', 'is_in_stock', 'created_at', 'images']
+        fields = [
+            "id",
+            "name",
+            "nicotine",
+            "price",
+            "discounted_price",
+            "category_name",
+            "recommended",
+            "pouches_per_can",
+            "format",
+            "flavor",
+            "net_weight",
+            "manufacturer",
+            "sales_count",
+            "is_in_stock",
+            "created_at",
+            "images",
+            "is_mix_pack",
+        ]
 
 
 class ProductLiteSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
     price = serializers.SerializerMethodField()
     is_in_stock = serializers.SerializerMethodField()
+    is_mix_pack = serializers.SerializerMethodField()
     
     def get_price(self, obj):
         currency = self.context.get('currency', DEFAULT_CURRENCY)  # Podrazumevana valuta je USD
@@ -72,9 +95,14 @@ class ProductLiteSerializer(serializers.ModelSerializer):
         return converted_price
 
     def get_is_in_stock(self, obj):
-        return obj.state
+        return obj.display_catalog_state()
 
-    
+    def get_is_mix_pack(self, obj):
+        v = getattr(obj, "is_mix_pack", None)
+        if v is not None:
+            return bool(v)
+        return obj.mix_lines.exists()
+
     class Meta:
         model = Product
         fields = [
@@ -89,6 +117,7 @@ class ProductLiteSerializer(serializers.ModelSerializer):
             "flavor",
             "net_weight",
             "is_in_stock",
+            "is_mix_pack",
         ]
 
 
@@ -140,49 +169,12 @@ class ProductOrderHistorySerializer(serializers.ModelSerializer):
         ]
 
 
-class SpecialOfferSerializer(serializers.ModelSerializer):
-    is_in_stock = serializers.SerializerMethodField()
-    price = serializers.SerializerMethodField()
-    images = serializers.SerializerMethodField()
-    # products = ProductSerializer(many=True)
-    products = ProductLiteSerializer(many=True)
-    
-    def get_price(self, obj):
-        currency = self.context.get('currency', DEFAULT_CURRENCY)
-        converted_price = convert_currency(obj.price.amount, DEFAULT_CURRENCY, currency)
-        return converted_price
-    
-    def get_is_in_stock(self, obj):
-        return obj.state == ProductState.IN_STOCK
-
-    def get_images(self, obj):
-        # Pretpostavlja se da ProductImage ima metodu get_image_url
-        # koja vraća URL originalne slike, i metode get_large_image_url i
-        # get_thumbnail_image_url za varijante veličina slika.
-        images = []
-        if 'prefetched_images' in self.context.keys():
-            images = self.context['prefetched_images'].get(obj.id, [])
-        else:
-            images = obj.images.all()  # Preuzima sve slike povezane sa proizvodom
-        
-        return [{
-            'original': image.get_image_url(),
-            'large': image.get_large_image_url(),
-            'thumbnail': image.get_thumbnail_image_url(),
-            'is_primary': image.is_primary,
-        } for image in images]
-
-    class Meta:
-        model = SpecialOffer
-        fields = [
-            'id', 'name', 'slug', 'price', 'images', 'created_at', 'recommended', 'is_in_stock',  'products'
-        ]
-
 class ProductFeaturedSerializer(serializers.ModelSerializer):
     category_name = serializers.CharField(source='category.name', read_only=True)
     images = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
     is_in_stock = serializers.SerializerMethodField()
+    is_mix_pack = serializers.SerializerMethodField()
 
     def get_images(self, obj):
         # Pretpostavlja se da ProductImage ima metodu get_image_url
@@ -207,13 +199,30 @@ class ProductFeaturedSerializer(serializers.ModelSerializer):
         return converted_price
 
     def get_is_in_stock(self, obj):
-        return obj.state
+        return obj.display_catalog_state()
 
-    
+    def get_is_mix_pack(self, obj):
+        v = getattr(obj, "is_mix_pack", None)
+        if v is not None:
+            return bool(v)
+        return obj.mix_lines.exists()
+
     class Meta:
         model = Product
-        fields = ['id','name', 'nicotine', 'price', 'category_name', 'images', 
-                  'pouches_per_can', 'format', 'flavor', 'net_weight', 'is_in_stock']
+        fields = [
+            "id",
+            "name",
+            "nicotine",
+            "price",
+            "category_name",
+            "images",
+            "pouches_per_can",
+            "format",
+            "flavor",
+            "net_weight",
+            "is_in_stock",
+            "is_mix_pack",
+        ]
 class FeaturedGroupSerializer(serializers.ModelSerializer):
     products = ProductFeaturedSerializer(many=True)
 

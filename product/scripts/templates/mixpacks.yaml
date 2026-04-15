@@ -1,0 +1,54 @@
+# Mix pack bundle — stanje i stock se računaju iz komponenti (vidi mix_components).
+# Pokretanje: cd backend && python product/scripts/import_mixpacks_from_yaml.py
+
+products:
+  - name: "Velo Freezing Peppermint Bundle 20-Pack"
+    slug: velo-freezing-peppermint-bundle-20-pack
+    brand: Velo
+    sku: VELO-MIX-FRZ-PEP-20
+    nicotine_mg_per_pouch: 0
+    format: Slim
+    flavor: Mint
+    net_weight_grams: 14.0
+    pouches_per_can: 20
+    manufacturer: BAT
+    price_amount: "24.90"
+    currency: EUR
+    # stock / state za mix pack se ignorišu posle uvoza — dolaze iz komponenti
+    stock: 0
+    state: in_stock
+    images:
+      - s3_key: mixpacs/velo-freezing-peppermint-bundle-20-pack.webp
+        primary: true
+    mix_components:
+      # Slugovi moraju postojati u bazi (npr. iz combined_products.csv)
+      - slug: velo-freezing-peppermint
+        quantity: 10
+      - slug: velo-crispy-peppermint
+        quantity: 10
+
+  # VELO Mixpack: 1× Storm + 1× Freezing + 1× Crispy (stanje = min zaliha komponenti)
+  - name: "Velo Mint Bundle"
+    slug: velo-mint-bundle
+    brand: Velo
+    sku: 
+    nicotine_mg_per_pouch: 0
+    format: Slim
+    flavor: Mixed
+    net_weight_grams: 14.0
+    pouches_per_can: 20
+    manufacturer: BAT
+    price_amount: "26.90"
+    currency: EUR
+    stock: 0
+    state: in_stock
+    images:
+      - s3_key: mixpacs/trio.png
+        primary: true
+    mix_components:
+      - slug: velo-peppermint-storm
+        quantity: 1
+      - slug: velo-freezing-peppermint
+        quantity: 1
+      - slug: velo-crispy-peppermint
+        quantity: 1

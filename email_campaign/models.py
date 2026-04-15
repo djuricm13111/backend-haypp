@@ -4,7 +4,7 @@ from datetime import timedelta
 from django.conf import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-from product.models import Product, SpecialOffer
+from product.models import Product
 
 
 

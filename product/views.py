@@ -1,17 +1,16 @@
-from django.db.models import Q
 from django.conf import settings
 from django.shortcuts import render
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
-from .models import Product, Cart, CartItem, ProductImage, Category, SpecialOffer, ProductState, FeaturedGroup
-from .serializers import ProductSerializer,CartSerializer, CartItemSerializer, CategorySerializer, SpecialOfferSerializer, FeaturedGroupSerializer
+from .models import Product, Cart, CartItem, ProductImage, Category, ProductState, FeaturedGroup, MixPackLine
+from .serializers import ProductSerializer,CartSerializer, CartItemSerializer, CategorySerializer, FeaturedGroupSerializer
 from rest_framework.decorators import action
 from django.core.cache import cache
 from rest_framework import viewsets
 from decimal import Decimal, InvalidOperation
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-from django.db.models import Value, CharField, Count, Q, F
+from django.db.models import Value, CharField, Count, Q, F, Exists, OuterRef
 from django.db.models.functions import Concat
 
 from rest_framework.views import APIView
@@ -28,7 +27,17 @@ from django.db.models import Case, When, Value, IntegerField
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.DEBUG) 
+logging.basicConfig(level=logging.DEBUG)
+
+
+def queryset_with_is_mix_pack(queryset):
+    """Annotira queryset: is_mix_pack ako proizvod ima bar jednu MixPackLine kao bundle."""
+    return queryset.annotate(
+        is_mix_pack=Exists(
+            MixPackLine.objects.filter(mix_product_id=OuterRef("pk"))
+        )
+    )
+
 
 class CatalogFilterMixin:
     """Jedan katalog: filter po brendu i globalnom limitu nikotina; stanje je na Product.state."""
@@ -79,9 +88,6 @@ class CatalogFilterMixin:
         )
         return qs.order_by('stock_order')
 
-    def get_filtered_special_offers(self):
-        return SpecialOffer.objects.filter(is_deleted=False)
-
 
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -122,7 +128,9 @@ class CategoryProductsView(CatalogFilterMixin, APIView):
             )
         
         # 1) Osnovni queryset u kategoriji (već ima stock_order iz mixina)
-        qs = self.get_filtered_queryset().filter(category=category)
+        qs = queryset_with_is_mix_pack(
+            self.get_filtered_queryset().filter(category=category)
+        )
         products = qs.order_by('stock_order', '-sales_count')
 
         # Serijalizacija
@@ -154,7 +162,7 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
     lookup_field = 'slug'
 
     def get_queryset(self):
-        return self.get_filtered_queryset()
+        return queryset_with_is_mix_pack(self.get_filtered_queryset())
 
     def retrieve(self, request, *args, **kwargs):
         """
@@ -235,6 +243,23 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
         # Keširanje odgovora pre slanja
         cache.set(cache_key, serializer.data, 60*15)  # Keširajte na 15 minuta
         return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], url_path='mix-packs')
+    def mix_packs(self, request, *args, **kwargs):
+        """Svi mix pack / bundle proizvodi u katalogu (isti filteri kao ostali listingi)."""
+        currency = request.headers.get('Currency', DEFAULT_CURRENCY)
+        cache_key = f"mix_packs_{currency}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return Response(cached_data)
+        qs = (
+            self.get_queryset()
+            .filter(is_mix_pack=True)
+            .order_by('stock_order', '-sales_count')
+        )
+        serializer = self.get_serializer(qs[:80], many=True)
+        cache.set(cache_key, serializer.data, 60 * 15)
+        return Response(serializer.data)
     
     @action(detail=True, methods=['get'], url_path='recommended')
     def recommended_products(self, request, slug=None):
@@ -242,13 +267,18 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
         Preporuke za PDP: prvo in_stock, pa dopuna najprodavanijima, zatim ON_REQUEST.
         """
         product = get_object_or_404(Product, slug=slug)
+        current_is_mix = MixPackLine.objects.filter(mix_product_id=product.id).exists()
         flavor_keywords = (product.flavor or "").split()
-        base_queryset = self.get_filtered_queryset()
+        base_queryset = queryset_with_is_mix_pack(self.get_filtered_queryset())
 
-        in_stock_qs = base_queryset.filter(state=ProductState.IN_STOCK).distinct()
+        in_stock_qs = base_queryset.filter(
+            state=ProductState.IN_STOCK,
+            is_mix_pack=current_is_mix,
+        ).distinct()
 
         sellable_qs = base_queryset.filter(
             state__in=(ProductState.IN_STOCK, ProductState.ON_REQUEST),
+            is_mix_pack=current_is_mix,
         ).distinct()
 
         flavor_query = Q()
@@ -332,7 +362,10 @@ class ProductBySKUView(views.APIView):
     permission_classes = [permissions.AllowAny]  # Set permissions as needed
 
     def get(self, request, sku):
-        product = get_object_or_404(Product, sku=sku)
+        product = get_object_or_404(
+            queryset_with_is_mix_pack(Product.objects.filter(is_deleted=False)),
+            sku=sku,
+        )
         serializer = ProductSerializer(product)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -341,7 +374,11 @@ class ProductSearchViewSet(CatalogFilterMixin, viewsets.ViewSet):
     ViewSet za pretragu proizvoda bez keširanja.
     """
     def get_queryset(self):
-        return self.get_filtered_queryset().select_related('category').order_by('category__name', 'nicotine')
+        return queryset_with_is_mix_pack(
+            self.get_filtered_queryset().select_related("category").order_by(
+                "category__name", "nicotine"
+            )
+        )
     
     def list(self, request):
         queryset = self.get_queryset()
@@ -395,34 +432,6 @@ class ProductSearchViewSet(CatalogFilterMixin, viewsets.ViewSet):
             'categories': categories
         })
 
-class SpecialOfferViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
-    serializer_class = SpecialOfferSerializer
-    permission_classes = [permissions.AllowAny]
-    lookup_field = 'slug'
-
-    def get_queryset(self):
-        return self.get_filtered_special_offers()
-
-    def list(self, request, *args, **kwargs):
-        currency = request.headers.get('Currency', DEFAULT_CURRENCY)
-
-        cache_key = f"all_special_offers_{currency}"
-
-        cached_data = cache.get(cache_key)
-        if cached_data is not None:
-            return Response(cached_data)
-
-        response = super(SpecialOfferViewSet, self).list(request, *args, **kwargs)
-
-        cache.set(cache_key, response.data, 60 * 15)  # Cache for 15 minutes
-        return response
-
-    def retrieve(self, request, *args, **kwargs):
-        special_offer = get_object_or_404(SpecialOffer, slug=kwargs.get('slug'))
-        serializer = self.get_serializer(special_offer)
-
-        return Response(serializer.data)
-    
 class FeaturedGroupAPIView(APIView):
     def get(self, request, slug):
         featured_group = get_object_or_404(FeaturedGroup, slug=slug)

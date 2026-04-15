@@ -114,27 +114,7 @@ def build_order_confirmation_email_data(order):
             product_data["subscription_interval_days"] = int(interval_days)
         return product_data
 
-    def row_from_special_item(item):
-        product_data = {
-            "id": item.special_offer.id,
-            "name": item.special_offer.name,
-            "category": "Special Offer",
-            "quantity": item.quantity,
-            "price": item.price.amount,
-            "discounted_price": item.discounted_price.amount
-            if item.discounted_price
-            else None,
-        }
-        product_data["is_subscription_line"] = False
-        return product_data
-
     for item in order_items:
-        if item.special_offer_id:
-            pd = row_from_special_item(item)
-            products_data.append(pd)
-            products_regular.append(pd)
-            continue
-
         if not item.product_id:
             continue
 

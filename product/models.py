@@ -139,36 +139,115 @@ class Product(models.Model):
             # automatsko postavljanje slug-a
             self.slug = slugify(f"{self.name}")
         super().save(*args, **kwargs)
-    
+
+    def _mix_availability(self):
+        """
+        Za proizvod koji ima mix_lines: (broj kompletnih bundle-ova, state).
+        None ako nije mix pack.
+        """
+        lines = list(self.mix_lines.select_related("component_product").all())
+        if not lines:
+            return None
+        effective = None
+        for line in lines:
+            c = line.component_product
+            if c.is_deleted or c.state != ProductState.IN_STOCK:
+                eligible = 0
+            else:
+                q = line.quantity or 1
+                eligible = c.stock // q
+            effective = eligible if effective is None else min(effective, eligible)
+        effective = max(0, effective if effective is not None else 0)
+        st = (
+            ProductState.IN_STOCK
+            if effective > 0
+            else ProductState.OUT_OF_STOCK
+        )
+        return effective, st
+
+    def effective_mix_bundle_count(self):
+        """Broj prodajnih bundle jedinica; None ako proizvod nije mix pack."""
+        r = self._mix_availability()
+        return None if r is None else r[0]
+
+    def display_catalog_state(self):
+        """Stanje za API / katalog: mix pack zavisi od komponenti."""
+        r = self._mix_availability()
+        if r is None:
+            return self.state
+        return r[1]
+
+    def refresh_mixpack_from_components(self, save=True):
+        """Sinhronizuje Product.stock i Product.state sa komponentama (samo mix packovi)."""
+        r = self._mix_availability()
+        if r is None:
+            return
+        effective, st = r
+        if save:
+            Product._base_manager.filter(pk=self.pk).update(
+                stock=effective,
+                state=st,
+            )
+        else:
+            self.stock = effective
+            self.state = st
+
     def __str__(self):
         return f"{self.name}"
- 
 
 
-class SpecialOffer(models.Model):
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, blank=True, null=True)
-    products = models.ManyToManyField(Product, related_name='special_offers')
-    price = MoneyField(max_digits=14, decimal_places=2, default_currency=DEFAULT_CURRENCY, default=0.00)
-    currency = models.CharField(max_length=3, choices=PRICE_CURRENCIES, default=DEFAULT_CURRENCY)
-    recommended = models.BooleanField(default=False)
-    state = models.CharField(max_length=50, choices=[(state.value, state.name) for state in ProductState], default=ProductState.IN_STOCK.value)
+class MixPackLine(models.Model):
+    """
+    Jedan red bundle-a: mix_product (bundle SKU) sadrži quantity × component_product.
+    Stanje bundle-a = min(component.stock // quantity) dok su sve komponente in_stock.
+    """
 
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True)
-    is_deleted = models.BooleanField(default=False)  #
+    mix_product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="mix_lines",
+    )
+    component_product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="mix_used_in",
+    )
+    quantity = models.PositiveIntegerField(
+        default=1,
+        help_text="Koliko komada ove komponente treba za jedan bundle (npr. 10 limenki).",
+    )
 
-    # TODO: izmeniti save() funkciju     
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super(SpecialOffer, self).save(*args, **kwargs)        
+    class Meta:
+        verbose_name = "Mix pack linija"
+        verbose_name_plural = "Mix pack linije"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["mix_product", "component_product"],
+                name="product_mixpack_unique_component",
+            ),
+        ]
+
+    def clean(self):
+        if self.component_product_id and self.mix_product_id:
+            if self.component_product_id == self.mix_product_id:
+                raise ValidationError(
+                    "Mix pack ne može da bude komponenta sam sebi."
+                )
 
     def __str__(self):
-        return f"Special Offer {self.name}"
+        return f"{self.mix_product.slug} ← {self.quantity}× {self.component_product.slug}"
+
+
+def refresh_all_mixpack_bundles():
+    """Pozovi nakon masovnog ažuriranja stanja komponenti (npr. GS skripta)."""
+    mix_ids = MixPackLine.objects.values_list("mix_product_id", flat=True).distinct()
+    for pid in mix_ids:
+        p = Product._base_manager.get(pk=pid)
+        p.refresh_mixpack_from_components(save=True)
+
 
 import os
-from urllib.parse import urljoin
+
 IMAGE_PREFIX = 'https://snus-s3.s3.eu-north-1.amazonaws.com/wholesale'
 
 class ProductImage(models.Model):
@@ -217,41 +296,6 @@ class Cart(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.user.email}"
     
-
-class SpecialOfferImage(models.Model):
-    special_offer = models.ForeignKey(SpecialOffer, related_name='images', on_delete=models.CASCADE)
-    original_image_key = models.CharField(max_length=1024, null=True, blank=True)
-    is_primary = models.BooleanField(default=False)
-
-    def get_image_url(self):
-        """
-        Vraća URL za originalnu sliku.
-        """
-        return self.original_image_key
-
-    def get_thumbnail_image_url(self):
-        """
-        Vraća URL za thumbnail sliku (300x300) sa promenom ekstenzije u .webp.
-        """
-        # Uklanjanje dela URL-a koji se odnosi na bucket i domen
-        path = self.original_image_key.replace(IMAGE_PREFIX + 'special_offer/', '')
-        filename_without_ext, _ = os.path.splitext(path)
-        thumbnail_path = f'{filename_without_ext}.webp'
-        return f'{IMAGE_PREFIX}300x300webp/{thumbnail_path}'
-
-    def get_large_image_url(self):
-        """
-        Vraća URL za veliku sliku (800x800) sa promenom ekstenzije u .webp.
-        """
-        # Uklanjanje dela URL-a koji se odnosi na bucket i domen
-        path = self.original_image_key.replace(IMAGE_PREFIX + 'special_offer/', '')
-        filename_without_ext, _ = os.path.splitext(path)
-        large_image_path = f'{filename_without_ext}.webp'
-        return f'{IMAGE_PREFIX}800x800webp/{large_image_path}'
-    def __str__(self):
-        return f"{self.special_offer.name}"
-
-
 
 class FeaturedGroup(models.Model):
     name = models.CharField(max_length=255)  # Naziv grupe

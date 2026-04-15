@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.utils import timezone
-from product.models import Product, SpecialOffer
+from product.models import Product
 from djmoney.models.fields import MoneyField
 from decimal import Decimal
 from django.utils.translation import gettext_lazy as _
@@ -445,8 +445,7 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_items')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
-    special_offer = models.ForeignKey(SpecialOffer, on_delete=models.CASCADE, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = MoneyField(max_digits=14, decimal_places=2, default_currency=DEFAULT_CURRENCY)  # Price at the time of the order
     discounted_price = MoneyField(max_digits=14, decimal_places=2, default_currency=DEFAULT_CURRENCY, default=Money(0, DEFAULT_CURRENCY))
@@ -454,19 +453,15 @@ class OrderItem(models.Model):
     shipped_at = models.DateTimeField(null=True, blank=True)
 
     def clean(self):
-        # Ensure that exactly one of `product` or `special_offer` is set
-        if (self.product is None and self.special_offer is None) or (self.product and self.special_offer):
-            raise ValidationError('An OrderItem must be associated with either a Product or a SpecialOffer, but not both.')
+        if self.product is None:
+            raise ValidationError("OrderItem mora imati proizvod.")
 
     def save(self, *args, **kwargs):
         self.clean()  # Call the clean method to run the validation
         super(OrderItem, self).save(*args, **kwargs)
 
     def __str__(self):
-        if self.product:
-            return f" {self.product.category.name} {self.product.name} - {self.quantity}"
-        else:
-            return f"{self.special_offer.name} - {self.quantity}"
+        return f" {self.product.category.name} {self.product.name} - {self.quantity}"
 
 
 

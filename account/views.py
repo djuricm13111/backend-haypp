@@ -10,7 +10,7 @@ from .models import CustomUser
 
 from rest_framework import permissions, viewsets, generics
 from .models import AddressBook, Order, OrderItem, OrderStatus
-from product.models import ProductImage, SpecialOfferImage
+from product.models import ProductImage
 from .serializers import AddressBookSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.db import transaction
@@ -638,11 +638,6 @@ def _admin_order_queryset():
             'order_items__product__images',
             queryset=ProductImage.objects.order_by('-is_primary', 'id'),
         ),
-        Prefetch(
-            'order_items__special_offer__images',
-            queryset=SpecialOfferImage.objects.order_by('-is_primary', 'id'),
-        ),
-        'order_items__special_offer',
     ).order_by('-created_at')
 
 

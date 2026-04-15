@@ -14,6 +14,9 @@ def is_product_available_for_subscription_order(product: Product, quantity: int)
     """Automatska pretplatna isporuka: samo aktivni proizvod, na stanju, dovoljno komada."""
     if product.is_deleted:
         return False
+    eff = product.effective_mix_bundle_count()
+    if eff is not None:
+        return eff >= quantity
     if product.state != ProductState.IN_STOCK:
         return False
     if product.stock < quantity:

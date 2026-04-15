@@ -40,7 +40,7 @@ admin.site.register(Voucher)
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     extra = 0  # Ne prikazuj dodatne prazne redove za nove stavke
-    fields = ('product', 'special_offer', 'quantity', 'price', 'is_shipped', 'shipped_at')
+    fields = ('product', 'quantity', 'price', 'is_shipped', 'shipped_at')
     readonly_fields = ('price',)  # Uklonite 'product' i 'quantity' iz readonly_fields
     can_delete = True  # Omogućite brisanje stavki direktno iz narudžbine
 
@@ -81,8 +81,8 @@ def get_sales_data(start_date, end_date):
         shipping += order.shipping_cost.amount
         net_revenue += order.total_price.amount - order.shipping_cost.amount
         for item in order.order_items.all():
-            product_name =item.product.category.name  + ' ' +  item.product.name  if item.product else item.special_offer.name
-            category_name = item.product.category.name if item.product else 'Special Offer'
+            product_name = item.product.category.name + ' ' + item.product.name
+            category_name = item.product.category.name
             data.append({
                 'order_id': order.id,
                 'product_name': product_name,

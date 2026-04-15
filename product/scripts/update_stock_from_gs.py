@@ -15,7 +15,7 @@ django.setup()
 from django.utils.text import slugify
 from load_products import load_gs_products
 from scraper_nordic import get_supplier_availability
-from product.models import Product, ProductState
+from product.models import Product, ProductState, refresh_all_mixpack_bundles
 
 # === Učitaj stanja iz GS (wholesale / SR sheet) ===
 def load_gs_stock():
@@ -53,7 +53,8 @@ def update_my_stock_only():
             )
         affected += 1
 
-    print(f"✅ Ažurirano GS stanje: {affected} proizvoda")
+    refresh_all_mixpack_bundles()
+    print(f"✅ Ažurirano GS stanje: {affected} proizvoda (+ mix pack stanja)")
 
 
 def update_all_stock():
@@ -79,7 +80,8 @@ def update_all_stock():
         Product.objects.filter(pk=product.pk).update(state=state_sr, stock=stock_val_sr)
         affected += 1
 
-    print(f"✅ Ažurirano kompletno stanje (GS + dobavljač): {affected} proizvoda")
+    refresh_all_mixpack_bundles()
+    print(f"✅ Ažurirano kompletno stanje (GS + dobavljač): {affected} proizvoda (+ mix pack stanja)")
 
     from django.db.models import Q
     valid_slugs = set(stock_sr.keys()) | set(supplier_stock.keys())

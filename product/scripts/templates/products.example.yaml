@@ -1,0 +1,25 @@
+# =============================================================================
+# Obični proizvodi → BP (Product + ProductImage). Bez MixPackLine.
+#   cd backend && python product/scripts/import_products_from_yaml.py --dry-run
+#   python product/scripts/import_products_from_yaml.py
+# Ključevi mix_components / bundle_components se ovde ignorišu.
+# =============================================================================
+
+products:
+  - name: "Primer proizvoda"
+    slug: example-product-slug
+    brand: Velo
+    sku: EX-SKU-001
+    nicotine_mg_per_pouch: 10
+    format: Slim
+    flavor: Mint
+    net_weight_grams: 14.0
+    pouches_per_can: 20
+    manufacturer: BAT
+    price_amount: "5.90"
+    currency: EUR
+    stock: 50
+    state: in_stock
+    images:
+      - s3_key: velo/velo-example_1.webp
+        primary: true

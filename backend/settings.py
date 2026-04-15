@@ -67,8 +67,16 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'account.CustomUser'
 CSRF_TRUSTED_ORIGINS = [
-  'http://localhost:3000','http://localhost:8081',
-    'http://localhost:8000','https://api.snusco.com', 'https://www.snusco.com', 'https://snusco.com']
+    'http://localhost:3000',
+    'http://localhost:8081',
+    'http://localhost:8000',
+    'https://api.snusco.com',
+    'https://www.snusco.com',
+    'https://snusco.com',
+    'https://*.maskkingsrbija.com',
+    # Vercel: production, preview i branch deployevi (*.vercel.app)
+    'https://*.vercel.app',
+]
 
 
 MIDDLEWARE = [

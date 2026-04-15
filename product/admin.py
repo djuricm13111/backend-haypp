@@ -1,5 +1,14 @@
 from django.contrib import admin
-from .models import Product, Category, Cart, CartItem, SpecialOffer, ProductImage, CategoryImage, FeaturedGroup
+from .models import (
+    Product,
+    Category,
+    Cart,
+    CartItem,
+    ProductImage,
+    CategoryImage,
+    FeaturedGroup,
+    MixPackLine,
+)
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -22,8 +31,16 @@ class CategoryAdmin(admin.ModelAdmin):  # Using ModelAdmin instead of Translatio
         css = {
             'all': ('modeltranslation/css/tabbed_translation_fields.css',),  # Can be removed if not used elsewhere
         }
+class MixPackLineInline(admin.TabularInline):
+    model = MixPackLine
+    fk_name = "mix_product"
+    extra = 0
+    autocomplete_fields = ("component_product",)
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):  # Koristi ModelAdmin umesto TranslationAdmin
+    inlines = (MixPackLineInline,)
     list_display = ['get_category_name', 'name', 'sku', 'price', 'state', 'stock', 'sales_count', 'is_deleted']
     list_filter = ['category', 'state', 'is_deleted']
     search_fields = ['name', 'sku']
@@ -48,25 +65,6 @@ class ProductAdmin(admin.ModelAdmin):  # Koristi ModelAdmin umesto TranslationAd
 # admin.site.register(CartItem)
 # admin.site.register(Cart)
 
-@admin.register(SpecialOffer)
-class SpecialOfferAdmin(admin.ModelAdmin):  # Koristi ModelAdmin umesto TranslationAdmin
-    list_display = ['name', 'price', 'state', 'is_deleted']
-    list_filter = ['state', 'is_deleted']
-    filter_horizontal = ['products']
-    search_fields = ['name']
-    
-    def get_queryset(self, request):
-        # Koristi _base_manager da dohvati sve proizvode, uključujući i logički obrisane
-        return self.model._base_manager.all()
-
-    class Media:
-        js = (
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',  # Ažurirana verzija
-            'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',  # Ažurirana verzija
-        )
-        css = {
-            'all': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
 @admin.register(FeaturedGroup)
 class FeaturedGroupAdmin(admin.ModelAdmin):
     list_display = ("name", "slug")

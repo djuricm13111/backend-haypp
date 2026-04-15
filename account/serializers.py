@@ -5,7 +5,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from rest_framework import serializers
 from .models import AddressBook, PointsHistory, OrderItem, Blog, UserPoints, PaymentMethod, OrderStatus, TransportMethod, AddressType
-from product.models import Product, SpecialOffer
+from product.models import Product
 from scripts.currency_converter import convert_currency, DEFAULT_CURRENCY
 from scripts.discount import calculate_discount
 from django.db import transaction
@@ -161,8 +161,6 @@ class AdminOrderItemSerializer(serializers.ModelSerializer):
     def get_label(self, obj):
         if obj.product_id and obj.product:
             return f"{obj.product.category.name} {obj.product.name}"
-        if obj.special_offer_id and obj.special_offer:
-            return obj.special_offer.name
         return "—"
 
     def get_image_url(self, obj):
@@ -170,16 +168,6 @@ class AdminOrderItemSerializer(serializers.ModelSerializer):
             img = obj.product.images.filter(is_primary=True).first() or obj.product.images.first()
             if img:
                 return img.get_thumbnail_image_url() or img.get_image_url()
-        if obj.special_offer_id and obj.special_offer:
-            img = obj.special_offer.images.filter(is_primary=True).first() or obj.special_offer.images.first()
-            if img:
-                u = img.get_thumbnail_image_url() or img.get_image_url()
-                if u and not str(u).startswith('http'):
-                    try:
-                        return img.get_large_image_url()
-                    except Exception:
-                        return u
-                return u
         return None
 
 
@@ -304,7 +292,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrderItem
-        fields = ['product', 'special_offer', 'quantity']
+        fields = ['product', 'quantity']
 
 
 import logging
@@ -429,8 +417,6 @@ class OrderSerializer(serializers.ModelSerializer):
             order_items = attrs.get('order_items', [])
             product_qty = {}
             for oi in order_items:
-                if oi.get('special_offer'):
-                    continue
                 p = oi.get('product')
                 if not p:
                     continue
@@ -509,6 +495,9 @@ class OrderSerializer(serializers.ModelSerializer):
 
         if validated_data['payment_method'] in [PaymentMethod.CARD, PaymentMethod.PAYPAL]:
             validated_data['order_status'] = OrderStatus.PAID
+        total_qty = sum(int(item.get("quantity", 1)) for item in order_items_data)
+        global_d = Decimal(str(calculate_discount(total_qty)))
+
         with transaction.atomic():
             total_price = Money(0, DEFAULT_CURRENCY)
 
@@ -516,39 +505,30 @@ class OrderSerializer(serializers.ModelSerializer):
             order.save()
 
             for item_data in order_items_data:
-                if "product" in item_data:
-                    product_id = item_data['product'].id
-                    product = Product.objects.get(id=product_id)
-                elif "special_offer" in item_data:
-                    product_id = item_data['special_offer'].id
-                    product = SpecialOffer.objects.get(id=product_id)       
-                else:
-                    raise Exception("greska nije poslat ni special_offer ni product")
-                
+                if "product" not in item_data:
+                    raise Exception("Svaka stavka porudžbine mora imati product.")
+                product = Product.objects.get(id=item_data["product"].id)
                 quantity = item_data.get('quantity', 1)
 
-                # Update sales_count
-                if isinstance(product, Product):
-                    product.sales_count += quantity
-                    product.save()
+                product.sales_count += quantity
+                product.save()
 
-                # Konverzija cene proizvoda iz valute proizvoda u USD
-                #converted_price = convert_currency(product.price.amount, currency, DEFAULT_CURRENCY)
-                #item_total = Money(converted_price, DEFAULT_CURRENCY) * quantity
-                item_total = Money(product.price.amount, DEFAULT_CURRENCY) * quantity
-                total_price += item_total
-                discount = calculate_discount(sum(item['quantity'] for item in order_items_data))
-                discounted_price = product.price.amount * (Decimal(1) - Decimal(discount))
+                line_d = (
+                    Decimal(0)
+                    if product.mix_lines.exists()
+                    else global_d
+                )
+                unit_disc = product.price.amount * (Decimal(1) - line_d)
+                line_subtotal = Money(unit_disc * Decimal(quantity), DEFAULT_CURRENCY)
+                total_price += line_subtotal
 
-                if "product" in item_data:
-                    OrderItem.objects.create(order=order, product=product, quantity=quantity, price=Money(product.price.amount, DEFAULT_CURRENCY), discounted_price=discounted_price)
-                else:
-                    OrderItem.objects.create(order=order, special_offer=product, quantity=quantity, price=Money(product.price.amount, DEFAULT_CURRENCY), discounted_price=discounted_price)
-
-            discount = calculate_discount(sum(item['quantity'] for item in order_items_data))
-
-            
-            total_price = total_price * (1 - discount)
+                OrderItem.objects.create(
+                    order=order,
+                    product=product,
+                    quantity=quantity,
+                    price=Money(product.price.amount, DEFAULT_CURRENCY),
+                    discounted_price=Money(unit_disc, DEFAULT_CURRENCY),
+                )
 
             # Dodato ovde
             # Usklađeno sa frontendom (global_const.freeShippingThreshold = 50): besplatna dostava od €50 međuzbira.

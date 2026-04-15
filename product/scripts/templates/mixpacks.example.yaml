@@ -1,0 +1,66 @@
+# =============================================================================
+# Mix pack / bundle proizvodi — kopiraj kao `mixpacks.yaml` ili koristi --file.
+# Pokretanje:
+#   cd backend && python product/scripts/import_mixpacks_from_yaml.py --dry-run
+# =============================================================================
+
+products:
+  - name: "Velo Freezing Peppermint Bundle 20-Pack (10× Freezing + 10× Crispy)"
+    slug: velo-freezing-peppermint-bundle-20-pack
+    brand: Velo
+    sku: VELO-MIX-FRZ-PEP-20
+
+    nicotine_mg_per_pouch: 0
+    format: Slim
+    flavor: Mint
+    net_weight_grams: 14.0
+    pouches_per_can: 20
+    manufacturer: BAT
+
+    price_amount: "24.90"
+    currency: EUR
+
+    # Za mix pack: stock/state u YAML-u se posle importa prepisuju iz komponenti.
+    stock: 0
+    state: in_stock
+
+    images:
+      - s3_key: velo/velo-freezing-peppermint-bundle-20-pack_1.webp
+        primary: true
+
+    # Bundle je "na stanju" samo ako su sve komponente in_stock i ima dovoljno stock-a.
+    # Broj prodajnih bundle-a = min(component.stock // quantity) po svakoj liniji.
+    mix_components:
+      - slug: velo-freezing-peppermint
+        quantity: 10
+      - slug: velo-crispy-peppermint
+        quantity: 10
+
+    # Alias: bundle_components (isto kao mix_components)
+
+  # Primer: trio (1+1+1 limenka) — serija / publish date nisu polja u modelu,
+  # drži ih u imenu ili opisu na frontu ako treba.
+  - name: "VELO Mixpack Peppermint Trio (Storm + Freezing + Crispy)"
+    slug: velo-mixpack-peppermint-trio
+    brand: Velo
+    sku: VELO-MIX-PPM-TRIO-STORM-FRZ-CRSP
+    nicotine_mg_per_pouch: 0
+    format: Slim
+    flavor: Mixed
+    net_weight_grams: 14.0
+    pouches_per_can: 20
+    manufacturer: BAT
+    price_amount: "26.90"
+    currency: EUR
+    stock: 0
+    state: in_stock
+    images:
+      - s3_key: velo/velo-peppermint-storm_2.png
+        primary: true
+    mix_components:
+      - slug: velo-peppermint-storm
+        quantity: 1
+      - slug: velo-freezing-peppermint
+        quantity: 1
+      - slug: velo-crispy-peppermint
+        quantity: 1

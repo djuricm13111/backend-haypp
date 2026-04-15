@@ -1,13 +1,12 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import CategoryListView,ProductViewSet,AddToCartView, UpdateCartItemView, RemoveFromCartView, ViewCartView, SyncCartView, CategoryProductsView, ProductSearchViewSet, ProductBySKUView, SpecialOfferViewSet
+from .views import CategoryListView,ProductViewSet,AddToCartView, UpdateCartItemView, RemoveFromCartView, ViewCartView, SyncCartView, CategoryProductsView, ProductSearchViewSet, ProductBySKUView
 from .views import FeaturedGroupAPIView
 
 
 router = DefaultRouter()
 router.register(r'products', ProductViewSet, basename='product')
 router.register(r'search', ProductSearchViewSet, basename='product-search')
-router.register(r'special-offers', SpecialOfferViewSet, basename='special-offer')
 urlpatterns = [
     path('', include(router.urls)),  # Uključivanje URL-ova generisanih od strane router-a
     
