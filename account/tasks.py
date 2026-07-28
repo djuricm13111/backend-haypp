@@ -302,6 +302,7 @@ def process_due_subscriptions():
             oos_payload = None
             oos_email = None
             sub_for_confirmation = None
+            is_oos = False
             with transaction.atomic():
                 sub = (
                     ProductSubscription.objects.select_for_update()
@@ -331,24 +332,25 @@ def process_due_subscriptions():
                         "retry_days": SUBSCRIPTION_OOS_RETRY_DAYS,
                         "interval_days": sub.interval_days,
                     }
-                    continue
-                order_items = [
-                    {"product": it.product_id, "quantity": it.quantity} for it in sub.items.all()
-                ]
-                create_authenticated_order(
-                    user=sub.user,
-                    address_id=sub.address_id,
-                    order_items=order_items,
-                    payment_method=sub.payment_method,
-                    transport_method=sub.transport_method,
-                    note=sub.note or "",
-                    subscription=sub,
-                )
-                sub.next_order_at = timezone.now() + timedelta(days=sub.interval_days)
-                sub.save(update_fields=["next_order_at", "updated_at"])
-                sub_for_confirmation = sub.pk
+                    is_oos = True
+                else:
+                    order_items = [
+                        {"product": it.product_id, "quantity": it.quantity} for it in sub.items.all()
+                    ]
+                    create_authenticated_order(
+                        user=sub.user,
+                        address_id=sub.address_id,
+                        order_items=order_items,
+                        payment_method=sub.payment_method,
+                        transport_method=sub.transport_method,
+                        note=sub.note or "",
+                        subscription=sub,
+                    )
+                    sub.next_order_at = timezone.now() + timedelta(days=sub.interval_days)
+                    sub.save(update_fields=["next_order_at", "updated_at"])
+                    sub_for_confirmation = sub.pk
 
-            if oos_payload and oos_email:
+            if is_oos and oos_payload and oos_email:
                 send_subscription_oos_email.delay(oos_email, oos_payload, "en")
                 continue
 

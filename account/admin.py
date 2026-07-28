@@ -31,6 +31,14 @@ class ProductSubscriptionAdmin(admin.ModelAdmin):
     list_filter = ("status", "interval_days")
     search_fields = ("user__email",)
     inlines = [SubscriptionItemInline]
+    fields = ("user", "status", "interval_days", "next_order_at", "address", "payment_method", "transport_method", "note")
+    actions = ["trigger_now"]
+
+    def trigger_now(self, request, queryset):
+        from django.utils import timezone
+        updated = queryset.update(next_order_at=timezone.now())
+        self.message_user(request, f"{updated} subscription(s) postavljeno na 'due' — pokreni process_subscriptions da se obradi.")
+    trigger_now.short_description = "Postavi next_order_at na sada (za testiranje)"
 
 
 admin.site.register(Referral)

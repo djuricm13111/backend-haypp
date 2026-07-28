@@ -21,6 +21,8 @@ def create_authenticated_order(
     wsgi_req = factory.post("/api/orders/create/")
     wsgi_req.user = user
     request = Request(wsgi_req)
+    request._user = user
+    request._auth = None
     data = {
         "address": address_id,
         "order_items": order_items,
