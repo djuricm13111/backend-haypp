@@ -80,6 +80,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "created_at",
             "images",
             "is_mix_pack",
+            "badge_text",
         ]
 
 
@@ -118,6 +119,7 @@ class ProductLiteSerializer(serializers.ModelSerializer):
             "net_weight",
             "is_in_stock",
             "is_mix_pack",
+            "badge_text",
         ]
 
 

@@ -38,11 +38,26 @@ class MixPackLineInline(admin.TabularInline):
     autocomplete_fields = ("component_product",)
 
 
+class HasDiscountFilter(admin.SimpleListFilter):
+    title = "Ima popust"
+    parameter_name = "has_discount"
+
+    def lookups(self, request, model_admin):
+        return [("yes", "Da — ima discounted_price"), ("no", "Ne")]
+
+    def queryset(self, request, queryset):
+        if self.value() == "yes":
+            return queryset.filter(discounted_price__isnull=False)
+        if self.value() == "no":
+            return queryset.filter(discounted_price__isnull=True)
+        return queryset
+
+
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):  # Koristi ModelAdmin umesto TranslationAdmin
+class ProductAdmin(admin.ModelAdmin):
     inlines = (MixPackLineInline,)
-    list_display = ['get_category_name', 'name', 'sku', 'price', 'state', 'stock', 'sales_count', 'is_deleted']
-    list_filter = ['category', 'state', 'is_deleted']
+    list_display = ['get_category_name', 'name', 'sku', 'price', 'discounted_price', 'badge_text', 'state', 'stock', 'sales_count', 'is_deleted']
+    list_filter = ['category', 'state', 'is_deleted', HasDiscountFilter]
     search_fields = ['name', 'sku']
     
     def get_category_name(self, obj):

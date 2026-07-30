@@ -110,6 +110,8 @@ class Product(models.Model):
     manufacturer = models.CharField(max_length=100, blank=True, null=True)
     sku = models.CharField(max_length=50, null=True, blank=True, unique=True)
 
+    badge_text = models.CharField(max_length=30, blank=True, null=True)
+
     sales_count = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
