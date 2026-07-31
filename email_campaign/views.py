@@ -14,7 +14,7 @@ class SubscribeView(APIView):
         if serializer.is_valid():
             email = serializer.validated_data['email']
             if Subscriber.objects.filter(email=email).exists():
-                return Response({'message': 'This email is already subscribed.'}, status=status.HTTP_409_CONFLICT)
+                return Response({'message': 'already_subscribed'}, status=status.HTTP_200_OK)
             
             subscriber = serializer.save()
             language = request.headers.get('Accept-Language', 'en')

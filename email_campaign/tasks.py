@@ -68,6 +68,34 @@ def send_promotion_email_task(email, context, template_type):
 
 
 @shared_task
+def send_launch_announcement(shop_url="https://snusco.com"):
+    from .models import Subscriber
+    emails = list(Subscriber.objects.values_list("email", flat=True))
+    if not emails:
+        return {"sent": 0}
+
+    html_content = render_to_string("launch_announcement.html", {"shop_url": shop_url})
+    text_content = strip_tags(html_content)
+
+    sent = 0
+    for email in emails:
+        try:
+            msg = EmailMultiAlternatives(
+                subject="Orders are now open — shop now!",
+                body=text_content,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[email],
+            )
+            msg.attach_alternative(html_content, "text/html")
+            msg.send(fail_silently=False)
+            sent += 1
+        except Exception as e:
+            print(f"Failed to send to {email}: {e}")
+
+    return {"sent": sent, "total": len(emails)}
+
+
+@shared_task
 def test_task():
     print("Celery is working!")
     return "Celery is working!"

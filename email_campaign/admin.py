@@ -50,4 +50,18 @@ class ProductPromotionAdmin(admin.ModelAdmin):
 
 admin.site.register(ProductPromotion, ProductPromotionAdmin)
 
-admin.site.register(Subscriber)
+
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ("email", "subscribed_at")
+    ordering = ("-subscribed_at",)
+    actions = ["send_launch_announcement"]
+
+    @admin.action(description="Send launch announcement to all subscribers")
+    def send_launch_announcement(self, request, queryset):
+        from .tasks import send_launch_announcement as launch_task
+        launch_task.delay()
+        count = queryset.model.objects.count()
+        self.message_user(request, f"Launch announcement queued for {count} subscriber(s).")
+
+
+admin.site.register(Subscriber, SubscriberAdmin)
