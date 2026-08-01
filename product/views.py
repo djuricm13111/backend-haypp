@@ -218,7 +218,7 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
             return Response(cached_data)  # Vraćanje keširanih podataka ako su dostupni
 
         # Ako podaci nisu u kešu, izvršite upit i serijalizujte podatke
-        new_arrivals_products = self.get_queryset().order_by('-created_at')[:13]
+        new_arrivals_products = self.get_queryset().filter(state=ProductState.IN_STOCK).order_by('-created_at')[:13]
         serializer = self.get_serializer(new_arrivals_products, many=True)
 
         # Keširanje odgovora pre slanja
@@ -237,7 +237,7 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
             return Response(cached_data)  # Vraćanje keširanih podataka ako su dostupni
 
         # Ako podaci nisu u kešu, izvršite upit i serijalizujte podatke
-        best_selling_products = self.get_queryset().order_by('-sales_count')[:13]
+        best_selling_products = self.get_queryset().filter(state=ProductState.IN_STOCK).order_by('-sales_count')[:13]
         serializer = self.get_serializer(best_selling_products, many=True)
 
         # Keširanje odgovora pre slanja
