@@ -1,131 +1,691 @@
-title,slug,brand,available,nicotine_mg_g,format,flavour,net_weight,pouches_per_can,manufacturer,type
-Velo Mango Flame,velo-mango-flame,Velo,True,14,Slim,Mango,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Crispy Peppermint,velo-crispy-peppermint,Velo,True,10,Slim,Mint,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Purple Grape,velo-purple-grape,Velo,True,14,Slim,Grapes,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Dark Blackcurrant,velo-dark-blackcurrant,Velo,True,14,Slim,Blackcurrant,14.0,20,BAT,Nicotine Pouch
-Velo Tropical Mango Slim,velo-tropical-mango-slim,Velo,True,8,Slim,Mandarin/Mango,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Lime Flame,velo-lime-flame,Velo,True,14,Slim,Lime,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Breezy Mango High Nic,velo-breezy-mango-high-nic,Velo,True,14,Slim,Mango,14.0,20,Velo,Nicotine Pouch
-Velo Icy Cherry,velo-icy-cherry,Velo,True,10,Slim,Cherry,14.0,20,Velo,Nicotine Pouch
-Velo Freezing Peppermint MAX,velo-freezing-peppermint-max,Velo,True,24,Slim,Mint,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Icy Berries,velo-icy-berries,Velo,True,10,Slim,Berry,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Freezing Peppermint ULTRA,velo-freezing-peppermint-ultra,Velo,True,14,Slim,Mint,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Tangled Berry,velo-tangled-berry,Velo,True,14,Slim,Mixed Berries,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Peppermint Storm,velo-peppermint-storm,Velo,True,15,Slim,Mint,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Ruby Berry,velo-ruby-berry,Velo,True,8,Slim,Berry,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Freezing Peppermint,velo-freezing-peppermint,Velo,True,11,Slim,Fresh,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Pablo Ice Cold,pablo-ice-cold,Pablo,True,30,Slim,Mint,16.0,20,N.G.P Europe,Nicotine Pouch
-Pablo Exclusive Green Mint,pablo-exclusive-green-mint,Pablo,True,50,Slim,Green Mint,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Dark Cherry,pablo-exclusive-dark-cherry,Pablo,True,50,Slim,Dark Cherry,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Lemonade,pablo-exclusive-lemonade,Pablo,True,50,Slim,Lemonade,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Orange,pablo-exclusive-orange,Pablo,True,50,Slim,Orange,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Frosted Mint,pablo-frosted-mint,Pablo,True,50,Slim,Mint,14.0,20,NGP IMPERIAL,Nicotine Pouch
-Pablo Exclusive Cola Cherry,pablo-exclusive-cola-cherry,Pablo,True,50,Slim,Cola Cherry,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Kiwi,pablo-exclusive-kiwi,Pablo,True,50,Slim,Kiwi,12.0,20,NGP,Nicotine Pouch
-Pablo Exclusive Strawberry Lychee,pablo-exclusive-strawberry-lychee,Pablo,True,50,Slim,Strawberry Lychee,12.0,20,NGP,Nicotine Pouch
-Pablo Exclusive Strawberry Cheesecake,pablo-exclusive-strawberry-cheesecake,Pablo,True,50,Slim,Strawberry Cheesecake,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Banana Ice,pablo-exclusive-banana-ice,Pablo,True,50,Slim,Banana,12.0,20,NGP IMPERIAL,Nicotine Pouch
-Pablo Exclusive Mango Ice,pablo-exclusive-mango-ice,Pablo,True,50,Slim,Mango,12.0,20,NGP IMPERIAL,Nicotine Pouch
-Pablo Exclusive Pink Lemonade,pablo-exclusive-pink-lemonade,Pablo,True,50,Slim,Pink Lemonade,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Pineapple,pablo-exclusive-pineapple,Pablo,True,50,Slim,Pineapple,13.0,20,NGP TOBACCO,Nicotine Pouch
-Garant Ice Peach Extreme Edition,garant-ice-peach-extreme-edition,Garant,True,50,Slim,"Peach, Mint",13.5,27,KORDULA UAB,Nicotine Pouch
-Garant Extreme Cherry,garant-extreme-cherry,Garant,True,50,Slim,Cherry,14.0,27,KORDULA UAB,Nicotine Pouch
-Garant Extreme Energy Drink,garant-extreme-energy-drink,Garant,True,50,Slim,Energy Drink,14.0,27,KORDULA UAB,Nicotine Pouch
-Garant Extreme Edition,garant-extreme-edition,Garant,True,50,Slim,Mint,11.8,27,KORDULA UAB,Nicotine Pouch
-Garant Ice Cool,garant-ice-cool,Garant,True,50,Slim,Mint,11.8,27,KORDULA UAB,Nicotine Pouch
-Fedrs Maradona,fedrs-maradona,Fedrs,True,33,Slim,Mint,10.0,20,FEDRS SP. Z O.O.,Nicotine Pouch
-Fedrs Ice Cool Mint Hard Slim,fedrs-ice-cool-mint-hard-slim,Fedrs,True,65,Slim,Mint,10.0,20,FEDRS SP. Z O.O.,Nicotine Pouch
-Iceberg Frosty Mint Extreme,iceberg-frosty-mint-extreme,Iceberg,True,50,Slim,Frosty Mint,13.0,20,Iceberg,Nicotine Pouch
-Iceberg Emerald,iceberg-emerald,Iceberg,True,50,Slim,Green apple / Lemon,13.0,20,Neoptolem,Nicotine Pouch
-Iceberg Sour Berries Extreme,iceberg-sour-berries-extreme,Iceberg,True,50,Slim,Sour Berries,13.0,20,Iceberg,Nicotine Pouch
-Iceberg Watermelon Mint Gum Slim Extreme,iceberg-watermelon-mint-gum-slim-extreme,Iceberg,True,50,Slim,Fruity,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Cherry Extreme,iceberg-cherry-extreme,Iceberg,True,50,Slim,Cherry,13.0,20,Iceberg,Nicotine Pouch
-Iceberg Guava Lime Extreme,iceberg-guava-lime-extreme,Iceberg,True,50,Slim,Guava Lime,13.0,20,Iceberg,Nicotine Pouch
-Rabbit Blue Ice,rabbit-blue-ice,Rabbit,True,28,Slim,Mint,13.0,20,Sungura Int,Nicotine Pouch
-Rabbit Cola,rabbit-cola,Rabbit,True,28,Slim,Cola,15.0,20,RaBBiT,Nicotine Pouch
-Rabbit Pepper Mint Extreme,rabbit-pepper-mint-extreme,Rabbit,True,28,Slim,Peppermint,15.0,20,RaBBiT,Nicotine Pouch
-Thunder Deep Freeze,thunder-deep-freeze,Thunder,True,16,Slim,Mint,10.0,21,Thunder,Nicotine Pouch
-Zyn Cool Mint Slim Extreme Strong,zyn-cool-mint-slim-extreme-strong,Zyn,True,14,Slim,Mint,14.0,20,Swedish Match,Nicotine Pouch
-Cuba White Double Fresh,cuba-white-double-fresh,Cuba,True,16,Slim,Double Fresh,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba White Forest Berries,cuba-white-forest-berries,Cuba,True,16,Slim,Forest Berries,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba White Watermelon,cuba-white-watermelon,Cuba,True,16,Slim,Watermelon,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba White Ice Spearmint,cuba-white-ice-spearmint,Cuba,True,16,Slim,Ice Spearmint,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Ninja Strawberry Strong,cuba-ninja-strawberry-strong,Cuba,True,15,Slim,Berry,13.0,20,CUBA,Nicotine Pouch
-Cuba Ninja Ice Cool,cuba-ninja-ice-cool,Cuba,True,30,Slim,Mint,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Ninja Orange Strong,cuba-ninja-orange-strong,Cuba,True,15,Slim,Fruit,13.0,20,CUBA,Nicotine Pouch
-Cuba Ninja Energy,cuba-ninja-energy,Cuba,True,30,Slim,Energy,13.0,25,Nikotabako,Nicotine Pouch
-White Fox Double Mint,white-fox-double-mint,White Fox,True,14,Slim,Mint,15.0,20,GN Tobacco,Nicotine Pouch
-White Fox All White Portion,white-fox-all-white-portion,White Fox,True,16,Slim,Mint,16.0,15,GN Tobacco,Nicotine Pouch
-77 Tropical Mint Slim Medium,77-tropical-mint-slim-medium,77,True,10,Slim,Mint,10.0,20,77 Group,Nicotine Pouch
-77 Cola Cherry Medium,77-cola-cherry-medium,77,True,10,Slim,Cola Cherry,10.0,20,77 Group,Nicotine Pouch
-77 Watermelon Ice Medium,77-watermelon-ice-medium,77,True,10,Slim,Watermelon Ice,10.0,20,77 Group,Nicotine Pouch
-77 Cola Vanilla Medium,77-cola-vanilla-medium,77,True,10,Slim,Cola Vanilla,10.0,20,77 Group,Nicotine Pouch
-Stng Berry Seltzer MAX (EN),stng-berry-seltzer-max-en,Stng,True,27,Slim,Berry Seltzer,11.0,20,STNG,Nicotine Pouch
-Stng Bubble MAX (EN),stng-bubble-max-en,Stng,True,27,Slim,Candy,11.0,20,STNG,Nicotine Pouch
-Stng Cola Cherry MAX (EN),stng-cola-cherry-max-en,Stng,True,27,Slim,Cola Cherry,11.0,20,STNG,Nicotine Pouch
-Rush Ice Cool,rush-ice-cool,Rush,True,16,Slim,Mint,14.0,20,RUSH,Nicotine Pouch
-Velo Orange Spark,velo-orange-spark,Velo,False,15,Slim,Orange,14.0,20,British American Tobacco (BAT),Nicotine Pouch
-Velo Wintery Waterlemon Mini,velo-wintery-waterlemon-mini,Velo,False,6,Mini,Watermelon & Mint,12.0,20,Velo,Nicotine Pouch
-Pablo Gold Edition Tropical Punch,pablo-gold-edition-tropical-punch,Pablo,False,50,Slim,Tropical Punch,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Gold Edition White Mint,pablo-gold-edition-white-mint,Pablo,False,50,Slim,White Mint,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Passion Fruit,pablo-exclusive-passion-fruit,Pablo,False,50,Slim,Passion Fruit,12.0,20,NGP,Nicotine Pouch
-Pablo Exclusive Cola,pablo-exclusive-cola,Pablo,False,50,Slim,Cola,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Gold Edition Passion Fruit,pablo-gold-edition-passion-fruit,Pablo,False,50,Slim,Passion Fruit,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Gold Edition Kiwi,pablo-gold-edition-kiwi,Pablo,False,50,Slim,Kiwi,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Gold Edition Dark Cherry,pablo-gold-edition-dark-cherry,Pablo,False,50,Slim,Dark Cherry,13.0,20,NGP TOBACCO,Nicotine Pouch
-Pablo Exclusive Grape Ice,pablo-exclusive-grape-ice,Pablo,False,50,Slim,Grape Ice,12.0,20,NGP,Nicotine Pouch
-Pablo Gold Edition Frosted Mint,pablo-gold-edition-frosted-mint,Pablo,False,50,Slim,Frosted Mint,13.0,20,NGP TOBACCO,Nicotine Pouch
-Garant Extreme Grape,garant-extreme-grape,Garant,False,50,Slim,Grape,14.0,27,KORDULA UAB,Nicotine Pouch
-Garant Ice Blueberry Extreme Edition,garant-ice-blueberry-extreme-edition,Garant,False,50,Slim,"Blueberry, Mint",13.5,27,KORDULA UAB,Nicotine Pouch
-Garant Mango Lime Extreme Edition,garant-mango-lime-extreme-edition,Garant,False,50,Slim,"Mango, Lime",13.5,27,KORDULA UAB,Nicotine Pouch
-Garant Extreme Raspberry,garant-extreme-raspberry,Garant,False,50,Slim,Raspberry,14.0,27,KORDULA UAB,Nicotine Pouch
-Fedrs Ice Cool Hard Double Mint,fedrs-ice-cool-hard-double-mint,Fedrs,False,65,Slim,Mint,13.2,20,FEDRS,Nicotine Pouch
-Iceberg Energy Mango,iceberg-energy-mango,Iceberg,False,50,Slim,Mango,15.0,20,Iceberg,Nicotine Pouch
-Iceberg Grape Gum Slim Extreme,iceberg-grape-gum-slim-extreme,Iceberg,False,50,Slim,Fruity,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Dragon Fire,iceberg-dragon-fire,Iceberg,False,58,Slim,Japanese Flowers,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Ninja Orange,iceberg-ninja-orange,Iceberg,False,58,Slim,Orange,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Raspberry Gum Slim Extreme,iceberg-raspberry-gum-slim-extreme,Iceberg,False,50,Slim,Fruity,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Black Slim Extreme,iceberg-black-slim-extreme,Iceberg,False,50,Slim,Fruity,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Energy Slim Extra Strong,iceberg-energy-slim-extra-strong,Iceberg,False,50,Slim,Red bull,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Arasaka,iceberg-arasaka,Iceberg,False,50,Slim,Peach,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Coconut,iceberg-coconut,Iceberg,False,58,Slim,Coconut,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Cola,iceberg-cola,Iceberg,False,50,Slim,Cola,12.0,20,Neoptolem,Nicotine Pouch
-Iceberg Menthol,iceberg-menthol,Iceberg,False,50,Slim,Menthol,12.0,20,Neoptolem,Nicotine Pouch
-Killa Cold Mint,killa-cold-mint,Killa,False,16,Slim,Mint,16.0,24,Neoptolem,Nicotine Pouch
-Zyn Spearmint Slim Strong,zyn-spearmint-slim-strong,Zyn,False,9,Slim,Spearmint,16.0,24,ZYN,Nicotine Pouch
-Zyn Fresh Mint Slim,zyn-fresh-mint-slim,Zyn,False,6,Slim,Fresh Mint,16.0,24,ZYN,Nicotine Pouch
-Cuba White Pineapple,cuba-white-pineapple,Cuba,False,16,Slim,Pineapple,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Coca Leaf,cuba-coca-leaf,Cuba,False,43,Slim,Coca Leaf,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Pineapple,cuba-black-pineapple,Cuba,False,43,Slim,Pineapple,13.0,20,Nikotabako,Nicotine Pouch
-Cuba White Blueberry,cuba-white-blueberry,Cuba,False,16,Slim,Blueberry,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Forest Berries,cuba-black-forest-berries,Cuba,False,43,Slim,Forest Berries,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Double Fresh,cuba-black-double-fresh,Cuba,False,43,Slim,Mint,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba White Cherry,cuba-white-cherry,Cuba,False,16,Slim,Cherry,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba White Cola,cuba-white-cola,Cuba,False,16,Slim,Cola,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Banana Hit,cuba-black-banana-hit,Cuba,False,43,Slim,Banana,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Cola,cuba-black-cola,Cuba,False,43,Slim,Cola,13.0,20,Nikotabako,Nicotine Pouch
-Cuba Black Ice Spearmint,cuba-black-ice-spearmint,Cuba,False,43,Slim,Spearmint,13.0,20,NICOTOBACCO,Nicotine Pouch
-Cuba Black Currant,cuba-black-currant,Cuba,False,43,Slim,Currant,13.0,20,Nikotabako,Nicotine Pouch
-Cuba Black Blueberry,cuba-black-blueberry,Cuba,False,43,Slim,Blueberry,13.0,20,Nikotabako,Nicotine Pouch
-Cuba Black Cherry Slim,cuba-black-cherry-slim,Cuba,False,43,Slim,Cherry,13.0,20,Nikotabako,Nicotine Pouch
-Cuba Black Peach,cuba-black-peach,Cuba,False,43,Slim,Peach,13.0,20,Nikotabako,Nicotine Pouch
-Cuba Black Watermelon,cuba-black-watermelon,Cuba,False,43,Slim,Watermelon,13.0,20,Nikotabako,Nicotine Pouch
-Camo Wild Mint,camo-wild-mint,Camo,False,6,Slim,Mint,15.0,20,UAB,Nicotine Pouch
-Camo Ice Cold Mint,camo-ice-cold-mint,Camo,False,6,Slim,Mint,15.0,20,UAB,Nicotine Pouch
-Camo Spicy Citrus,camo-spicy-citrus,Camo,False,6,Slim,Citrus,15.0,20,UAB,Nicotine Pouch
-Camo Peppermint,camo-peppermint,Camo,False,6,Slim,Peppermint,15.0,20,UAB,Nicotine Pouch
-XQS Arctic Freeze,xqs-arctic-freeze,XQS,False,11,Slim,Peppermint,14.0,20,XQS International,Nicotine Pouch
-Clew Blueberry 20mg,clew-blueberry-20mg,Clew,False,20,Slim,Berry,14.0,20,CLEW,Nicotine Pouch
-Clew Menthol 20mg,clew-menthol-20mg,Clew,False,20,Slim,Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Watermelon 10mg,clew-watermelon-10mg,Clew,False,10,Slim,Fruit,13.5,20,CLEW,Nicotine Pouch
-Clew Blueberry 10mg,clew-blueberry-10mg,Clew,False,10,Slim,Berry,14.0,20,CLEW,Nicotine Pouch
-Clew Watermelon 20mg,clew-watermelon-20mg,Clew,False,20,Slim,Fruit,13.5,20,CLEW,Nicotine Pouch
-Clew Spearmint 20mg,clew-spearmint-20mg,Clew,False,20,Slim,Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Cool Mint 20mg,clew-cool-mint-20mg,Clew,False,20,Slim,Cool Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Menthol 10mg,clew-menthol-10mg,Clew,False,10,Slim,Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Spearmint 10mg,clew-spearmint-10mg,Clew,False,10,Slim,Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Cool Mint 10mg,clew-cool-mint-10mg,Clew,False,10,Slim,Mint,13.5,20,CLEW,Nicotine Pouch
-Clew Wintergreen 20mg,clew-wintergreen-20mg,Clew,False,20,Slim,Wintergreen,13.5,20,CLEW,Nicotine Pouch
-Clew Wintergreen 10mg,clew-wintergreen-10mg,Clew,False,10,Slim,Wintergreen,13.5,20,CLEW,Nicotine Pouch
-Rush Boost Mint Extreme,rush-boost-mint-extreme,Rush,False,30,Slim,Mint,14.0,20,RUSH,Nicotine Pouch
-Rush Green Mint,rush-green-mint,Rush,False,16,Slim,Mint,14.0,20,RUSH,Nicotine Pouch
+title,slug,brand,available,flavour,format,nicotine_mg_g,nicotine_per_pouch,net_weight,type
+VELO Arctic Grapefruit Normal,velo-arctic-grapefruit-normal,Velo,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+XO Double Apple,xo-double-apple,XO,True,Fruit,Slim,16,8,10,Nicotine Pouch
+XO Icy Cola,xo-icy-cola,XO,True,-,-,-,-,-,-
+XO Icy Citrus,xo-icy-citrus,XO,True,-,-,-,-,-,-
+XQS Hallon Lakrits Slim Strong,xqs-hallon-lakrits-slim-strong,XQS,True,Licorice,Slim,16,8,10,Nicotine pouch
+XQS Raspberry Blackcurrant Slim Strong,xqs-raspberry-blackcurrant-slim-strong,XQS,True,Berry,Slim,16,8,10,Nicotine pouch
+Après Banana Hyper Strong,apres-banana-hyper-strong,Après,True,Fruit,Slim,20,11,11,Nicotine pouch
+Après Blueberry,apres-blueberry,Après,True,Berry,Slim,8,"4,4",11,Nicotine pouch
+Après Blueberry Hyper Strong,apres-blueberry-hyper-strong,Après,True,Berry,Slim,20,11,11,Nicotine pouch
+ZYN Cool Mint Slim S2,zyn-cool-mint-slim-s2,zyn,True,Mint,Slim,8.8,6,14.3,Nicotine Pouch
+ZYN Menthol Ice Slim S5,zyn-menthol-ice-slim-s5,zyn,True,Mint,Slim,19.2,13.5,14.7,Nicotine Pouch
+ZYN Menthol Ice Slim S6,zyn-menthol-ice-slim-s6,zyn,True,Mint,Slim,23.5,16.5,14.7,Nicotine Pouch
+ZYN Blackcurrant Ice Slim S5,zyn-blackcurrant-ice-slim-s5,zyn,True,Berry,Slim,19.2,13.5,14.7,Nicotine Pouch
+ZYN Blackcurrant Ice Slim S4,zyn-blackcurrant-ice-slim-s4,zyn,True,Berry,Slim,15.7,11,14.7,Nicotine Pouch
+ZYN Menthol Ice Slim S4,zyn-menthol-ice-slim-s4,zyn,True,Mint,Slim,15.7,11,14.7,Nicotine Pouch
+Loop Red Chili Melon Medium,loop-red-chili-melon-medium,Loop,True,-,-,-,-,-,-
+Kelly White Mini Strawberry Lime,kelly-white-mini-strawberry-lime,Kelly White,True,Berry,Mini,12.5,5,8,Nicotine pouch
+VID Black Orange,vid-black-orange,VID,True,Fruit,Slim,12,7.2,12,Nicotine pouch
+VID Coffee Caramel Strong,vid-coffee-caramel-strong,VID,True,Coffee,Slim,16,9.6,12,Nicotine pouch
+VID Cola Sour Strong,vid-cola-sour-strong,VID,True,Cola,Slim,16,9.6,12,Nicotine pouch
+VID Crispy Mint Strong,vid-crispy-mint-strong,VID,True,Mint,Slim,16,9.6,12,Nicotine pouch
+VID Watermelon,vid-watermelon,VID,True,Fruit,Slim,12,7.2,12,Nicotine pouch
+VID Blueberry Strong,vid-blueberry-strong,VID,True,Berry,Slim,16,9.6,13,Nicotine pouch
+Avant Cool Mint Extra Strong,avant-cool-mint-extra-strong,AVANT,True,Berry,Slim,20,13,13,Nicotine Pouch
+Avant Frozen Berries Strong,avant-frozen-berries-strong,AVANT,True,Berry,Slim,16,10.4,13,Nicotine Pouch
+Avant Cool Iced Apple Strong,avant-cool-iced-apple-strong,AVANT,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+Avant Cool Ice Tea Strong,avant-cool-ice-tea-strong,AVANT,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+Avant Caffe Mocha Normal,avant-caffe-mocha-normal,AVANT,True,Caffee,Slim,12,7.8,13,Nicotine Pouch
+STNG Mellow Mint (EN),stng-mellow-mint-en,STNG,True,Mint,Slim,16.7,9.2,11,Nicotine Pouch
+STNG Raspberry MAX (EN),stng-raspberry-max-en,STNG,True,Berry,Slim,50,27.5,11,Nicotine Pouch
+STNG Double Mint MAX (EN),stng-double-mint-max-en,STNG,True,Mint,Slim,50,27.5,11,Nicotine Pouch
+STNG Cola Cherry MAX (EN),stng-cola-cherry-max-en,STNG,True,Cola,Slim,50,27.5,11,Nicotine Pouch
+STNG Bubble MAX (EN),stng-bubble-max-en,STNG,True,Candy,Slim,50,27.5,11,Nicotine Pouch
+STNG Berry Seltzer MAX (EN),stng-berry-seltzer-max-en,STNG,True,Berry,Slim,50,27.5,11,Nicotine Pouch
+STNG Berry Seltzer (EN),stng-berry-seltzer-en,STNG,True,Berry,Slim,16.7,9.2,11,Nicotine Pouch
+Zeus Bubblegum Strong,zeus-bubblegum-strong,Zeus,True,Candy,Slim,20,10,10,Nicotine Pouch
+Zeus Epic Berry Strong,zeus-epic-berry-strong,Zeus,True,Berry,Slim,20,10,10,Nicotine Pouch
+Zeus Cherry Blossom Strong,zeus-cherry-blossom-strong,Zeus,True,Candy,Slim,20,10,10,Nicotine Pouch
+Loop Hot Peach Hyper Strong,loop-hot-peach-hyper-strong,Loop,True,-,-,-,-,-,-
+LOOP Creamy Cappuccino Mini,loop-creamy-cappuccino-mini,Loop,True,Coffee,Mini,15,6.8,9,Nicotine Pouch
+LOOP Hot Peach Mini,loop-hot-peach-mini,Loop,True,-,-,-,-,-,-
+ZYN Violet Licorice Slim S3,zyn-violet-licorice-slim-s3,zyn,True,Licorice,Slim,13,9,14.3,Nicotine Pouch
+ZYN Spearmint Slim S3,zyn-spearmint-slim-s3,zyn,True,Mint,Slim,13,9,14.3,Nicotine Pouch
+ZYN Gentle Mint Slim S2,zyn-gentle-mint-slim-s2,zyn,True,Mint,Slim,9,6,14.3,Nicotine Pouch
+ZYN Red Fruits Slim S3,zyn-red-fruits-slim-s3,zyn,True,Fruit,Slim,13,9,14.3,Nicotine Pouch
+ZYN Black Licorice Mini S2,zyn-black-licorice-mini-s2,zyn,True,Licorice,Mini,7.5,3,8,Nicotine Pouch
+Zyn apple mint mini S2,zyn-apple-mint-mini-s2,zyn,True,Fruit,Mini,7.5,3,8,Nicotine Pouch
+ZYN Spearmint Mini S2,zyn-spearmint-mini-s2,zyn,True,Mint,Mini,7.5,3,8,Nicotine Pouch
+ZYN Citrus Mini S2,zyn-citrus-mini-s2,zyn,True,Citrus,Mini,7.5,3,8,Nicotine Pouch
+Zyn black cherry mini S4,zyn-black-cherry-mini-s4,zyn,True,Fruit,Mini,7.5,3,8,Nicotine Pouch
+Zyn black cherry mini S2,zyn-black-cherry-mini-s2,zyn,True,Fruit,Mini,7.5,3,8,Nicotine Pouch
+MAGGIE Mr Blue 60mg,maggie-mr-blue-60mg,MAGGIE,True,Fruit,Slim,16,13.6,16,Nicotine pouch
+MAGGIE Sweet Plantain 60mg,maggie-sweet-plantain-60mg,MAGGIE,True,Fruit,Slim,16,13.6,16,Nicotine pouch
+MAGGIE Grape Soda 60mg,maggie-grape-soda-60mg,MAGGIE,True,Fruit,Slim,16,13.6,16,Nicotine pouch
+MAGGIE Lite Grape Soda,maggie-lite-grape-soda,MAGGIE,True,Fruit,Slim,16,13.6,16,Nicotine pouch
+MAGGIE Lite Sweet Plantain,maggie-lite-sweet-plantain,MAGGIE,True,Fruit,Slim,16,13.6,16,Nicotine pouch
+Après Tangerine Spritz Hyper Strong,apres-tangerine-spritz-hyper-strong,Après,True,Fruit,Slim,20,11,11,Nicotine pouch
+Après Cactus Lime Hyper Strong,apres-cactus-lime-hyper-strong,Après,True,Citrus,Slim,20,11,11,Nicotine Pouch
+Après Ice Tea Peach Hyper Strong,apres-ice-tea-peach-hyper-strong,Après,True,Fruit,Slim,20,11,11,Nicotine Pouch
+Après Cola Hyper Strong,apres-cola-hyper-strong,Après,True,Cola,Slim,20,11,11,Nicotine Pouch
+Après Lemon Curd Hyper Strong,apres-lemon-curd-hyper-strong,Après,True,Citrus,Slim,20,11,11,Nicotine Pouch
+Skruf Crystal Fresh Extra Strong,skruf-crystal-fresh-extra-strong,Skruf,True,Mint,Slim,16,11.5,17.3,Nicotine pouch
+77 GHOST Mini Cola Extra Strong,77-ghost-mini-cola-extra-strong,77,True,Cola,Mini,40,20,12,Nicotine Pouch
+77 GHOST Mini Bubble Gum Extra Strong,77-ghost-mini-bubble-gum-extra-strong,77,True,Candy,Mini,40,20,12,Nicotine Pouch
+77 GHOST Mini Original Extra Strong,77-ghost-mini-original-extra-strong,77,True,Tobacco,Mini,40,20,12,Nicotine Pouch
+77 Cola Medium,77-cola-medium,77,True,Cola,Slim,16,10.4,13,Nicotine Pouch
+77 Blueberry Medium,77-blueberry-medium,77,True,Berry,Slim,16,10.4,13,Nicotine Pouch
+NEAFS Ice Cool Regular,neafs-ice-cool-regular,NEAFS,True,Mint,Slim,13.3,8,15,Nicotine pouch
+NEAFS Ice Cool Strong,neafs-ice-cool-strong,NEAFS,True,Mint,Slim,20,12,15,Nicotine pouch
+NEAFS Ice Cool Extra Strong,neafs-ice-cool-extra-strong,NEAFS,True,Mint,Slim,26,16,15,Nicotine pouch
+NEAFS Mint Fusion Regular,neafs-mint-fusion-regular,NEAFS,True,Mint,Slim,13.3,8,15,Nicotine pouch
+NEAFS Mint Fusion Strong,neafs-mint-fusion-strong,NEAFS,True,Mint,Slim,20,12,15,Nicotine pouch
+NEAFS Mint Fusion Extra Strong,neafs-mint-fusion-extra-strong,NEAFS,True,Mint,Slim,26,16,15,Nicotine pouch
+NEAFS Menthol Regular,neafs-menthol-regular,NEAFS,True,-,-,-,-,-,-
+NEAFS Blueberry Ice Regular,neafs-blueberry-ice-regular,NEAFS,True,Berry,Slim,13.3,8,15,Nicotine pouch
+NEAFS Mango Ice Regular,neafs-mango-ice-regular,NEAFS,True,Fruit,Slim,13.3,8,15,Nicotine pouch
+NEAFS Lush Ice Regular,neafs-lush-ice-regular,NEAFS,True,Fruit,Slim,13.3,8,15,Nicotine pouch
+HELWIT Mocha Extra Strong,helwit-mocha-extra-strong,HELWIT,True,Coffee,Slim,15,7.5,10,Nicotine Pouch
+HELWIT Banana Extra Strong,helwit-banana-extra-strong,HELWIT,True,Fruit,Slim,15,7.5,10,Nicotine Pouch
+Lundgrens Månskära,lundgrens-manskara,Lundgrens,True,-,-,-,-,-,-
+Velo Tropical Mango High Nic,velo-tropical-mango-high-nic,Velo,True,Fruit,Slim,20,14,14,Nicotine pouch
+Velo Blue Raspberry,velo-blue-raspberry,Velo,True,Berry,Slim,11.4,8,14,Nicotine pouch
+Velo Simply Spearmint Mini,velo-simply-spearmint-mini,Velo,True,Mint,Mini,10,4,8.4,Nicotine pouch
+VELO Freezing Peppermint MAX,velo-freezing-peppermint-max,Velo,True,Mint,Slim,24,17,14,Nicotine pouch
+VELO Freezing Peppermint Ultra,velo-freezing-peppermint-ultra,Velo,True,Mint,Slim,20,14,14,Nicotine pouch
+VELO Purple Grape,velo-purple-grape,Velo,True,Berry,Slim,14,10,14,Nicotine pouch
+VELO Bright Spearmint Mini,velo-bright-spearmint-mini,Velo,True,Mint,Mini,8,4,10,Nicotine pouch
+VELO Purple Grape Mini,velo-purple-grape-mini,Velo,True,Fruit,Mini,11.9,6,10,Nicotine pouch
+VELO Freezing Peppermint,velo-freezing-peppermint,Velo,True,MInt,Slim,15.6,10.9,14,Nicotine pouch
+VELO Salty Liquorice,velo-salty-liquorice,Velo,True,Licorice,Slim,14,10,14,Nicotine pouch
+VELO Ruby Berry Slim,velo-ruby-berry-slim,Velo,True,Berry,Slim,8,6,14,Nicotine pouch
+Velo Tropical Mango Slim,velo-tropical-mango-slim,Velo,True,Fruit,Slim,8,6,14,Nicotine pouch
+VELO Green Spearmint,velo-green-spearmint,Velo,True,Mint,Slim,8.5,6,14,Nicotine pouch
+VELO Sour Lime Mini,velo-sour-lime-mini,Velo,True,Citrus,Mini,9.5,4,8.4,Nicotine pouch
+XQS Strawberry Kiwi Strong,xqs-strawberry-kiwi-strong,XQS,True,Berry,Slim,16,8,10,Nicotine pouch
+XQS Berrynana Twist Strong,xqs-berrynana-twist-strong,XQS,True,Berry,Slim,16,8,10,Nicotine pouch
+Snowman Raspberry Blast 9mg,snowman-raspberry-blast-9mg,Snowman,True,Berry,Slim,15,9,12,Nicotine Pouch
+Snowman Fresh Mint 9mg,snowman-fresh-mint-9mg,Snowman,True,Mint,Slim,15,9,12,Nicotine Pouch
+Snowman Citrus Boost 9mg,snowman-citrus-boost-9mg,Snowman,True,Citrus,Slim,15,9,12,Nicotine Pouch
+Snowman Arctic Kick 9mg,snowman-arctic-kick-9mg,Snowman,True,Mint,Slim,15,9,12,Nicotine Pouch
+RUSH Grape Ice Extreme,rush-grape-ice-extreme,RUSH,True,berry,Slim,30,21,14,Nicotine Pouch
+RUSH Cherry Chill Extreme,rush-cherry-chill-extreme,RUSH,True,Fruit,Slim,30,21,14,Nicotine Pouch
+RUSH Boost Mint Extreme,rush-boost-mint-extreme,RUSH,True,Mint,Slim,30,21,14,Nicotine Pouch
+RUSH Icy Grape,rush-icy-grape,RUSH,True,Berry,Slim,16,11.2,14,Nicotine Pouch
+RUSH Nordic Frost,rush-nordic-frost,RUSH,True,Mint,Slim,16,11.2,14,Nicotine Pouch
+RUSH Ice Cool,rush-ice-cool,RUSH,True,Mint,Slim,16,11.2,14,Nicotine Pouch
+RUSH Green Mint,rush-green-mint,RUSH,True,Mint,Slim,16,11.2,14,Nicotine Pouch
+RUSH Berry Ice,rush-berry-ice,RUSH,True,Berry,Slim,16,11.2,14,Nicotine Pouch
+RUSH Mango Freeze,rush-mango-freeze,RUSH,True,Fruit,Slim,16,11.2,14,Nicotine Pouch
+ACE Cool Mint Slim 12mg,ace-cool-mint-slim-12mg,ACE,True,Mint,Slim,12,6,10,Nicotine pouch
+MAGGIE Fruit Punch 60mg,maggie-fruit-punch-60mg,MAGGIE,True,Fruit,Slim,60,45,16,Nicotine pouch
+MAGGIE Jamaican Kola 60mg,maggie-jamaican-kola-60mg,MAGGIE,True,Cola,Slim,60,45,16,Nicotine pouch
+MAGGIE Cherry Tonic Wine 60mg,maggie-cherry-tonic-wine-60mg,MAGGIE,True,Fruit,Slim,60,45,16,Nicotine pouch
+CLEW Wintergreen 10mg,clew-wintergreen-10mg,CLEW,True,flower,Slim,14,10,14,Nicotine Pouch
+CLEW Blueberry 10mg,clew-blueberry-10mg,CLEW,True,Berry,Slim,14,10,14,Nicotine Pouch
+CLEW Watermelon 10mg,clew-watermelon-10mg,CLEW,True,Fruit,Slim,14,10,14,Nicotine Pouch
+CLEW Spearmint 10mg,clew-spearmint-10mg,CLEW,True,Mint,Slim,14,10,14,Nicotine Pouch
+CLEW Menthol 10mg,clew-menthol-10mg,CLEW,True,Mint,Slim,14,10,14,Nicotine Pouch
+CLEW Cool Mint 10mg,clew-cool-mint-10mg,CLEW,True,Mint,Slim,14,10,14,Nicotine Pouch
+NEAFS Menthol Extra Strong,neafs-menthol-extra-strong,NEAFS,True,Mint,Slim,26,16,15,Nicotine pouch
+NEAFS Menthol Strong,neafs-menthol-strong,NEAFS,True,Mint,Slim,20,12,15,Nicotine pouch
+NEAFS Blueberry Ice Extra Strong,neafs-blueberry-ice-extra-strong,NEAFS,True,Berry,Slim,26,16,15,Nicotine pouch
+NEAFS Blueberry Ice Strong,neafs-blueberry-ice-strong,NEAFS,True,Berry,Slim,20,12,15,Nicotine pouch
+NEAFS Mango Ice Extra Strong,neafs-mango-ice-extra-strong,NEAFS,True,Fruit,Slim,26,16,15,Nicotine pouch
+NEAFS Mango Ice Strong,neafs-mango-ice-strong,NEAFS,True,Fruit,Slim,20,12,15,Nicotine pouch
+NEAFS Lush Ice Extra Strong,neafs-lush-ice-extra-strong,NEAFS,True,Fruit,Slim,26,16,15,Nicotine pouch
+NEAFS Lush Ice Strong,neafs-lush-ice-strong,NEAFS,True,Fruit,Slim,20,12,15,Nicotine pouch
+XO Black Cherry,xo-black-cherry,XO,True,-,-,-,-,-,-
+XO Mango,xo-mango,XO,True,Fruit,Slim,16,8,10,Nicotine pouch
+CLEW Wintergreen 20mg,clew-wintergreen-20mg,CLEW,True,-,-,-,-,-,-
+CLEW Blueberry 20mg,clew-blueberry-20mg,CLEW,True,Berry,Slim,28.5,20,14,Nicotine Pouch
+CLEW Spearmint 20mg,clew-spearmint-20mg,CLEW,True,-,-,-,-,-,-
+CLEW Menthol 20mg,clew-menthol-20mg,CLEW,True,Mint,Slim,28.5,20,13.5,Nicotine Pouch
+CLEW Cool Mint 20mg,clew-cool-mint-20mg,CLEW,True,Mint,Slim,28.5,20,13.5,Nicotine Pouch
+Lundgrens Höståker,lundgrens-hostaker,Lundgrens,True,-,-,-,-,-,-
+Rabbit Energy,rabbit-energy,rabbit,True,Energy Drink,Slim,77,50,13,Nicotine Pouch
+Rabbit Bubble gum,rabbit-bubble-gum,rabbit,True,Candy,Slim,77,50,13,Nicotine Pouch
+77 Raspberry Vanilla Medium,77-raspberry-vanilla-medium,77,True,-,-,-,-,-,-
+Loop Creamy Cappuccino Strong,loop-creamy-cappuccino-strong,Loop,True,Fruit,Slim,15,9.4,13.75,Nicotine pouch
+Loop Spicy Apple Strong,loop-spicy-apple-strong,Loop,True,Fruit,Slim,15,9.4,13.75,Nicotine pouch
+Kelly White Mini Cucumber Mint,kelly-white-mini-cucumber-mint,Kelly White,True,Fruit,Mini,12.5,5,8,Nicotine pouch
+Après Tangerine Spritz Extra Strong,apres-tangerine-spritz-extra-strong,Après,True,Fruit,Slim,15,8.3,11,Nicotine pouch
+NOIS Extreme Mango 50mg,nois-extreme-mango-50mg,NOiS,True,Fruit,Slim,50,25,13.5,Nicotine pouch
+NOIS Extreme Blueberry 50mg,nois-extreme-blueberry-50mg,NOiS,True,Berry,Slim,50,25,13.5,Nicotine Pouch
+MAGGIE Lite Fruit Punch,maggie-lite-fruit-punch,Maggie,True,-,-,-,-,-,-
+MAGGIE Lite Jamaican Kola,maggie-lite-jamaican-kola,Maggie,True,-,-,-,-,-,-
+MAGGIE Lite Mr Blue,maggie-lite-mr-blue,Maggie,True,-,-,-,-,-,-
+MAGGIE Lite Cherry Tonic Wine,maggie-lite-cherry-tonic-wine,Maggie,True,-,-,-,-,-,-
+Chainpop Pomegranate Melon,chainpop-pomegranate-melon,Chainpop,True,-,-,-,-,-,-
+Chainpop Violet Cactus,chainpop-violet-cactus,Chainpop,True,-,-,-,-,-,-
+XO Watermelon Chili,xo-watermelon-chili,XO,True,Fruit,Slim,16,8,10,Nicotine pouch
+XO Grape Ice,xo-grape-ice,XO,True,Fruit,Slim,16,8,10,Nicotine pouch
+XO Ice Cool,xo-ice-cool,XO,True,Mint,Slim,16,8,10,Nicotine pouch
+XO Spearmint,xo-spearmint,XO,True,Mint,Slim,16,8,10,Nicotine pouch
+XO Blueberry,xo-blueberry,XO,True,Berry,Slim,16,8,10,Nicotine pouch
+Loop Hot Peach Strong,loop-hot-peach-strong,Loop,True,Fruit,Slim,15,9.4,13.75,Nicotine Pouch
+Loop Red Chili Melon Hyper Strong,loop-red-chili-melon-hyper-strong,Loop,True,-,-,-,-,-,-
+Après Lemon Curd Extra Strong,apres-lemon-curd-extra-strong,Après,True,Citrus,Slim,15,8.3,-,Nicotine Pouch
+HELWIT Cola Extra Strong Slim,helwit-cola-extra-strong-slim,HELWIT,True,Cola,Slim,15,7.5,10,Nicotine Pouch
+HELWIT Blueberry Extra Strong,helwit-blueberry-extra-strong,Helwit,True,-,-,-,-,-,-
+77 Cola Cherry Medium,77-cola-cherry-medium,77,True,-,-,-,-,-,-
+77 Fresh Mint Medium,77-fresh-mint-medium,77,True,-,-,-,-,-,-
+77 Peach Mint Medium,77-peach-mint-medium,77,True,-,-,-,-,-,-
+77 Raspberry Medium,77-raspberry-medium,77,True,-,-,-,-,-,-
+77 Strawberry Medium,77-strawberry-medium,77,True,-,-,-,-,-,-
+77 Watermelon Ice Medium,77-watermelon-ice-medium,77,True,-,-,-,-,-,-
+77 Forest Fruits Medium,77-forest-fruits-medium,77,True,-,-,-,-,-,-
+77 Arctic Berry Medium,77-arctic-berry-medium,77,True,-,-,-,-,-,-
+77 Ice Mint Medium,77-ice-mint-medium,77,True,-,-,-,-,-,-
+77 Liquorice Citrus Medium,77-liquorice-citrus-medium,77,True,-,-,-,-,-,-
+77 Cola Vanilla Medium,77-cola-vanilla-medium,77,True,-,-,-,-,-,-
+Skruf Fresh Freeze Ultra limited,skruf-fresh-freeze-ultra-limited,Skruf,True,Mint,Slim,16,11.5,17.3,Nicotine pouch
+ACE Spearmint,ace-spearmint,Ace,True,mint,Slim,12,6,10,Nicotine pouch
+LOOP Smooth Mint Strong,loop-smooth-mint-strong,Loop,True,Mint,Slim,15,9.4,13.75,Nicotine Pouch
+LOOP Smooth Mint Mini,loop-smooth-mint-mini,Loop,True,Mint,Mini,15,6.8,9,Nicotine Pouch
+Kelly White Hot Cherry Mini Extra Strong,kelly-white-hot-cherry-mini-extra-strong,Kelly White,True,Fruit,Mini,16.5,6.6,8,Nicotine pouch
+VELO Crispy Peppermint Mini,velo-crispy-peppermint-mini,Velo,True,Mint,Mini,16,8,10,Nicotine pouch
+Siberia All White mini,siberia-all-white-mini,Siberia,True,Mint,Mini,33,21.5,10,Nicotine pouch
+XQS Arctic Freeze Ultra,xqs-arctic-freeze-ultra,XQS,True,Mint,Slim,22.4,11,10,Nicotine pouch
+XQS Hallonsoda Strong,xqs-hallonsoda-strong,XQS,True,Berry,Slim,16,8,10,Nicotine pouch
+Lundgrens Kvällsbris,lundgrens-kvallsbris,Lundgrens,True,Mint,Normal,10,8,16.8,Nicotine pouch
+Velo Crispy Peppermint,velo-crispy-peppermint,Velo,True,Mint,Slim,14,10,14,Nicotine pouch
+VELO Zesty Elderflower,velo-zesty-elderflower,Velo,True,Flower,Slim,14,9.8,14,Nicotine pouch
+VELO peppermint Storm,velo-peppermint-storm,Velo,True,Mint,Slim,15.6,10.9,14,Nicotine pouch
+VELO Wintery Watermelon Mini,velo-wintery-watermelon-mini,Velo,True,Fruit,Mini,11.9,6,10,Nicotine pouch
+Velo Lime Flame,velo-lime-flame,Velo,True,Citrus,Slim,11.4,8,14,Nicotine pouch
+Velo Orange Spark,velo-orange-spark,Velo,True,Fruit,Slim,15.6,10.9,14,Nicotine pouch
+Velo mango Flame,velo-mango-flame,Velo,True,Fruit,Slim,14,10,14,Nicotine pouch
+Velo Icy Cherry,velo-icy-cherry,Velo,True,Fruit,Slim,11.4,8,14,Nicotine Pouch
+Fix Watermelon Ice S5,fix-watermelon-ice-s5,fix,True,Fruit,Slim,16.4,11.5,14,Nicotine Pouch
+Fix Blueberry Ice S5,fix-blueberry-ice-s5,fix,True,Berry,Slim,16.4,11.5,14,Nicotine Pouch
+Klint Cola Lime Strong,klint-cola-lime-strong,Klint,True,Cola,Slim,16,11.2,14,Nicotine pouch
+LOOP Ice Cool Mint Strong,loop-ice-cool-mint-strong,Loop,True,-,-,-,-,-,-
+Loop Red Chili Mini,loop-red-chili-mini,Loop,True,Fruit,Mini,15,6.8,9,Nicotine Pouch
+Loop Red Chili Melon Extra Strong,loop-red-chili-melon-extra-strong,Loop,True,Fruit,Slim,20,12.5,12.5,Nicotine Pouch
+Zeus Mint Rage Strong,zeus-mint-rage-strong,Zeus,True,Mint,Slim,20,10,10,Nicotine Pouch
+Zeus Frozen Citrus Strong,zeus-frozen-citrus-strong,Zeus,True,Citrus,Slim,20,10,10,Nicotine Pouch
+Rabbit Pineapple Ice,rabbit-pineapple-ice,rabbit,True,Fruit,Slim,77,50,13,Nicotine pouch
+Rabbit Cola,rabbit-cola,rabbit,True,Cola,Slim,77,50,13,Nicotine pouch
+Rabbit Double Apple,rabbit-double-apple,rabbit,True,Fruit,Slim,77,50,13,Nicotine pouch
+Rabbit Jalapeno Lime,rabbit-jalapeno-lime,rabbit,True,Citrus,Slim,77,50,13,Nicotine pouch
+Loop Hot Rhubarb,loop-hot-rhubarb,Loop,True,-,-,-,-,-,-
+Ace X Black Raspberry Chili,ace-x-black-raspberry-chili,Ace,True,Berry,Slim,16,8,10,Nicotine pouch
+Après Cola,apres-cola,Après,True,Cola,Slim,8,4.4,11,Nicotine pouch
+Chainpop Apple Cinnamon,chainpop-apple-cinnamon,Chainpop,True,-,-,-,-,-,-
+Chainpop Peach Honey,chainpop-peach-honey,Chainpop,True,-,-,-,-,-,-
+Chainpop Raspberry Lemon,chainpop-raspberry-lemon,Chainpop,True,-,-,-,-,-,-
+Siberia Maxi All White Portion,siberia-maxi-all-white-portion,Siberia,True,Mint,Large,33,49.5,18,Nicotine pouch
+Kelly White Cool Mint Slim Strong,kelly-white-cool-mint-slim-strong,Kelly White,True,Mint,Slim,15,7.5,10,Nicotine pouch
+Kelly White Raspberry Lemon Mini,kelly-white-raspberry-lemon-mini,Kelly White,True,Berry,Mini,13.8,5.5,8,Nicotine pouch
+Kelly White Sparkling Strawberry Slim,kelly-white-sparkling-strawberry-slim,Kelly White,True,Berry,Slim,10,5,10,Nicotine pouch
+Kelly White Sweet Melon Mint Slim,kelly-white-sweet-melon-mint-slim,Kelly White,True,Fruit,Slim,10,5,10,Nicotine pouch
+Kelly White Sweet Peach Slim,kelly-white-sweet-peach-slim,Kelly White,True,Fruit,Slim,8,4,10,Nicotine pouch
+Lundgrens Mörk,lundgrens-mork,Lundgrens,True,Tobacco,Normal,10,8,16.8,Nicotine pouch
+Siberia Long Portion,siberia-long-portion,Siberia,True,Mint,Slim,33,35,15,Nicotine pouch
+Siberia Ultra Slim All White Portion,siberia-ultra-slim-all-white-portion,Siberia,True,Mint,Slim,33,16.5,11,Nicotine pouch
+ZYN Lemon Spritz Slim,zyn-lemon-spritz-slim,zyn,True,Citrus,Slim,9,6,14.7,Nicotine Pouch
+White Fox All White Portion,white-fox-all-white-portion,white-fox,True,Mint,Slim,16,12,15,Nicotine pouch
+White Fox Black Edition,white-fox-black-edition,white-fox,True,Mint,Slim,32,24,15,Nicotine pouch
+White Fox Full Charge,white-fox-full-charge,white-fox,True,Mint,Normal,16.5,16.5,15,Nicotine pouch
+XQS Black Cherry Slim Light,xqs-black-cherry-slim-light,XQS,True,Fruit,Slim,8,4,10,Nicotine pouch
+XQS Black Cherry Slim Strong,xqs-black-cherry-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+XQS Blueberry Mint Light,xqs-blueberry-mint-light,XQS,True,Berry,Slim,8,-,-,Nicotine pouch
+XQS Blueberry Mint Strong,xqs-blueberry-mint-strong,XQS,True,Berry,Slim,16,8,10,Nicotine pouch
+XQS Citrus Light,xqs-citrus-light,XQS,True,Citrus,Slim,8,4,10,Nicotine pouch
+XQS Citrus Strong,xqs-citrus-strong,XQS,True,Citrus,Slim,16,-,-,Nicotine pouch
+XQS Orange Apple Slim Strong,xqs-orange-apple-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+XQS Tropical Light,xqs-tropical-light,XQS,True,Fruit,SLim,8,4,10,Nicotine pouch
+XQS Tropical Strong,xqs-tropical-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+Siberia Portion,siberia-portion,Siberia,True,Mint,Normal,33,33,15,Nicotine pouch
+Siberia Slim,siberia-slim,Siberia,True,Mint,Slim,33,25,15,Nicotine pouch
+Siberia Super Slim,siberia-super-slim,Siberia,True,Mint,Slim,33,21.5,13,Nicotine pouch
+SKRUF Purple Cassice S2,skruf-purple-cassice-s2,Skruf,True,Berry,Slim,8,6,17.3,Nicotine pouch
+SKRUF Fresh Mint S2,skruf-fresh-mint-s2,Skruf,True,Mint,Slim,8,6,17.3,Nicotine pouch
+SKRUF Fresh Mint S3,skruf-fresh-mint-s3,Skruf,True,Mint,Slim,12,9,17.3,Nicotine pouch
+SKRUF Purple Cassic S3,skruf-purple-cassic-s3,Skruf,True,Berry,Slim,12,9,17.3,Nicotine Pouch
+SKRUF Fresh Mint S4,skruf-fresh-mint-s4,Skruf,True,Mint,Slim,15,11,17.3,Nicotine Pouch
+SKRUF Indigo Berry S2,skruf-indigo-berry-s2,Skruf,True,Berry,Slim,8,6,17.3,Nicotine pouch
+SKRUF Nordic Liqourice S2,skruf-nordic-liqourice-s2,Skruf,True,Licorice,Slim,8,6,17.3,Nicotine pouch
+SKRUF Nordic Liqourice S4,skruf-nordic-liqourice-s4,Skruf,True,Licorice,Slim,16.6,12,17.3,Nicotine pouch
+RaBBiT Blue Ice X-Strong,rabbit-blue-ice-x-strong,rabbit,True,Mint,Slim,40,26,13,Nicotine pouch
+RaBBiT Blueberry X-Strong,rabbit-blueberry-x-strong,rabbit,True,Berry,Slim,40,26,13,Nicotine pouch
+RaBBiT Ice Hemp X-Strong,rabbit-ice-hemp-x-strong,rabbit,True,Hemp,Slim,40,26,13,Nicotine pouch
+RaBBiT Pepper Mint Extreme,rabbit-pepper-mint-extreme,rabbit,True,Mint,Slim,77,50,13,Nicotine Pouch
+Lundgrens Fjällskog,lundgrens-fjallskog,Lundgrens,True,Berry,Normal,10,8,16.8,Nicotine pouch
+Lundgrens Rimfrost,lundgrens-rimfrost,Lundgrens,True,Mint,Normal,12.5,10,16.8,Nicotine Pouch
+LOOP Habanero Mint Extra Strong,loop-habanero-mint-extra-strong,Loop,True,-,-,-,-,-,-
+LOOP Habanero Mint Hyper Strong,loop-habanero-mint-hyper-strong,Loop,True,-,-,-,-,-,-
+LOOP Jalapeno Lime Mini,loop-jalapeno-lime-mini,Loop,True,-,-,-,-,-,-
+LOOP Jalapeno Lime Extra Strong,loop-jalapeno-lime-extra-strong,Loop,True,Citrus,Slim,20,12.5,13.75,Nicotine Pouch
+LOOP Jalapeno Lime Hyper Strong,loop-jalapeno-lime-hyper-strong,Loop,True,Citrus,Slim,25,15.6,12.5,Nicotine Pouch
+LOOP Jalapeno Lime Strong,loop-jalapeno-lime-strong,Loop,True,Citrus,Slim,15,9.4,12.5,Nicotine Pouch
+LOOP Hot Mango Strong,loop-hot-mango-strong,Loop,True,-,-,-,-,-,-
+LOOP Red Chili Melon Strong,loop-red-chili-melon-strong,Loop,True,-,-,-,-,-,-
+LOOP Licorice Fusion Strong,loop-licorice-fusion-strong,Loop,True,-,-,-,-,-,-
+Lundgrens Äng,lundgrens-ang,Lundgrens,True,Berry,Normal,10,8,16.8,Nicotine Pouch
+Lundgrens Dunge,lundgrens-dunge,Lundgrens,True,Berry,Normal,10,8,16.8,Nicotine pouch
+KLINT Apple Mint X-Strong,klint-apple-mint-x-strong,Klint,True,Fruit,Slim,20,14,14,Nicotine pouch
+KLINT Artic Mint X-Strong,klint-artic-mint-x-strong,Klint,True,Mint,Slim,20,14,14,Nicotine pouch
+KLINT Freeze Mint #4,klint-freeze-mint-4,Klint,True,Mint,Slim,16,11.2,14,Nicotine pouch
+HELWIT Cola Slim,helwit-cola-slim,HELWIT,True,Cola,Slim,9,4.5,10,Nicotine pouch
+HELWIT Mint Slim,helwit-mint-slim,Helwit,True,Mint,Slim,9,4.5,10,Nicotine Pouch
+HELWIT Violet Slim,helwit-violet-slim,Helwit,True,-,-,-,-,-,-
+ACE Cool Mint Low,ace-cool-mint-low,Ace,True,Mint,Slim,6,3,10,Nicotine pouch
+ACE Eucalyptus,ace-eucalyptus,Ace,True,-,-,-,-,-,-
+ACE X Cool Mint,ace-x-cool-mint,ACE,True,Mint,Slim,16,8,10,Nicotine pouch
+ACE X Cosmic Cool Mint,ace-x-cosmic-cool-mint,ACE,True,Mint,Normal,16,11.5,13,Nicotine pouch
+ACE X Guarana Chili Boost,ace-x-guarana-chili-boost,ACE,True,Fruit,Slim,16,8,10,Nicotine pouch
+Après Cola Extra Strong,apres-cola-extra-strong,Après,True,Cola,Slim,15,8.3,11,Nicotine pouch
+Après Ice Tea Peach,apres-ice-tea-peach,Après,True,Tea,Slim,8,4.4,11,Nicotine pouch
+Après Ice Tea Peach Extra Strong,apres-ice-tea-peach-extra-strong,Après,True,Tea,Slim,15,8.3,11,Nicotine Pouch
+Après Mint,apres-mint,Après,True,Mint,Slim,8,4.4,11,Nicotine Pouch
+ZYN Cool Mint Ice Slim S6,zyn-cool-mint-ice-slim-s6,zyn,False,Mint,Slim,23.5,16.5,14.7,Nicotine Pouch
+Zeus Tropic Burst Strong,zeus-tropic-burst-strong,Zeus,False,Fruit,Slim,20,10,10,Nicotine Pouch
+Zeus True North Strong,zeus-true-north-strong,Zeus,False,Mint,Slim,20,10,10,Nicotine Pouch
+ZYN Cool Mint Slim S3,zyn-cool-mint-slim-s3,zyn,False,Mint,Slim,13,9,14.3,Nicotine Pouch
+ICEBERG Black (EU),iceberg-black-eu,ICEBERG,False,Mint,Slim,50,40,16,Nicotine pouch
+CLEW Watermelon 20mg,clew-watermelon-20mg,CLEW,False,-,-,-,-,-,-
+Greatest Cold Dry 16mg,greatest-cold-dry-16mg,Greatest,False,-,-,-,-,-,-
+NOIS Cool Strong 35mg,nois-cool-strong-35mg,NOiS,False,Mint,Slim,35,17.5,13.5,Nicotine pouch
+NOIS Extreme 50mg,nois-extreme-50mg,NOiS,False,Mint,Slim,50,25,13.5,Nicotine pouch
+NOIS Eucalypt 25mg,nois-eucalypt-25mg,NOiS,False,Eucalyptus,Slim,25,12.5,11,Nicotine pouch
+NOIS Blackcurrant 16mg,nois-blackcurrant-16mg,NOiS,False,Berry,Slim,16,8,11,Nicotine pouch
+NOIS Mango Mint 12mg,nois-mango-mint-12mg,NOiS,False,Fruit,Slim,12,6,11,Nicotine pouch
+NOIS Spearmint 20mg,nois-spearmint-20mg,NOiS,False,Mint,Slim,20,10,11,Nicotine pouch
+NOIS Mint 20mg,nois-mint-20mg,NOiS,False,Mint,Slim,20,10,11,Nicotine pouch
+GARANT Mango Lime Extreme,garant-mango-lime-extreme,Garant,False,Fruit,Slim,50,25,13.5,Nicotine pouch
+GARANT Ice peach Extreme,garant-ice-peach-extreme,Garant,False,Fruit,Slim,50,25,13.5,Nicotine pouch
+GARANT Ice Blueberry Extreme,garant-ice-blueberry-extreme,Garant,False,Berry,Slim,50,25,13.5,Nicotine pouch
+GARANT Extreme,garant-extreme,Garant,False,-,-,-,-,-,-
+GARANT Energy Drink Extreme,garant-energy-drink-extreme,Garant,False,-,-,-,-,-,-
+GARANT Pineapple Extreme,garant-pineapple-extreme,Garant,False,-,-,-,-,-,-
+GARANT Citrus Extreme,garant-citrus-extreme,Garant,False,-,-,-,-,-,-
+GARANT Grape Extreme,garant-grape-extreme,Garant,False,-,-,-,-,-,-
+GARANT Cherry Extreme,garant-cherry-extreme,Garant,False,-,-,-,-,-,-
+GARANT Raspberry Extreme,garant-raspberry-extreme,Garant,False,-,-,-,-,-,-
+White Fox Double Mint,white-fox-double-mint,white-fox,False,Mint,Slim,16,12,15,Nicotine pouch
+White Fox Peppered Mint,white-fox-peppered-mint,white-fox,False,Mint,Slim,19,14.3,15,Nicotine pouch
+SKRUF Frozen Mint Superslim S4,skruf-frozen-mint-superslim-s4,Skruf,False,Mint,Slim,15,8,14.6,Nicotine pouch
+STNG Mellow Mint,stng-mellow-mint,STNG,False,Mint,Slim,16.7,9.2,11,Nicotine pouches
+STNG Raspberry,stng-raspberry,STNG,False,Berry,Slim,16.7,9.2,11,Nicotine pouches
+STNG Cola Cherry,stng-cola-cherry,STNG,False,Cola,Slim,16.7,9.2,11,Nicotine pouches
+STNG Bubble,stng-bubble,STNG,False,Candy,Slim,16.7,9.2,11,Nicotine pouches
+STNG Berry Seltzer,stng-berry-seltzer,STNG,False,Berry,Slim,16.7,9.2,11,Nicotine pouches
+ZYN Violet Licorice Slim S2,zyn-violet-licorice-slim-s2,zyn,False,Licorice,Slim,9,6,14.3,Nicotine pouch
+ZYN Spearmint Slim S2,zyn-spearmint-slim-s2,zyn,False,Mint,Slim,9,6,14.3,Nicotine pouch
+ZYN Cool Mint Slim S4,zyn-cool-mint-slim-s4,zyn,False,Mint,Slim,16,11,14.3,Nicotine pouch
+ZYN Spearmint Mini S1,zyn-spearmint-mini-s1,zyn,False,Mint,Mini,4,1.5,8,Nicotine pouch
+ZYN Cool mint Mini S4,zyn-cool-mint-mini-s4,zyn,False,Mint,Mini,15,6,8,Nicotine pouch
+ZYN Cool Mint Mini S2,zyn-cool-mint-mini-s2,zyn,False,Mint,Mini,7.5,3,8,Nicotine pouch
+ZYN Peach Mini S2,zyn-peach-mini-s2,zyn,False,Fruit,Mini,7.5,3,8,Nicotine pouch
+ZYN Coffee Mini S4,zyn-coffee-mini-s4,zyn,False,Coffee,Mini,7.5,3,8,Nicotine pouch
+LOOP Smooth Mint Extra Strong,loop-smooth-mint-extra-strong,Loop,False,Mint,Slim,-,12.5,13.75,Nicotine pouch
+CUBA Black Peach,cuba-black-peach,CUBA,False,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Black Banana Hit,cuba-black-banana-hit,CUBA,False,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Black Black Current,cuba-black-black-current,CUBA,False,Berry,Slim,66,43,13,Nicotine pouch
+ICEBERG Gummy Bears Extreme,iceberg-gummy-bears-extreme,ICEBERG,False,Candy,Slim,50,30,12,Nicotine pouch
+ICEBERG Strawberry Pomegranate Extreme 50mg,iceberg-strawberry-pomegranate-extreme-50mg,ICEBERG,False,Berry,Slim,50,30,12,Nicotine pouch
+ICEBERG Watermelon Lime,iceberg-watermelon-lime,ICEBERG,False,Fruit,Slim,50,30,12,Nicotine pouch
+CUBA Black Cola,cuba-black-cola,CUBA,False,Cola,Slim,66,43,13,Nicotine pouch
+CUBA Black Ice Spearmint,cuba-black-ice-spearmint,CUBA,False,Mint,Slim,66,43,13,Nicotine pouch
+CUBA Black Watermelon,cuba-black-watermelon,CUBA,False,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Ninja Orange Strong,cuba-ninja-orange-strong,CUBA,False,Fruit,Slim,-,15.6,13,Nicotine pouch
+CUBA Ninja Strawberry Strong,cuba-ninja-strawberry-strong,CUBA,False,Berry,Slim,-,15.6,13,Nicotine pouch
+ICEBERG Cherry Apricot Gum,iceberg-cherry-apricot-gum,ICEBERG,False,Fruit,Slim,50,30,12,Nicotine pouch
+ICEBERG Dragon Fruit Extreme 50mg,iceberg-dragon-fruit-extreme-50mg,ICEBERG,False,Fruit,Slim,50,30,12,Nicotine pouch
+ICEBERG Guava Lime Extreme,iceberg-guava-lime-extreme,ICEBERG,False,Fruit,Slim,50,30,12,Nicotine pouch
+ICEBERG Raspberry Gum extreme,iceberg-raspberry-gum-extreme,ICEBERG,False,Berry,Slim,50,30,12,Nicotine pouch
+ICEBERG Strawberry Banana Gum Extreme,iceberg-strawberry-banana-gum-extreme,ICEBERG,False,Berry,Slim,50,30,12,Nicotine pouch
+CUBA Black Blueberry Slim,cuba-black-blueberry-slim,CUBA,False,Berry,Slim,66,43,13,Nicotine pouch
+CUBA Black Double Fresh Slim,cuba-black-double-fresh-slim,CUBA,False,Mint,Slim,66,43,13,Nicotine pouch
+CUBA Coca Leaf Slim Extra Strong,cuba-coca-leaf-slim-extra-strong,CUBA,False,Coca,Slim,77,50,13,Nicotine pouch
+CUBA Ninja Bubble Gum Slim Strong,cuba-ninja-bubble-gum-slim-strong,CUBA,False,Candy,Slim,30,15.6,13,Nicotine pouch
+CUBA Ninja Energy Slim Strong,cuba-ninja-energy-slim-strong,CUBA,False,Energy Drink,Slim,30,15.6,13,Nicotine pouch
+CUBA Ninja Ice Cool Slim Strong,cuba-ninja-ice-cool-slim-strong,CUBA,False,Mint,Slim,30,15.6,13,Nicotine pouch
+CUBA Black Pineapple Slim,cuba-black-pineapple-slim,CUBA,False,Fruit,Slim,66,43,13,Nicotine pouch
+ZYN Gentle Mint Mini S1,zyn-gentle-mint-mini-s1,zyn,False,Mint,Mini,7.5,3,8,Nicotine pouch
+ZYN Red Fruits Slim S2,zyn-red-fruits-slim-s2,zyn,False,Fruit,Slim,9,6,14.7,Nicotine pouch
+CUBA Black Forest Berries,cuba-black-forest-berries,CUBA,False,Berry,Slim,66,43,13,Nicotine pouch
+CUBA Black Cherry Slim,cuba-black-cherry-slim,CUBA,False,Fruit,Slim,66,43,13,Nicotine pouch
+BARON Fruit Cocktail,baron-fruit-cocktail,BARON,True,-,-,0,0,-,-
+FUMi Freezy Mint Extra Strong,fumi-freezy-mint-extra-strong,FUMI,True,Mint,Slim,15.7,11,14,Nicotine pouch
+FUMi Minty Blueberry Strong,fumi-minty-blueberry-strong,FUMI,True,Berry,Slim,11.4,8,14,Nicotine pouch
+FUMi Zingy Ginger Strong,fumi-zingy-ginger-strong,FUMI,True,Spices,Slim,11.4,8,14,Nicotine pouch
+HELWIT Blueberry Medium,helwit-blueberry-medium,HELWIT,True,Berry,Slim,9,4.5,10,Nicotine pouch
+HELWIT Cherry Medium,helwit-cherry-medium,HELWIT,True,Fruit,Slim,9,4.5,10,Nicotine pouch
+HELWIT Menthol Strong,helwit-menthol-strong,HELWIT,True,Mint,Slim,12,6,10,Nicotine Pouch
+HELWIT Mocha Medium,helwit-mocha-medium,HELWIT,True,Coffee,Slim,9,4.5,10,Nicotine Pouch
+HELWIT Orange Strong,helwit-orange-strong,HELWIT,True,Fruit,Slim,9,4.5,10,Nicotine Pouch
+HELWIT Raspberry Liquorice Slim,helwit-raspberry-liquorice-slim,HELWIT,True,Berry,Slim,7,3.5,10,Nicotine Pouch
+HELWIT Strawberry Medium,helwit-strawberry-medium,HELWIT,True,Berry,Slim,9,4.5,10,Nicotine Pouch
+HELWIT Watermelon Slim,helwit-watermelon-slim,HELWIT,True,Fruit,Slim,7,3.5,10,Nicotine Pouch
+Lundgrens Mörk Stark,lundgrens-mork-stark,Lundgrens,True,Tobacco,Normal,12.5,10,16.8,Nicotine pouch
+RAVE Cola Explosion 16mg,rave-cola-explosion-16mg,RAVE,True,Cola,Slim,16,9.6,12,Nicotine pouch
+RAVE Cola Explosion 32.5mg,rave-cola-explosion-325mg,RAVE,True,Cola,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Frozen Citrus 16mg,rave-frozen-citrus-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+RAVE Frozen Citrus 32.5mg,rave-frozen-citrus-325mg,RAVE,True,Citrus,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Juicy Apple 16mg,rave-juicy-apple-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+RAVE Juicy Apple 32.5mg,rave-juicy-apple-325mg,RAVE,True,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+RAVE La Passion Fruit 16mg,rave-la-passion-fruit-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+RAVE La Passion Fruit 32.5mg,rave-la-passion-fruit-325mg,RAVE,True,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Lemoncello 16mg,rave-lemoncello-16mg,RAVE,True,Citrus,Slim,19,9.6,12,Nicotine pouch
+Rave Lemoncello 32.5mg,rave-lemoncello-325mg,RAVE,True,Citrus,Slim,32.5,19.5,12,Nicotine pouch
+Rave Mango Django 16mg,rave-mango-django-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+Rave Mango Django 32.5mg,rave-mango-django-325mg,RAVE,True,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Merry Cherry 16mg,rave-merry-cherry-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+RAVE Merry Cherry 32.5mg,rave-merry-cherry-325mg,RAVE,True,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Minty Berry 16mg,rave-minty-berry-16mg,RAVE,True,Berry,Slim,16,9.6,12,Nicotine pouch
+RAVE Minty Berry 32.5mg,rave-minty-berry-325mg,RAVE,True,Berry,Slim,32.5,19.5,12,Nicotine pouch
+RAVE Skittler 16mg,rave-skittler-16mg,RAVE,True,Fruit,Slim,16,9.6,12,Nicotine pouch
+Rave Skittler 32.5mg,rave-skittler-325mg,RAVE,True,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+XQS Dark Banana Slim Strong,xqs-dark-banana-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+XQS Fizzy Peach Slim Strong,xqs-fizzy-peach-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+Après Ski Limited Edition,apres-ski-limited-edition,Après,True,Berry,Slim,8,"4,4",11,Nicotine pouch
+CLEW Blueberry 5mg,clew-blueberry-5mg,CLEW,True,Berry,Slim,7.14,5,14,Nicotine Pouch
+CLEW Cool Mint 5mg,clew-cool-mint-5mg,CLEW,True,Mint,Slim,7.14,5,14,Nicotine Pouch
+CLEW Menthol 5mg,clew-menthol-5mg,CLEW,True,Mint,Slim,7.14,5,14,Nicotine Pouch
+CLEW Spearmint 5mg,clew-spearmint-5mg,CLEW,True,Mint,Slim,7.14,5,14,Nicotine Pouch
+CLEW Watermelon 5mg,clew-watermelon-5mg,CLEW,True,Fruit,Slim,7.14,5,14,Nicotine Pouch
+CLEW Wintergreen 5mg,clew-wintergreen-5mg,CLEW,True,flower,Slim,7.14,5,14,Nicotine Pouch
+CUBA Black Apple Juice,cuba-black-apple-juice,CUBA,True,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Black Cold Dry,cuba-black-cold-dry,CUBA,True,Mint,Slim,66,43,13,Nicotine pouch
+CUBA Black Grape,cuba-black-grape,CUBA,True,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Black Lollipop,cuba-black-lollipop,CUBA,True,Candy,Slim,66,43,13,Nicotine pouch
+CUBA Black Mango,cuba-black-mango,CUBA,True,Fruit,Slim,66,43,13,Nicotine pouch
+CUBA Black Raspberry,cuba-black-raspberry,CUBA,True,Berry,Slim,66,43,13,Nicotine pouch
+CUBA Black Tropical Fruit,cuba-black-tropical-fruit,CUBA,True,Fruit,Slim,66,43,13,Nicotine pouch
+Denssi Blueberry Freeze 16mg,denssi-blueberry-freeze-16mg,DENSSI,True,Berry,Slim,16,8,10,Nicotine pouch
+Denssi Blueberry Freeze 8mg,denssi-blueberry-freeze-8mg,DENSSI,True,Berry,Slim,8,4,10,Nicotine pouch
+Denssi Brain Freeze 16mg,denssi-brain-freeze-16mg,DENSSI,True,Mint,Slim,16,8,10,Nicotine pouch
+Denssi Brain Freeze 8mg,denssi-brain-freeze-8mg,DENSSI,True,Mint,Slim,16,8,10,Nicotine pouch
+Denssi Cold Mint 16mg,denssi-cold-mint-16mg,DENSSI,True,Mint,Slim,16,8,10,Nicotine pouch
+Denssi Cold Mint 8mg,denssi-cold-mint-8mg,DENSSI,True,Mint,Slim,8,4,10,Nicotine pouch
+Denssi Mango Freeze 16mg,denssi-mango-freeze-16mg,DENSSI,True,Fruit,Slim,16,8,10,Nicotine pouch
+Denssi Mango Freeze 8mg,denssi-mango-freeze-8mg,DENSSI,True,Fruit,Slim,8,4,10,Nicotine pouch
+Denssi Spearmint 16mg,denssi-spearmint-16mg,DENSSI,True,Mint,Slim,16,8,10,Nicotine pouch
+Denssi Strawberry Freeze 16mg,denssi-strawberry-freeze-16mg,DENSSI,True,Berry,Slim,16,8,10,Nicotine pouch
+Denssi Strawberry Freeze 8mg,denssi-strawberry-freeze-8mg,DENSSI,True,Berry,Slim,8,4,10,Nicotine pouch
+Denssi Watermelon Freeze 16mg,denssi-watermelon-freeze-16mg,DENSSI,True,Fruit,Slim,16,8,10,Nicotine pouch
+Denssi Watermelon Freeze 8mg,denssi-watermelon-freeze-8mg,DENSSI,True,Fruit,Slim,8,4,10,Nicotine pouch
+FOLD Coolmint Original,fold-coolmint-original,FOLD,True,Berry,Slim,-,8,10,Nicotine pouch
+FOLD Menthol Extreme,fold-menthol-extreme,FOLD,True,Berry,Slim,-,13,10,Nicotine pouch
+FOLD Peppermint Light,fold-peppermint-light,FOLD,True,Berry,Slim,-,6,10,Nicotine pouch
+FOLD Spearmint Strong,fold-spearmint-strong,FOLD,True,Berry,Slim,-,10,10,Nicotine pouch
+FUMI Prickly Pear Strong,fumi-prickly-pear-strong,FUMI,True,Fruit,Slim,11.4,8,14,Nicotine pouch
+Glick Black Currant Extreme,glick-black-currant-extreme,GLICK,True,Berry,Slim,20,10,10,Nicotine pouch
+Glick Ice Mint 50mg,glick-ice-mint-50mg,GLICK,True,Mint,Slim,50,25,10,Nicotine pouch
+Glick Ice Mint Extreme,glick-ice-mint-extreme,GLICK,True,Mint,Slim,20,10,10,Nicotine pouch
+Glick Lemonberry 50mg,glick-lemonberry-50mg,GLICK,True,Citrus,Slim,50,25,10,Nicotine pouch
+Glick Lemonberry Extreme,glick-lemonberry-extreme,GLICK,True,Citrus,Slim,20,10,10,Nicotine pouch
+Glick Pink Fusion 50mg,glick-pink-fusion-50mg,GLICK,True,Sweet,Slim,50,25,10,Nicotine pouch
+Glick Sweet Mint Extreme,glick-sweet-mint-extreme,GLICK,True,Mint,Slim,20,10,10,Nicotine pouch
+Glick Triple Mint Extreme,glick-triple-mint-extreme,GLICK,True,Mint,Slim,20,10,10,Nicotine pouch
+HELWIT Banana Slim,helwit-banana-slim,HELWIT,True,Fruit,Slim,7,3.5,10,Nicotine pouch
+Kelly White Mini Sweet Peppermint,kelly-white-mini-sweet-peppermint,Kelly White,True,Spices,Mini,15,6,8,Nicotine pouch
+Kelly White Sweet Peach Slim Strong,kelly-white-sweet-peach-slim-strong,Kelly White,True,Fruit,Slim,14.6,8,11,Nicotine pouch
+KLAR Afterglow Regular Mini,klar-afterglow-regular-mini,KLAR,True,Fruit,Mini,7.5,3.2,8.5,Nicotine pouch
+KLAR Afterglow Strong Mini,klar-afterglow-strong-mini,KLAR,True,Fruit,Mini,15,6.4,8.5,Nicotine pouch
+KLAR Blank Extra Strong Slim,klar-blank-extra-strong-slim,KLAR,True,Original,Slim,20,9,12,Nicotine pouch
+KLAR Blank Regular Mini,klar-blank-regular-mini,KLAR,True,Original,Mini,7.5,3,8,Nicotine pouch
+KLAR Blank Strong Mini,klar-blank-strong-mini,KLAR,True,Original,Mini,15,6,8,Nicotine pouch
+KLAR Mint Extra Strong Slim,klar-mint-extra-strong-slim,KLAR,True,Mint,Slim,20,9,12,Nicotine pouch
+KLAR Mint Regular Mini,klar-mint-regular-mini,KLAR,True,Mint,Mini,7.5,3,8,Nicotine pouch
+KLAR Mint Strong Mini,klar-mint-strong-mini,KLAR,True,MInt,Mini,15,6,8,Nicotine pouch
+LEO Black Cherry Strong,leo-black-cherry-strong,LEO,True,Berry,Slim,20,12,12,Nicotine pouch
+LEO Blue Razz Ice Strong,leo-blue-razz-ice-strong,LEO,True,Fruit,Slim,20,12,12,Nicotine pouch
+LEO Freeze Ice Max,leo-freeze-ice-max,LEO,True,Mint,Slim,26,16,12,Nicotine pouch
+LEO Freeze Ice Strong,leo-freeze-ice-strong,LEO,True,Mint,Slim,20,12,12,Nicotine pouch
+LEO Sour Peach Strong,leo-sour-peach-strong,LEO,True,Fruit,Slim,20,12,12,Nicotine pouch
+LEO Strawberry Kiwi Lime,leo-strawberry-kiwi-lime,LEO,True,Fruit,Slim,20,12,12,Nicotine pouch
+LEO Watermelon Ice Strong,leo-watermelon-ice-strong,LEO,True,Fruit,Slim,20,12,12,Nicotine pouch
+Loop Blueberry Ice Strong,loop-blueberry-ice-strong,Loop,True,Berry,Slim,15,9.4,12.5,Nicotine pouch
+Loop Fresh Peppermint Hyper,loop-fresh-peppermint-hyper,Loop,True,Mint,Slim,23.5,14.8,12.5,Nicotine pouch
+Loop Fresh Peppermint Mini Hyper,loop-fresh-peppermint-mini-hyper,Loop,True,Mint,Slim,23.5,10.5,9,Nicotine pouch
+Loop Fresh Spearmint Hyper,loop-fresh-spearmint-hyper,Loop,True,Mint,Slim,25,15.6,12.5,Nicotine pouch
+Loop Fresh Spearmint Mini Hyper,loop-fresh-spearmint-mini-hyper,Loop,True,Mint,Slim,25,11.3,9,Nicotine pouch
+Loop Spicy Apple Hyper Strong,loop-spicy-apple-hyper-strong,Loop,True,Fruit,Slim,25,15.6,12.5,Nicotine pouch
+Loop Strawberry Ice Strong,loop-strawberry-ice-strong,Loop,True,Berry,Slim,15,9.4,12.5,Nicotine pouch
+LUMI Blue Ice 12mg,lumi-blue-ice-12mg,LUMI,True,Mint,Slim,16.5,12,14.6,Nicotine pouch
+LUMI Blue Ice 18mg,lumi-blue-ice-18mg,LUMI,True,Mint,Slim,25.7,18,14,Nicotine pouch
+LUMI Blue Ice 6mg,lumi-blue-ice-6mg,LUMI,True,Mint,Slim,8.5,6,14,Nicotine pouch
+LUMI Citrus 12mg,lumi-citrus-12mg,LUMI,True,Citrus,Slim,16.5,12,14.6,Nicotine pouch
+LUMI Citrus 18mg,lumi-citrus-18mg,LUMI,True,Citrus,Slim,25.7,18,14,Nicotine pouch
+LUMI Citrus 6mg,lumi-citrus-6mg,LUMI,True,Citrus,Slim,8.5,6,14,Nicotine pouch
+LUMI Forest Fruits 12mg,lumi-forest-fruits-12mg,LUMI,True,Fruit,Slim,16.5,12,14.6,Nicotine pouch
+LUMI Forest Fruits 6mg,lumi-forest-fruits-6mg,LUMI,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+LUMI Freeze Mint 12mg,lumi-freeze-mint-12mg,LUMI,True,Mint,Slim,16.5,12,14.6,Nicotine pouch
+LUMI Freeze Mint 18mg,lumi-freeze-mint-18mg,LUMI,True,Mint,Slim,25.7,18,14,Nicotine pouch
+LUMI Mix 5-Pack 12mg,lumi-mix-5-pack-12mg,LUMI,True,Mixed,Slim,16.5,12,73,Nicotine pouch
+LUMI MIX 5-Pack 18mg,lumi-mix-5-pack-18mg,LUMI,True,Mixed,Slim,25.7,18,70,Nicotine pouch
+LUMI Mix 5-Pack 6mg,lumi-mix-5-pack-6mg,LUMI,True,Mixed,Slim,8.5,6,70,Nicotine pouch
+LUMI Watermelon 18mg,lumi-watermelon-18mg,LUMI,True,Fruit,Slim,25.7,18,14,Nicotine pouch
+LUMI Watermelon 6mg,lumi-watermelon-6mg,LUMI,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+Lundgrens Tjäle,lundgrens-tjale,Lundgrens,True,Mint,Normal,7.5,6,16.8,Nicotine pouch
+RELX AirPouch Cola 14mg,relx-airpouch-cola-14mg,RELX,True,Cola,Slim,140,14,2,Nicotine pouch
+RELX AirPouch Fresh Mint 14mg,relx-airpouch-fresh-mint-14mg,RELX,True,Mint,Slim,140,14,2,Nicotine pouch
+RELX AirPouch Lemon Crush 14mg,relx-airpouch-lemon-crush-14mg,RELX,True,Citrus,Slim,140,14,2,Nicotine pouch
+RELX AirPouch SpearMint Fresh 20mg,relx-airpouch-spearmint-fresh-20mg,RELX,True,Mint,Slim,200,20,2,Nicotine pouch
+RELX AirPouch SpearMint Fresh 9mg,relx-airpouch-spearmint-fresh-9mg,RELX,True,Mint,Slim,90,9,2,Nicotine pouch
+RELX AirPouch SpearMint Fresh14mg,relx-airpouch-spearmint-fresh14mg,RELX,True,Mint,Slim,140,14,2,Nicotine pouch
+RELX AirPouch Strawberry Lush 14mg,relx-airpouch-strawberry-lush-14mg,RELX,True,Berry,Slim,140,14,2,Nicotine pouch
+SKRUF Aloe Fresh S2,skruf-aloe-fresh-s2,Skruf,True,Mint,Slim,8,6.5,17.8,Nicotine pouch
+Skruf Intense Peppermint Ice S4,skruf-intense-peppermint-ice-s4,Skruf,True,Mint,Slim,16,11.3,14.1,Nicotine pouch
+Skruf Intense Spearmint Ice S4,skruf-intense-spearmint-ice-s4,Skruf,True,Mint,Slim,16,11.3,14,Nicotine pouch
+Smögen Seabreeze Mint,smogen-seabreeze-mint,Smögen,True,Mint,Slim,13.3,8,12,Nicotine pouch
+Smögen Stormy Licorice,smogen-stormy-licorice,Smögen,True,Licorice,Slim,13.3,8,12,Nicotine pouch
+Smögen Westcoast Berries,smogen-westcoast-berries,Smögen,True,Berry,Slim,13.3,8,12,Nicotine pouch
+SNOBERG Blueberry Ice 20mg,snoberg-blueberry-ice-20mg,SNOBERG,True,Berry,Slim,20,10,10,Nicotine Pouch
+SNOBERG Cherry Ice 13mg,snoberg-cherry-ice-13mg,SNOBERG,True,Fruit,Slim,13,6.5,10,Nicotine Pouch
+SNOBERG Cool Peppermin 13mg,snoberg-cool-peppermin-13mg,SNOBERG,True,Mint,Slim,13,6.5,10,Nicotine Pouch
+SNOBERG Cool Peppermin 20mg,snoberg-cool-peppermin-20mg,SNOBERG,True,Mint,Slim,20,10,10,Nicotine Pouch
+SNOBERG Double Mint 20mg,snoberg-double-mint-20mg,SNOBERG,True,Mint,Slim,20,10,10,Nicotine Pouch
+SNOBERG Watermelon Ice 13mg,snoberg-watermelon-ice-13mg,SNOBERG,True,Fruit,Slim,13,6.5,10,Nicotine Pouch
+SNOBERG WinterGreen 13mg,snoberg-wintergreen-13mg,SNOBERG,True,Mint,Slim,13,6.5,10,Nicotine Pouch
+STNG Berry Seltzer MAX,stng-berry-seltzer-max,STNG,True,Berry,Slim,50,27.5,11,Nicotine Pouch
+STNG Bubble MAX,stng-bubble-max,STNG,True,Candy,Slim,50,27.5,11,Nicotine Pouch
+STNG Cola Cherry MAX,stng-cola-cherry-max,STNG,True,Cola,Slim,50,27.5,11,Nicotine Pouch
+STNG Raspberry MAX,stng-raspberry-max,STNG,True,Berry,Slim,50,27.5,11,Nicotine Pouch
+TECTONIC Mint,tectonic-mint,TECTONIC,True,Fruit,Large,15.9,15,18.8,Nicotine pouch
+TOGO Cold Mint -90°C,togo-cold-mint-90c,TOGO,True,Mint,Slim,16.6,10,12,Nicotine pouch
+TOGO Mighty Sour,togo-mighty-sour,TOGO,True,Citrus,Slim,13.3,8,12,Nicotine pouch
+TOGO Pommie Orange,togo-pommie-orange,TOGO,True,Fruit,Slim,13.3,8,12,Nicotine pouch
+VELO Bright Peppermint,velo-bright-peppermint,Velo,True,Mint,Slim,11.4,8,14,Nicotine pouch
+VELO Dark Blackcurrant,velo-dark-blackcurrant,Velo,True,Berry,Slim,11.4,8,14,Nicotine pouch
+VELO Sour Lime Slim,velo-sour-lime-slim,Velo,True,Citrus,Slim,8.6,6,14,Nicotine pouch
+XPCT Black Mega Berry,xpct-black-mega-berry,XPCT,True,Berry,Slim,10.6,6.5,200,Nicotine pouch
+Xpct Black Mega Cola Ginger,xpct-black-mega-cola-ginger,XPCT,True,Cola,Slim,13.8,8.4,200,Nicotine pouch
+XPCT Black Mega Liquorice,xpct-black-mega-liquorice,XPCT,True,Licorice,Slim,13.8,8.4,200,Nicotine pouch
+Xpct Black Mega Mango Pineapple,xpct-black-mega-mango-pineapple,XPCT,True,Fruit,Slim,10.6,6.5,200,Nicotine pouch
+XPCT Black Mega Mint,xpct-black-mega-mint,XPCT,True,Fruit,Slim,16,10.4,200,Nicotine pouch
+XPCT Black Mega Raspberry Mint,xpct-black-mega-raspberry-mint,XPCT,True,Berry,Slim,17,10.4,200,Nicotine pouch
+XQS Apple Crisp Slim Strong,xqs-apple-crisp-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+XQS Orange Squeeze Slim Strong,xqs-orange-squeeze-slim-strong,XQS,True,Fruit,Slim,16,8,10,Nicotine pouch
+Zeus Arctic Freeze Extra Strong,zeus-arctic-freeze-extra-strong,Zeus,True,Mint,Slim,50,25,10,Nicotine pouch
+Zeus Mint Rage Extra Strong,zeus-mint-rage-extra-strong,Zeus,True,Mint,Slim,50,25,10,Nicotine Pouch
+Zeus True North Extra Strong,zeus-true-north-extra-strong,Zeus,True,Mint,Slim,50,25,10,Nicotine Pouch
+ZYN Red Berry Fizz Slim S3,zyn-red-berry-fizz-slim-s3,zyn,True,Berry,Slim,13.3,9,14.3,Nicotine Pouch
+Chainpop Almond & Vanilla,chainpop-almond-vanilla,Chainpop,False,Candy,Slim,15,9,12,Nicotine pouch
+Chainpop Cherry & Chili,chainpop-cherry-chili,Chainpop,False,Berry,Slim,15,9,12,Nicotine pouch
+Chainpop Peppermint & Ice,chainpop-peppermint-ice,Chainpop,False,Eucalyptus,Slim,19,11.4,12,Nicotine pouch
+ZYN Coffee Mini S2,zyn-coffee-mini-s2,zyn,False,Coffee,Mini,7.5,3,8,Nicotine Pouch
+Chainpop Mint & Mellow,chainpop-mint-mellow,Chainpop,False,Mint,Slim,8,5,12,Nicotine pouch
+CLEW Coffee 5mg,clew-coffee-5mg,CLEW,False,Coffee,Slim,7.14,5,14,Nicotine Pouch
+CUBA White Apple Juice,cuba-white-apple-juice,CUBA,False,Fruit,Slim,16,10.4,13,Nicotine pouch
+CUBA White Banana Hit,cuba-white-banana-hit,CUBA,False,Fruit,Slim,16,10.4,13,Nicotine pouch
+CUBA White Black Currant,cuba-white-black-currant,CUBA,False,Fruit,Slim,16,10.4,13,Nicotine pouch
+CUBA White Cold Dry,cuba-white-cold-dry,CUBA,False,Mint,Slim,16,10.4,13,Nicotine pouch
+Denssi Spearmint 8mg,denssi-spearmint-8mg,DENSSI,False,Mint,Slim,8,4,10,Nicotine pouch
+GARANT Cola Extreme,garant-cola-extreme,Garant,False,Cola,Slim,50,25,13.5,Nicotine pouch
+GARANT Freeze Extreme,garant-freeze-extreme,Garant,False,Mint,Slim,70,38,11.8,Nicotine pouch
+GARANT Fresh Mint Extreme,garant-fresh-mint-extreme,Garant,False,Mint,Slim,50,25,13.5,Nicotine pouch
+GARANT Ice Cool,garant-ice-cool,Garant,False,Mint,Slim,35,15,11.8,Nicotine pouch
+Glick Citrine Grape Extreme,glick-citrine-grape-extreme,GLICK,False,Citrus,Slim,20,10,10,Nicotine pouch
+Glick Lemonberry Light,glick-lemonberry-light,GLICK,False,Citrus,Slim,8,4,10,Nicotine pouch
+Glick Triple Mint 50mg,glick-triple-mint-50mg,GLICK,False,Mint,Slim,50,25,10,Nicotine pouch
+LUMI Forest Fruits 18mg,lumi-forest-fruits-18mg,LUMI,False,Fruit,Slim,25.7,18,14,Nicotine pouch
+LUMI Freeze Mint 6mg,lumi-freeze-mint-6mg,LUMI,False,Mint,Slim,8.5,6,14,Nicotine pouch
+LUMI Watermelon 12mg,lumi-watermelon-12mg,LUMI,False,Fruit,Slim,16.5,12,14.6,Nicotine pouch
+NOIS Cool Strong Extreme 50mg,nois-cool-strong-extreme-50mg,NOiS,False,Mint,Slim,50,25,13.5,Nicotine pouch
+SNOBERG Blueberry Ice 13mg,snoberg-blueberry-ice-13mg,SNOBERG,False,Berry,Slim,13,6.5,10,Nicotine Pouch
+SNOBERG Cherry Ice 20mg,snoberg-cherry-ice-20mg,SNOBERG,False,Fruit,Slim,20,10,10,Nicotine Pouch
+SNOBERG Double Mint 13mg,snoberg-double-mint-13mg,SNOBERG,False,Mint,Slim,13,6.5,10,Nicotine Pouch
+SNOBERG WinterGreen 20mg,snoberg-wintergreen-20mg,SNOBERG,False,Mint,Slim,20,10,10,Nicotine Pouch
+TOGO Straw Melonade,togo-straw-melonade,TOGO,False,Berry,Slim,13.3,8,12,Nicotine pouch
+TYR Fresh Lime,tyr-fresh-lime,TYR,False,Citrus,Slim,-,12,12,Nicotine pouch
+TYR Ice Cool,tyr-ice-cool,TYR,False,Mint,Slim,-,12.2,12,Nicotine pouch
+TYR SPEARMINT,tyr-spearmint,TYR,False,Mint,Slim,-,12,12,Nicotine pouch
+TYR Strawberry,tyr-strawberry,TYR,False,Berry,Slim,-,12,12,Nicotine pouch
+VELO Freezing Peppermint Ultra (ES),velo-freezing-peppermint-ultra-es,Velo,False,Mint,Slim,20,14,14,Nicotine pouch
+VELO Shift Cool Peppermint,velo-shift-cool-peppermint,Velo,False,Mint,Slim,11.4,8,14,Nicotine pouch
+VELO Shift Hot Dragonfruit,velo-shift-hot-dragonfruit,Velo,False,Fruit,Slim,11.4,8,14,Nicotine pouch
+VELO Shift Hot Grape,velo-shift-hot-grape,Velo,False,Fruit,Slim,11.4,8,14,Nicotine pouch
+VELO Shift Hot Peach,velo-shift-hot-peach,Velo,False,Fruit,Slim,11.4,8,14,Nicotine pouch
+VELO Shift Hot Spearmint,velo-shift-hot-spearmint,Velo,False,Mint,Slim,11.4,8,14,Nicotine pouch
+Velo Tropical Ice Slim (ES),velo-tropical-ice-slim-es,Velo,False,Fruit,Slim,14,10,14,Nicotine pouch
+Zeus Frozen Citrus Extra Strong,zeus-frozen-citrus-extra-strong,Zeus,False,Citrus,Slim,50,25,10,Nicotine Pouch
+ZYN Apple Mint Slim S3,zyn-apple-mint-slim-s3,zyn,False,Fruit,Slim,13,9,14.3,Nicotine Pouch
+ZYN Apple Mint Slim S4,zyn-apple-mint-slim-s4,zyn,False,Fruit,Slim,16,11,14.3,Nicotine pouch
+ZYN Cactus Spice Slim S3,zyn-cactus-spice-slim-s3,zyn,False,Spices,Slim,13.3,9,14.3,Nicotine Pouch
+ZYN Cactus Spice Slim S4,zyn-cactus-spice-slim-s4,zyn,False,Spices,Slim,16.2,11,14.3,Nicotine Pouch
+ZYN Citrus Slim S3,zyn-citrus-slim-s3,zyn,False,Citrus,Slim,13,9,14.3,Nicotine Pouch
+ZYN Citrus Slim S4,zyn-citrus-slim-s4,zyn,False,Citrus,Slim,16,11,14.3,Nicotine Pouch
+ZYN Red Fruits Fizz Slim S3,zyn-red-fruits-fizz-slim-s3,zyn,False,Berry,Slim,13.3,9,14.3,Nicotine pouch
+Après Mochaccino,apres-mochaccino,Apres,False,Coffee,Slim,8,4.4,11,Nicotine pouch
+Après Raspberry Liqorice Hyper Strong,apres-raspberry-liqorice-hyper-strong,Apres,False,Berry,Slim,20,11,11,Nicotine pouch
+Après Mochaccino Hyper Strong,apres-mochaccino-hyper-strong,Apres,False,Coffee,Slim,20,11,11,Nicotine pouch
+ZYN Red Berry Fizz Slim S4,zyn-red-berry-fizz-slim-s4,zyn,False,Berry,Slim,16.25,11,14.3,Nicotine pouch
+"RAVE Skittler 32,5",rave-skittler-325,RAVE,False,Fruit,Slim,32.5,19.5,12,Nicotine pouch
+Loop Hot Rhubarb Strong,loop-hot-rhubarb-strong,Loop,False,Fruit,Slim,15,9.4,13.75,Nicotine pouch
+HELWIT Orange Medium,helwit-orange-medium,HELWIT,False,Fruit,Slim,9,4.5,10,Nicotine pouch
+ZYN Red Berry Fizz Slim S2,zyn-red-berry-fizz-slim-s2,zyn,False,Berry,Slim,8.8,6,14.3,Nicotine pouch
+77 Apple Mint 10.4mg,77-apple-mint-104mg,77 Pouches,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+77 Cola Cherry 10.4mg,77-cola-cherry-104mg,77 Pouches,True,Cola,Slim,16,10.4,13,Nicotine Pouch
+77 Forest Fruits 10.4mg,77-forest-fruits-104mg,77 Pouches,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+77 Peach Mint 10.4mg,77-peach-mint-104mg,77 Pouches,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+77 Raspberry Ice 10.4mg,77-raspberry-ice-104mg,77 Pouches,True,Berry,Slim,16,10.4,13,Nicotine Pouch
+77 Salted Caramel 10.4mg,77-salted-caramel-104mg,77 Pouches,True,Candy,Slim,16,10.4,13,Nicotine Pouch
+77 Strawberry 10.4mg,77-strawberry-104mg,77 Pouches,True,Berry,Slim,16,10.4,13,Nicotine Pouch
+BARON Classic,baron-classic,Baron,True,-,-,0,0,-,-
+BARON Eucalyptus,baron-eucalyptus,Baron,True,-,-,0,0,-,-
+BARON Menthol,baron-menthol,Baron,True,-,-,0,0,-,-
+BARON Wintergreen,baron-wintergreen,Baron,True,-,-,0,0,-,-
+HELWIT Liquorice Strong,helwit-liquorice-strong,HELWIT,True,Licorice,Slim,12,6,10,Nicotine Pouch
+ICEBERG Cherry 50mg,iceberg-cherry-50mg,ICEBERG,True,Fruit,Slim,50,40,16,Nicotine Pouch
+ICEBERG Grape Gum 50mg,iceberg-grape-gum-50mg,ICEBERG,True,Fruit,Slim,50,40,16,Nicotine pouch
+ICEBERG Menthol 50mg,iceberg-menthol-50mg,ICEBERG,True,Mint,Slim,50,40,16,Nicotine pouch
+ICEBERG Sour Berries 50mg,iceberg-sour-berries-50mg,ICEBERG,True,Berry,Slim,50,40,16,Nicotine Pouch
+77 Bubbly Blizz 10.4mg,77-bubbly-blizz-104mg,77 Pouches,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+77 Grape Ice 10.4mg,77-grape-ice-104mg,77 Pouches,True,Fruit,Slim,16,10.4,13,Nicotine Pouch
+77 New Raspberry Vanilla 10.4mg,77-new-raspberry-vanilla-104mg,77 Pouches,True,Berry,Slim,16,10.4,13,Nicotine Pouch
+Après Hugo Spritz 4.4mg,apres-hugo-spritz-44mg,Apres,True,Berry,Slim,8,"4,4",11,Nicotine pouch
+Après Hugo Spritz Hypèr Strong,apres-hugo-spritz-hyper-strong,Apres,True,Fruit,Slim,20,11,11,Nicotine pouch
+Après Limoncello Di Capri,apres-limoncello-di-capri,Apres,True,Citrus,Slim,10,5.5,11,Nicotine pouch
+Après Pink Spritz 4.4mg,apres-pink-spritz-44mg,Apres,True,Fruit,Slim,8,"4,4",11,Nicotine pouch
+Après Pink Spritz Hypèr Strong,apres-pink-spritz-hyper-strong,Apres,True,Berry,Slim,20,11,11,Nicotine pouch
+CLEW Citrus 10mg,clew-citrus-10mg,CLEW,True,Citrus,Slim,14,10,14,Nicotine Pouch
+CLEW Citrus 20mg,clew-citrus-20mg,CLEW,True,Citrus,Slim,28.5,20,14,Nicotine Pouch
+CLEW Citrus 5mg,clew-citrus-5mg,CLEW,True,Citrus,Slim,7.14,5,14,Nicotine Pouch
+CUBA Blackberry,cuba-blackberry,CUBA,True,Berry,Slim,66,43,13,Nicotine pouch
+CUBA White Grape,cuba-white-grape,CUBA,True,Fruit,Slim,16,10.4,13,Nicotine pouch
+CUBA White Peach,cuba-white-peach,CUBA,True,Fruit,Slim,16,10.4,13,Nicotine pouch
+Edel Berry Ice Strong,edel-berry-ice-strong,Edel,True,Berry,Slim,20,12,12,Nicotine pouch
+Edel Cold Strong,edel-cold-strong,Edel,True,Mint,Slim,20,12,12,Nicotine pouch
+Edel Forever Ice Extra Strong,edel-forever-ice-extra-strong,Edel,True,Mint,Slim,25,15,12,Nicotine pouch
+Edel Onyx Extra Strong,edel-onyx-extra-strong,Edel,True,Eucalyptus,Slim,25,15,12,Nicotine pouch
+ICEBERG Arasaka Ultra 70mg,iceberg-arasaka-ultra-70mg,ICEBERG,True,Fruit,Slim,70,56,16,Nicotine Pouch
+ICEBERG Arctic Mint 50mg,iceberg-arctic-mint-50mg,ICEBERG,True,Mint,Slim,50,40,16,Nicotine pouch
+ICEBERG Berries 50mg,iceberg-berries-50mg,ICEBERG,True,Berry,Slim,50,40,16,Nicotine pouch
+ICEBERG Citrus Mix 50mg,iceberg-citrus-mix-50mg,ICEBERG,True,Citrus,Slim,50,40,16,Nicotine pouch
+ICEBERG Emerald Ultra 70mg,iceberg-emerald-ultra-70mg,ICEBERG,True,Fruit,Slim,70,56,16,Nicotine Pouch
+ICEBERG Energy Ultra 70mg,iceberg-energy-ultra-70mg,ICEBERG,True,Energy Drink,Slim,70,56,16,Nicotine pouch
+ICEBERG Grape Ultra 70mg,iceberg-grape-ultra-70mg,ICEBERG,True,Fruit,Slim,70,56,16,Nicotine pouch
+ICEBERG Green Apple 50mg,iceberg-green-apple-50mg,ICEBERG,True,Fruit,Slim,50,40,16,Nicotine Pouch
+ICEBERG Ice Cool 50mg,iceberg-ice-cool-50mg,ICEBERG,True,Mint,Slim,50,40,16,Nicotine pouch
+ICEBERG Kiwi Strawberry 50mg,iceberg-kiwi-strawberry-50mg,ICEBERG,True,Fruit,Slim,50,40,16,Nicotine pouch
+ICEBERG Sour Berries Ultra 70mg,iceberg-sour-berries-ultra-70mg,ICEBERG,True,Berry,Slim,70,56,16,Nicotine pouch
+ICEBERG Strawberry Banana Gum Ultra 70mg,iceberg-strawberry-banana-gum-ultra-70mg,ICEBERG,True,Berry,Slim,70,56,16,Nicotine pouch
+ICEBERG Sweet Mint Ultra 70mg,iceberg-sweet-mint-ultra-70mg,ICEBERG,True,Sweet,Slim,70,56,16,Nicotine Pouch
+ICEBERG Watermelon Mint Gum Ultra 70mg,iceberg-watermelon-mint-gum-ultra-70mg,ICEBERG,True,Fruit,Slim,70,56,16,Nicotine pouch
+Juice Head Arctic Mint Regular EU,juice-head-arctic-mint-regular-eu,JUICE HEAD,True,Mint,Slim,8.5,6,14,Nicotine pouch
+Juice Head Blueberry Lemon Regular EU,juice-head-blueberry-lemon-regular-eu,JUICE HEAD,True,Berry,Slim,8.5,6,14,Nicotine pouch
+Juice Head Blueberry Lemon Super Strong EU,juice-head-blueberry-lemon-super-strong-eu,JUICE HEAD,True,Berry,Slim,20,14,14,Nicotine pouch
+Juice Head Peach Pineapple Regular EU,juice-head-peach-pineapple-regular-eu,JUICE HEAD,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Peach Pineapple Strong EU,juice-head-peach-pineapple-strong-eu,JUICE HEAD,True,Fruit,Slim,12.8,9,14,Nicotine pouch
+Juice Head Peach Pineapple Super Strong EU,juice-head-peach-pineapple-super-strong-eu,JUICE HEAD,True,Fruit,Slim,20,14,14,Nicotine pouch
+Juice Head Spicy Pineapple Regular EU,juice-head-spicy-pineapple-regular-eu,JUICE HEAD,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Spicy Pineapple Super Strong EU,juice-head-spicy-pineapple-super-strong-eu,JUICE HEAD,True,Fruit,Slim,20,14,14,Nicotine pouch
+Juice Head Watermelon Strawberry Regular EU,juice-head-watermelon-strawberry-regular-eu,JUICE HEAD,True,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Watermelon Strawberry Strong EU,juice-head-watermelon-strawberry-strong-eu,JUICE HEAD,True,Fruit,Slim,12.8,9,14,Nicotine pouch
+Juice Head Watermelon Strawberry Super Strong EU,juice-head-watermelon-strawberry-super-strong-eu,JUICE HEAD,True,Fruit,Slim,20,14,14,Nicotine pouch
+Kelly White Crispy Apple Slim Extra Strong,kelly-white-crispy-apple-slim-extra-strong,Kelly White,True,Fruit,Slim,16.6,10,12,Nicotine pouch
+Kelly White Minty Grape Slim Extra Strong,kelly-white-minty-grape-slim-extra-strong,Kelly White,True,Fruit,Slim,16.6,10,12,Nicotine pouch
+Kelly White Sweet Peppermint Slim Extra Strong,kelly-white-sweet-peppermint-slim-extra-strong,Kelly White,True,Sweet,Slim,16.6,10,12,Nicotine pouch
+KLAR Afterglow Extra Strong Slim,klar-afterglow-extra-strong-slim,KLAR,True,Fruit,Slim,14.3,9,12.5,Nicotine pouch
+KLAR Blueberry Mint Extra Strong Slim,klar-blueberry-mint-extra-strong-slim,KLAR,True,Berry,Slim,15,9,12,Nicotine pouch
+KLAR Blueberry Mint Mini Regular,klar-blueberry-mint-mini-regular,KLAR,True,Berry,Mini,7.5,3,8,Nicotine pouch
+KLAR Blueberry Mint Strong Mini,klar-blueberry-mint-strong-mini,KLAR,True,Berry,Mini,15,6,8,Nicotine pouch
+KLAR Strawberry Basil Extra Strong Slim,klar-strawberry-basil-extra-strong-slim,KLAR,True,Fruit,Slim,15,9,12,Nicotine pouch
+KLAR Strawberry Basil Regular Mini,klar-strawberry-basil-regular-mini,KLAR,True,Fruit,Mini,7.5,3,8,Nicotine pouch
+KLAR Strawberry Basil Strong Mini,klar-strawberry-basil-strong-mini,KLAR,True,Fruit,Mini,15,6,8,Nicotine pouch
+Lewa Classic Tast,lewa-classic-tast,LEWA,True,Original,Normal,14,12.6,18,Nicotine pouch
+Lewa Oranssi,lewa-oranssi,LEWA,True,Mint,Slim,23.7,16.6,14,Nicotine pouch
+Loop Blackcurrant Strong,loop-blackcurrant-strong,Loop,True,berry,Slim,15,9.4,12.5,Nicotine pouch
+Loop Pineapple Ice Strong,loop-pineapple-ice-strong,Loop,True,Fruit,Slim,14.2,8.9,12.5,Nicotine pouch
+Loop Smooth Mint Hyper Strong,loop-smooth-mint-hyper-strong,Loop,True,Mint,Normal,23.6,14.8,12.5,Nicotine pouch
+Loop Smooth Mint Mega Hyper Strong,loop-smooth-mint-mega-hyper-strong,Loop,True,Mint,Normal,15,15,15,Nicotine pouch
+Loop Smooth Mint Mini Hyper,loop-smooth-mint-mini-hyper,Loop,True,Mint,Mini,25,11.3,9,Nicotine pouch
+LOOP Smooth Mint Mini Xtended,loop-smooth-mint-mini-xtended,Loop,True,Mint,Mini,15,7.5,9,Nicotine Pouch
+MYNT Lychee 12mg,mynt-lychee-12mg,MYNT,True,Fruit,Slim,24,12,10,Nicotine pouch
+MYNT Lychee 18mg,mynt-lychee-18mg,MYNT,True,Fruit,Slim,36,18,10,Nicotine pouch
+MYNT Lychee 6mg,mynt-lychee-6mg,MYNT,True,Fruit,Slim,12,6,10,Nicotine pouch
+MYNT Mango Slim 12mg,mynt-mango-slim-12mg,MYNT,True,Fruit,Slim,24,12,10,Nicotine pouch
+MYNT Mango Slim 18mg,mynt-mango-slim-18mg,MYNT,True,Fruit,Slim,36,18,10,Nicotine pouch
+MYNT Mango Slim 6mg,mynt-mango-slim-6mg,MYNT,True,Fruit,Slim,12,6,10,Nicotine pouch
+MYNT Mint 12mg,mynt-mint-12mg,MYNT,True,Mint,Slim,24,12,10,Nicotine pouch
+MYNT Mint 6mg,mynt-mint-6mg,MYNT,True,Mint,Slim,12,6,10,Nicotine pouch
+MYNT Spearmint 12mg,mynt-spearmint-12mg,MYNT,True,Mint,Slim,24,12,10,Nicotine pouch
+MYNT Spearmint 18mg,mynt-spearmint-18mg,MYNT,True,Mint,Slim,36,18,10,Nicotine pouch
+MYNT Spearmint 6mg,mynt-spearmint-6mg,MYNT,True,Mint,Slim,12,6,10,Nicotine pouch
+MYNT Sweet Slim 12mg,mynt-sweet-slim-12mg,MYNT,True,Sweet,Slim,24,12,10,Nicotine pouch
+MYNT Sweet Slim 18mg,mynt-sweet-slim-18mg,MYNT,True,sweet,Slim,36,18,10,Nicotine pouch
+MYNT Sweet Slim 6mg,mynt-sweet-slim-6mg,MYNT,True,Sweet,Slim,12,6,10,Nicotine pouch
+MYNT Winter Green 12mg,mynt-winter-green-12mg,MYNT,True,Mint,Slim,24,12,10,Nicotine pouch
+MYNT Winter Green 18mg,mynt-winter-green-18mg,MYNT,True,Mint,Slim,36,18,10,Nicotine pouch
+MYNT Winter Green 6mg,mynt-winter-green-6mg,MYNT,True,Mint,Slim,12,6,10,Nicotine pouch
+Nyytti Black,nyytti-black,Nyytti,True,Licorice,Slim,16,9.6,12,Nicotine pouch
+Nyytti Liquorice Candy,nyytti-liquorice-candy,Nyytti,True,Licorice,Slim,16,9.6,12,Nicotine pouch
+Nyytti Turkish Pepper,nyytti-turkish-pepper,Nyytti,True,Spices,Slim,16,9.6,12,Nicotine pouch
+Nyytti White,nyytti-white,Nyytti,True,Mint,Slim,16,9.6,12,Nicotine pouch
+VELO Bright Spearmint 14mg,velo-bright-spearmint-14mg,Velo,True,Mint,Slim,20,14,14,Nicotine pouch
+VELO Cherry Ice Mini (ES),velo-cherry-ice-mini-es,Velo,True,Fruit,Mini,14.3,6,6.3,Nicotine pouch
+VELO Coconut Lime Slim,velo-coconut-lime-slim,Velo,True,Fruit,Slim,11.4,8,14,Nicotine pouch
+VELO Dark Cherry Mini,velo-dark-cherry-mini,Velo,True,Berry,Mini,9.5,4,8.4,Nicotine pouch
+VELO Guava Jalapeno Slim,velo-guava-jalapeno-slim,Velo,True,Fruit,Slim,11.4,8,14,Nicotine pouch
+VELO Guava Passionfruit Slim,velo-guava-passionfruit-slim,Velo,True,Fruit,Slim,11.4,8,14,Nicotine pouch
+XQS Cola Lime 8mg,xqs-cola-lime-8mg,XQS,True,Cola,Slim,16,8,10,Nicotine pouch
+XQS The Menthol 11mg,xqs-the-menthol-11mg,XQS,True,Mint,Slim,"14,6",11,15,Nicotine pouch
+XQS The Menthol 17mg,xqs-the-menthol-17mg,XQS,True,Mint,Slim,20.8,17,16,Nicotine pouch
+XQS The Peppermint 10mg,xqs-the-peppermint-10mg,XQS,True,Mint,Slim,"13,3",10,15,Nicotine pouch
+ZYN Black Cherry Slim S3,zyn-black-cherry-slim-s3,zyn,True,Berry,Slim,13.3,9,13.6,Nicotine pouch
+ZYN Blueberry Mint Slim S4,zyn-blueberry-mint-slim-s4,zyn,True,Berry,Slim,16.2,11,13.6,Nicotine Pouch
+ZYN Watermelon Mint S2,zyn-watermelon-mint-s2,zyn,True,Fruit,Slim,10,6,12,Nicotine pouch
+KLINT Mint,klint-mint,Klint,False,-,-,-,-,-,-
+KLINT Polar Mint #3,klint-polar-mint-3,Klint,False,Mint,Slim,12,-,-,Nicotine pouch
+ICEBERG Black Ultra 70mg,iceberg-black-ultra-70mg,ICEBERG,False,Fruit,Slim,70,56,16,Nicotine pouch
+ICEBERG Kiwi Strawberry Ultra 70mg,iceberg-kiwi-strawberry-ultra-70mg,ICEBERG,False,Fruit,Slim,70,56,16,Nicotine pouch
+Juice Head Arctic Mint Super Strong EU,juice-head-arctic-mint-super-strong-eu,JUICE HEAD,False,Mint,Slim,20,14,14,Nicotine pouch
+Kelly White Hot Cherry Slim Strong,kelly-white-hot-cherry-slim-strong,Kelly White,False,Fruit,Slim,15,8,11,Nicotine pouch
+Kelly White Raspberry Lemon Slim Extra Strong,kelly-white-raspberry-lemon-slim-extra-strong,Kelly White,False,Berry,Slim,16.6,10,12,Nicotine pouch
+MYNT Mint 18mg,mynt-mint-18mg,MYNT,False,Mint,Slim,36,18,10,Nicotine pouch
+Nyytti Tar,nyytti-tar,Nyytti,False,Spices,Slim,16,9.6,12,Nicotine pouch
+VELO Blueberry Ice Slim (ES),velo-blueberry-ice-slim-es,Velo,False,Berry,Slim,11.4,8,14,Nicotine pouch
+VELO McLaren Spicy Papaya Slim,velo-mclaren-spicy-papaya-slim,Velo,False,Fruit,Slim,11.4,8,14,Nicotine pouch
+Velo Peach Ice Slim (ES),velo-peach-ice-slim-es,Velo,False,Fruit,Slim,14,10,14,Nicotine pouch
+XQS The Spearmint 6mg,xqs-the-spearmint-6mg,XQS,False,Mint,Slim,8,6,15,Nicotine pouch
+PABLO X Ice Cold (SE),pablo-x-ice-cold-se,Pablo,False,Mint,Slim,30,24,16,Nicotine pouch
+PABLO Exclusive Bubblegum (SE),pablo-exclusive-bubblegum-se,Pablo,False,Candy,Slim,50,30,12,Nicotine pouch
+Juice Head Watermelon Strawberry Super Strong (SE),juice-head-watermelon-strawberry-super-strong-se,JUICE HEAD,False,Fruit,Slim,20,14,14,Nicotine pouch
+Juice Head Watermelon Strawberry Regular (SE),juice-head-watermelon-strawberry-regular-se,JUICE HEAD,False,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Spicy Pineapple Super Strong (SE),juice-head-spicy-pineapple-super-strong-se,JUICE HEAD,False,Fruit,Slim,20,14,14,Nicotine pouch
+Juice Head Spicy Pineapple Regular (SE),juice-head-spicy-pineapple-regular-se,JUICE HEAD,False,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Peach Pineapple Super Strong (SE),juice-head-peach-pineapple-super-strong-se,JUICE HEAD,False,Fruit,Slim,20,14,14,Nicotine pouch
+Juice Head Peach Pineapple Regular (SE),juice-head-peach-pineapple-regular-se,JUICE HEAD,False,Fruit,Slim,8.5,6,14,Nicotine pouch
+Juice Head Blueberry Lemon Super Strong (SE),juice-head-blueberry-lemon-super-strong-se,JUICE HEAD,False,Berry,Slim,20,14,14,Nicotine pouch
+Juice Head Blueberry Lemon Regular (SE),juice-head-blueberry-lemon-regular-se,JUICE HEAD,False,Berry,Slim,8.5,6,14,Nicotine pouch
+Juice Head Arctic Mint Super Strong (SE),juice-head-arctic-mint-super-strong-se,JUICE HEAD,False,Mint,Slim,20,14,14,Nicotine pouch
+Juice Head Arctic Mint Regular (SE),juice-head-arctic-mint-regular-se,JUICE HEAD,False,Mint,Slim,8.5,6,14,Nicotine pouch
+Loop Sicily Spritz Strong,loop-sicily-spritz-strong,Loop,False,Citrus,Slim,14.2,8.9,12.5,Nicotine pouch
+KLAR Blueberry Mint Regular Mini,klar-blueberry-mint-regular-mini,KLAR,False,Berry,Mini,7.5,3,8,Nicotine pouch
+ZYN Watermelon Mint Slim S2,zyn-watermelon-mint-slim-s2,zyn,False,Fruit,Slim,10,6,12,Nicotine pouch

@@ -1,14 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import unicodedata
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
 
-# Pomoćna funkcija za generisanje sluga
 def slugify(text):
-    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+    # Identično Django slugify: normalizuj unicode (è→e), obriši ne-alfanumerike, razmake→crtica
+    text = unicodedata.normalize('NFKD', text)
+    text = text.encode('ascii', 'ignore').decode('ascii')
+    text = text.lower()
+    text = re.sub(r'[^\w\s-]', '', text)
+    text = re.sub(r'[-\s]+', '-', text)
+    return text.strip('-')
 
 # Parsira listing stranicu i vraća listu proizvoda (samo osnovni podaci)
 def scrape_products_from_url(base_url, limit=1000):
@@ -26,11 +32,17 @@ def scrape_products_from_url(base_url, limit=1000):
             print("❌ Ne mogu da učitam stranicu.")
             break
 
+        # Ako je sajt redirectovao na drugu URL (npr. nazad na stranicu 1) — kraj
+        if response.url != url:
+            print(f"🔁 Redirect detektovan na stranici {page}, zaustavljam.")
+            break
+
         soup = BeautifulSoup(response.text, "html.parser")
         product_cards = soup.select("div.product-card")
         if not product_cards:
             break
 
+        new_on_page = 0
         for card in product_cards:
             title_tag = card.select_one("div.product-card__main__title .name")
             brand_tag = card.select_one("span.brand")
@@ -46,6 +58,7 @@ def scrape_products_from_url(base_url, limit=1000):
             if slug in seen_slugs:
                 continue
             seen_slugs.add(slug)
+            new_on_page += 1
 
             products.append({
                 "title": title,
@@ -54,6 +67,11 @@ def scrape_products_from_url(base_url, limit=1000):
                 "available": available
             })
             total_collected += 1
+
+        # Nema novih proizvoda na ovoj stranici — vjerovatno loop
+        if new_on_page == 0:
+            print(f"⚠️ Nema novih proizvoda na stranici {page}, zaustavljam.")
+            break
 
         page += 1
 

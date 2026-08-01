@@ -106,17 +106,15 @@ for row in csv.DictReader(open(PRODUCTS_CSV, encoding="utf-8", newline="")):
 
     # ── Spremi podatke za Product ───────────────────────────────────────────────
     product_data = {
-        "category":         category,
-        "name":             title,
-        "nicotine":         parse_decimal(row.get("nicotine_mg_g", ""), "nicotine_mg_g", product_slug) or Decimal("0.0"),
-        "pouches_per_can":  parse_int(row.get("pouches_per_can", ""), "pouches_per_can", product_slug),
-        "format":           row.get("format", "").strip()          or None,
-        "flavor":           row.get("flavour", "").strip()         or None,
-        "net_weight":       parse_decimal(row.get("net_weight", ""), "net_weight", product_slug),
-        "manufacturer":     row.get("manufacturer", "").strip()    or None,
-        "sku":              row.get("sku", "").strip()             or None,
-        # Bitno: svaki CSV-om “dotaknuti” proizvod nije obrisan
-        "is_deleted":       False,
+        "category":           category,
+        "name":               title,
+        "nicotine":           parse_decimal(row.get("nicotine_mg_g", ""), "nicotine_mg_g", product_slug) or Decimal("0.0"),
+        "nicotine_per_pouch": parse_decimal(row.get("nicotine_per_pouch", ""), "nicotine_per_pouch", product_slug),
+        "format":             row.get("format", "").strip() or None,
+        "flavor":             row.get("flavour", "").strip() or None,
+        "net_weight":         parse_decimal(row.get("net_weight", ""), "net_weight", product_slug),
+        "sku":                row.get("sku", "").strip() or None,
+        "is_deleted":         False,
     }
 
     # ── Product: ručno GET ili CREATE pomoću base_manager ──────────────────────

@@ -104,6 +104,7 @@ class Product(models.Model):
     )
     recommended = models.BooleanField(default=False)
     pouches_per_can = models.IntegerField(blank=True, null=True)
+    nicotine_per_pouch = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     format = models.CharField(max_length=50, blank=True, null=True)
     flavor = models.CharField(max_length=50, blank=True, null=True)
     net_weight = models.DecimalField(max_digits=5, decimal_places=1, blank=True, null=True)
@@ -250,7 +251,7 @@ def refresh_all_mixpack_bundles():
 
 import os
 
-IMAGE_PREFIX = 'https://snus-s3.s3.eu-north-1.amazonaws.com/wholesale'
+IMAGE_PREFIX = 'https://snus-s3.s3.eu-north-1.amazonaws.com/products'
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
