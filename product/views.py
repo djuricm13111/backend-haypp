@@ -261,6 +261,24 @@ class ProductViewSet(CatalogFilterMixin, viewsets.ModelViewSet):
         cache.set(cache_key, serializer.data, 60 * 15)
         return Response(serializer.data)
     
+    @action(detail=False, methods=['get'], url_path='offers')
+    def offers(self, request, *args, **kwargs):
+        """Proizvodi sa postavljenom discounted_price (na popustu), sortirani po sales_count."""
+        currency = request.headers.get('Currency', DEFAULT_CURRENCY)
+        cache_key = f"offers_{currency}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return Response(cached_data)
+        qs = (
+            self.get_queryset()
+            .filter(state=ProductState.IN_STOCK, discounted_price__isnull=False)
+            .filter(discounted_price__lt=F('price'))
+            .order_by('-sales_count')[:80]
+        )
+        serializer = self.get_serializer(qs, many=True)
+        cache.set(cache_key, serializer.data, 60 * 15)
+        return Response(serializer.data)
+
     @action(detail=True, methods=['get'], url_path='recommended')
     def recommended_products(self, request, slug=None):
         """
