@@ -41,7 +41,7 @@ if [ -z "$ENV_CONFIG" ]; then
     exit 1
 fi
 
-echo "$ENV_CONFIG" > snusco-backend.env
+echo "$ENV_CONFIG" > snuswe-backend.env
 
 SECRET_ID="gh_token"
 GH_TOKEN=$(aws secretsmanager get-secret-value --secret-id "$SECRET_ID" --query SecretString --output text)
@@ -57,7 +57,7 @@ fi
 curl -H "Authorization: token $GH_TOKEN" \
      -H "Accept: application/vnd.github.v3.raw" \
      -o docker-compose.yml \
-     https://api.github.com/repos/snusco-org/snus-backend/contents/docker/docker-compose.yml
+     https://api.github.com/repos/snuswe-org/snus-backend/contents/docker/docker-compose.yml
 
 # Place nginx.conf into subdirectory and rename it to default.conf:
 #│── docker-compose.yml
@@ -68,7 +68,7 @@ curl -H "Authorization: token $GH_TOKEN" \
 mkdir nginx && curl -H "Authorization: token $GH_TOKEN" \
      -H "Accept: application/vnd.github.v3.raw" \
      -o nginx/default.conf \
-     https://api.github.com/repos/snusco-org/snus-backend/contents/docker/nginx.conf
+     https://api.github.com/repos/snuswe-org/snus-backend/contents/docker/nginx.conf
 
 # Setup SSL for nginx and enables HTTPS
 # sudo certbot --nginx -d BE_DOMAIN

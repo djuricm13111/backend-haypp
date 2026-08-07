@@ -70,9 +70,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:8081',
     'http://localhost:8000',
-    'https://api.snusco.com',
-    'https://www.snusco.com',
-    'https://snusco.com',
+    'https://api.snuswe.com',
+    'https://www.snuswe.com',
+    'https://snuswe.com',
     'https://*.maskkingsrbija.com',
     # Vercel: production, preview i branch deployevi (*.vercel.app)
     'https://*.vercel.app',
@@ -334,10 +334,10 @@ MOLLIE_API_KEY = env('MOLLIE_API_KEY')
 GOOGLE_SHEET_API_KEY = env('GOOGLE_SHEET_API_KEY')
 
 ###CUSTOM USAGE
-DEFAULT_DOMAIN = 'snusco.com'
+DEFAULT_DOMAIN = 'snuswe.com'
 # Jedan web shop — globalni limit nikotina po kesici (mg)
 MAX_NICOTINE_MG_PER_POUCH = 999
-#USE_POINTS = ['snusco.com']
-#ALLOW_FREE_DELIVERY = ['snusco.com']
+#USE_POINTS = ['snuswe.com']
+#ALLOW_FREE_DELIVERY = ['snuswe.com']
 USE_POINTS = []
 ALLOW_FREE_DELIVERY = []

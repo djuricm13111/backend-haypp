@@ -183,7 +183,7 @@ def send_order_confirmation_email(email, data, language='en'):
             body=text,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[email],
-            bcc=["uros@snusco.com", "snusco.com@gmail.com"],  # zadržano BCC
+            bcc=["uros@snuswe.com", "snuswe.com@gmail.com"],  # zadržano BCC
         )
         msg.attach_alternative(html, "text/html")
         sent = msg.send(fail_silently=False)
@@ -377,7 +377,7 @@ def test_mailjet():
             subject="✅ Mailjet test",
             message="Plain-text fallback.",
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=["info@snusco.com"],
+            recipient_list=["info@snuswe.com"],
             html_message="<p>Ovo je <strong>Mailjet SMTP</strong> test poruka.</p>",
             fail_silently=False,
         )

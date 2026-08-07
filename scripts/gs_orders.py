@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 # Funkcija za upisivanje proizvoda u Google Sheet
 def add_products_to_google_sheet(products_data):
-    credentials_file = 'snusco-gs-credentials.json'
+    credentials_file = 'snuswe-gs-credentials.json'
     scopes = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     
     # Prijava pomoću Google Sheets API

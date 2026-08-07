@@ -32,8 +32,8 @@ def translate_text(text, target_language):
 
 def update_links(text, language_code):
     updated_text = re.sub(
-        r'https://www.snusco.com/en-us/',
-        f'https://www.snusco.com/{language_code}/',
+        r'https://www.snuswe.com/en-us/',
+        f'https://www.snuswe.com/{language_code}/',
         text
     )
     return updated_text
@@ -139,14 +139,14 @@ def generate_paragraph(subtitle, previous_paragraphs, insert_blog_link=False):
             product_title = product['title']
             product_category = product['category']
             product_final = f"{product_category} {product_title}"
-            product_mentions.append(f"<a href='https://www.snusco.com/en-us/{product_final.lower().replace(' ', '-')}'>{product_final}</a>")
+            product_mentions.append(f"<a href='https://www.snuswe.com/en-us/{product_final.lower().replace(' ', '-')}'>{product_final}</a>")
 
     category_mentions = []
     if include_categories:
         mention_categories = random.choices(categories, k=random.randint(0, 2))  # Limit to fewer categories
         for category in mention_categories:
             category_name = category['name']
-            category_mentions.append(f"<a href='https://www.snusco.com/en-us/nicotine-pouches/{category_name.lower().replace(' ', '-')}'>{category_name}</a>")
+            category_mentions.append(f"<a href='https://www.snuswe.com/en-us/nicotine-pouches/{category_name.lower().replace(' ', '-')}'>{category_name}</a>")
 
     prompt = (
         f"Subtitle: {subtitle}\n"
@@ -174,7 +174,7 @@ def generate_paragraph(subtitle, previous_paragraphs, insert_blog_link=False):
             blog = random.choice(blogs)
             blog_title = blog['main_title']
             formatted_blog_title = format_blog_title_for_url(blog_title)
-            blog_link = f"https://www.snusco.com/en-us/{formatted_blog_title}"
+            blog_link = f"https://www.snuswe.com/en-us/{formatted_blog_title}"
             paragraph = re.sub(
                 r'\b(?:in|about|related to|more details)\b',
                 f'<a href="{blog_link}">Read more about this topic</a>',

@@ -103,7 +103,7 @@ try:
         blogs = json.load(file)
 
     # Base URL parts
-    base_url = "https://www.snusco.com"
+    base_url = "https://www.snuswe.com"
 
     # Language codes
     languages = ["sr-latn", "de", "it", "en-us", "fr", "hu", "tr"]

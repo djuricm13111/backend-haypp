@@ -17,7 +17,7 @@ BASE_CATEGORY_IMAGE_URL_MOBILE = "https://snus-s3.s3.eu-north-1.amazonaws.com/ca
 #LANG_CODES = ['en_us', 'de']
 # LANG_CODES = ['en_us', 'de', 'it', 'fr', 'hu', 'tr', 'sr_latn']
 # DEFAULT_LANG = "en_us"
-# DOMAIN  = "snusco.com"
+# DOMAIN  = "snuswe.com"
 
 def import_products(DOMAIN, LANG_CODES, DEFAULT_LANG):
     print(f"DATA FOR {DOMAIN}")

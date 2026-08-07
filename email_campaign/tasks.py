@@ -58,7 +58,7 @@ def send_promotion_email_task(email, context, template_type):
             body=text_content,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=recipients,
-            # bcc=["info@snusco.com"],  # ako želiš BCC, otkomentariši
+            # bcc=["info@snuswe.com"],  # ako želiš BCC, otkomentariši
         )
         msg.attach_alternative(html_content, "text/html")
         sent = msg.send(fail_silently=False)
@@ -68,7 +68,7 @@ def send_promotion_email_task(email, context, template_type):
 
 
 @shared_task
-def send_launch_announcement(shop_url="https://snusco.com"):
+def send_launch_announcement(shop_url="https://snuswe.com"):
     from .models import Subscriber
     emails = list(Subscriber.objects.values_list("email", flat=True))
     if not emails:

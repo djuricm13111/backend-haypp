@@ -148,7 +148,7 @@ Hosts the Docker Compose-based application environment.
 - An **Elastic IP** is attached to the EC2 instance to ensure a consistent public IP for DNS mapping and access.
 intiated- The EC2 instance is initiauled using the `ec2-setup.sh` script.
 - Defined IAM role that grans access to rest of services needed for application functionalities (S3, Secrets Manager, RDS)
-- Defined security group (`sg-029b627d9a776d3c9 - snusco-backend`) to allow inbound and outbound communication via various ports to allow SSH / HTTPS communication.
+- Defined security group (`sg-029b627d9a776d3c9 - snuswe-backend`) to allow inbound and outbound communication via various ports to allow SSH / HTTPS communication.
   - Ports allowed for application level: `8080, 8000, 3000`
   - Ports allowed for SSH connection: `22`
   - Ports allowed for HTTP / HTTPS communication: `80, 443`
@@ -248,10 +248,10 @@ aws ec2 run-instances \
   --block-device-mappings '{"DeviceName":"/dev/sda1","Ebs":{"Encrypted":false, "DeleteOnTermination":true,"Iops":3000,"SnapshotId":"snap-0b7078bceafe69fd4","VolumeSize":100,"VolumeType":"gp3","Throughput":125}}' \
   --network-interfaces '{"AssociatePublicIpAddress":true,"DeviceIndex":0,"Groups":["sg-029b627d9a776d3c9"]}' \
   --credit-specification '{"CpuCredits":"unlimited"}' \
-  --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"snusco-backend"}]}' \
+  --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"snuswe-backend"}]}' \
   --metadata-options '{"HttpEndpoint":"enabled","HttpPutResponseHopLimit":2,"HttpTokens":"required"}' \
   --private-dns-name-options '{"HostnameType":"ip-name","EnableResourceNameDnsARecord":true,"EnableResourceNameDnsAAAARecord":false}' \
-  --iam-instance-profile Name=snusco-server-role \
+  --iam-instance-profile Name=snuswe-server-role \
   --count "1"
 ```
 

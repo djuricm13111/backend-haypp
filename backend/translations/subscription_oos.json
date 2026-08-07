@@ -9,7 +9,7 @@
     "retry": "We’ll try again in {retry_days} days. Next scheduled attempt: {next_retry}.",
     "schedule": "Your subscription interval: every {interval_days} days.",
     "footer": "If you need help, reply to this email or visit your account subscriptions page.",
-    "team": "— The SnusCo team"
+    "team": "— The SnusWe team"
   },
   "de": {
     "subject": "Abo-Bestellung verschoben — Produkt nicht verfügbar",
@@ -21,7 +21,7 @@
     "retry": "Wir versuchen es in {retry_days} Tagen erneut. Nächster Versuch: {next_retry}.",
     "schedule": "Ihr Abo-Intervall: alle {interval_days} Tage.",
     "footer": "Bei Fragen antworten Sie auf diese E-Mail oder öffnen Sie Ihr Konto unter Abonnements.",
-    "team": "— Ihr SnusCo-Team"
+    "team": "— Ihr SnusWe-Team"
   },
   "sr": {
     "subject": "Pretplatna porudžbina odložena — proizvod nije dostupan",
@@ -33,6 +33,6 @@
     "retry": "Pokušaćemo ponovo za {retry_days} dana. Sledeći pokušaj: {next_retry}.",
     "schedule": "Interval pretplate: svakih {interval_days} dana.",
     "footer": "Za pomoć odgovorite na ovaj e-mail ili otvorite pretplate u nalogu.",
-    "team": "— SnusCo tim"
+    "team": "— SnusWe tim"
   }
 }

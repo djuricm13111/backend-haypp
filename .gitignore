@@ -287,8 +287,8 @@ pyrightconfig.json
 nginx/
 
 # --- Secrets & credentials (never commit) ---
-snusco-gs-credentials.json
-**/snusco-gs-credentials.json
+snuswe-gs-credentials.json
+**/snuswe-gs-credentials.json
 
 # Generated / large; sadrži stringove u putanjama koji mogu lažno pokrenuti GitHub secret scan
 product/scripts/combined_images.csv
