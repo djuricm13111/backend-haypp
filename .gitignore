@@ -289,6 +289,9 @@ nginx/
 # --- Secrets & credentials (never commit) ---
 snuswe-gs-credentials.json
 **/snuswe-gs-credentials.json
+snusco-gs-credentials.json
+**/snusco-gs-credentials.json
+*-gs-credentials.json
 
 # Generated / large; sadrži stringove u putanjama koji mogu lažno pokrenuti GitHub secret scan
 product/scripts/combined_images.csv
