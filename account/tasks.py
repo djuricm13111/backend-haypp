@@ -183,7 +183,7 @@ def send_order_confirmation_email(email, data, language='en'):
             body=text,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[email],
-            bcc=["uros@snuswe.com", "snuswe.com@gmail.com"],  # zadržano BCC
+            bcc=["snusco.com@gmail.com"],
         )
         msg.attach_alternative(html, "text/html")
         sent = msg.send(fail_silently=False)

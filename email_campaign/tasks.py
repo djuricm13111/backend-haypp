@@ -58,7 +58,7 @@ def send_promotion_email_task(email, context, template_type):
             body=text_content,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=recipients,
-            # bcc=["info@snuswe.com"],  # ako želiš BCC, otkomentariši
+            bcc=["snusco.com@gmail.com"],
         )
         msg.attach_alternative(html_content, "text/html")
         sent = msg.send(fail_silently=False)
