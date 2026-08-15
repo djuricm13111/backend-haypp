@@ -57,6 +57,7 @@ class HasDiscountFilter(admin.SimpleListFilter):
 class ProductAdmin(admin.ModelAdmin):
     inlines = (MixPackLineInline,)
     list_display = ['get_category_name', 'name', 'sku', 'price', 'discounted_price', 'badge_text', 'state', 'stock', 'sales_count', 'is_deleted']
+    list_editable = ['price']
     list_filter = ['category', 'state', 'is_deleted', HasDiscountFilter]
     search_fields = ['name', 'sku']
     

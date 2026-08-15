@@ -40,12 +40,14 @@ class ProductSerializer(serializers.ModelSerializer):
     
     
     def get_price(self, obj):
+        if obj.price is None:
+            return None
         currency = self.context.get('currency', DEFAULT_CURRENCY)  # Podrazumevana valuta je USD
         converted_price = convert_currency(obj.price.amount, DEFAULT_CURRENCY, currency)
         return converted_price
 
     def get_discounted_price(self, obj):
-        if obj.discounted_price and obj.discounted_price < obj.price:
+        if obj.discounted_price and obj.price and obj.discounted_price < obj.price:
             currency = self.context.get('currency', DEFAULT_CURRENCY)
             converted_discounted_price = convert_currency(obj.discounted_price.amount, DEFAULT_CURRENCY, currency)
             return converted_discounted_price
@@ -92,6 +94,8 @@ class ProductLiteSerializer(serializers.ModelSerializer):
     is_mix_pack = serializers.SerializerMethodField()
     
     def get_price(self, obj):
+        if obj.price is None:
+            return None
         currency = self.context.get('currency', DEFAULT_CURRENCY)  # Podrazumevana valuta je USD
         converted_price = convert_currency(obj.price.amount, DEFAULT_CURRENCY, currency)
         return converted_price
@@ -199,6 +203,8 @@ class ProductFeaturedSerializer(serializers.ModelSerializer):
         } for image in images]
     
     def get_price(self, obj):
+        if obj.price is None:
+            return None
         currency = self.context.get('currency', DEFAULT_CURRENCY)  # Podrazumevana valuta je USD
         converted_price = convert_currency(obj.price.amount, DEFAULT_CURRENCY, currency)
         return converted_price

@@ -40,35 +40,7 @@ def queryset_with_is_mix_pack(queryset):
 
 
 class CatalogFilterMixin:
-    """Jedan katalog: filter po brendu i globalnom limitu nikotina; stanje je na Product.state."""
-
-    ALLOWED_BRAND_SLUGS = [
-        "velo",
-        "zyn",
-        "cuba",
-        "white-fox",
-        "77",
-        "camo",
-        "xqs",
-        "clew",
-        "stng",
-        "rush",
-        "skruf",
-        "thunder",
-        "baow",
-        "ace",
-        "klint",
-        "nois",
-        "fix",
-        "zixs",
-        "on",
-        "nordic-spirit",
-        "greatest",
-        "dope",
-    ]
-
-    def apply_allowed_brands(self, qs):
-        return qs.filter(category__slug__in=self.ALLOWED_BRAND_SLUGS)
+    """Jedan katalog: filter po globalnom limitu nikotina; stanje je na Product.state."""
 
     def apply_nicotine_limit(self, qs):
         max_n = getattr(settings, 'MAX_NICOTINE_MG_PER_POUCH', 999)
@@ -76,7 +48,6 @@ class CatalogFilterMixin:
 
     def get_filtered_queryset(self):
         qs = Product.objects.filter(is_deleted=False).distinct()
-        qs = self.apply_allowed_brands(qs)
         qs = self.apply_nicotine_limit(qs)
         qs = qs.annotate(
             stock_order=Case(

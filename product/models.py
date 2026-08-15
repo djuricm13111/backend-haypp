@@ -267,13 +267,15 @@ class ProductImage(models.Model):
         return ''
 
     def get_image_url(self):
+        if self.original_image_key and self.original_image_key.startswith(('http://', 'https://')):
+            return self.original_image_key
         return f'{IMAGE_PREFIX}/{self.original_image_key}'
 
     def get_thumbnail_image_url(self):
-        return f'{IMAGE_PREFIX}/{self.original_image_key}'
+        return self.get_image_url()
 
     def get_large_image_url(self):
-        return f'{IMAGE_PREFIX}/{self.original_image_key}'
+        return self.get_image_url()
     def __str__(self):
         return f" {self.product.name}"
 
