@@ -67,6 +67,7 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "name",
+            "slug",
             "nicotine",
             "nicotine_per_pouch",
             "price",
