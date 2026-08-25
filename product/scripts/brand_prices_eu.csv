@@ -1,0 +1,66 @@
+slug,brand_name,price_eur,note
+77-pouches,77 Pouches,4.69,DE - haypp.com/de, najvisa pronadjena (redovna cena jedne limenke)
+ace,ACE,4.36,EU - snussie.com (snuscore imao mnogo nizu cenu, verovatno wholesale/promo - ignorisano)
+apres,Apres,6.00,EU - najvisa pronadjena (snuspal.com), ostali izvori 3.39-4.42
+avant,AVANT,4.60,UK/EU - konvertovano iz GBP, najvisa pronadjena, nesigurno za kontinentalnu EU
+baron,BARON,2.80,PL - nicotobacco.eu, najvisa pronadjena (raspon 2.40-2.80)
+brute,BRUTE,,nije pronadjeno nigde - koristi default_price
+chainpop,Chainpop,4.49,EU - snusdirect.com
+clew,CLEW,2.90,EU/UK - twowombats.com (snuscore imao mnogo nizu cenu, verovatno wholesale/promo - ignorisano)
+cuba,CUBA,4.24,EU - snussie.com, najvisa pronadjena
+denssi,DENSSI,4.59,EU - snussie.com
+edel,Edel,4.00,CH/EU - najvisa pronadjena (cena zavisi od formata, raspon 1.90-4.00)
+fold,FOLD,2.71,SE - nicbud.com
+fumi,FUMI,5.29,DE - haypp.com/de, najvisa pronadjena (redovna cena jedne limenke)
+garant,Garant,4.69,EU - najvisa pronadjena (whitepouches.com)
+glick,GLICK,3.89,EU - najvisa pronadjena
+greatest,Greatest,4.54,EU
+helwit,HELWIT,4.69,EU - najvisa pronadjena (jedan outlier na 2.09 ignorisan)
+ice,Ice,3.99,DE - haypp.com/de, najvisa pronadjena
+iceberg,ICEBERG,5.15,PL/EU - najvisa pronadjena (PL nativno tzriste), EU-wide diskonti jeftiniji (~3.95)
+its,IT`S,4.59,UK samo (northerner.com/uk, GBP) - nesigurno za kontinentalnu EU
+juice-head,JUICE HEAD,,nije pronadjeno u EU - pretezno US brend (3.99-4.99 USD)
+kelly-white,Kelly White,4.66,EU - najvisa pronadjena
+killa,Killa,4.99,EU/PL - najvisa pronadjena, UK jeftinije (2.99-3.29 GBP)
+klar,KLAR,4.39,EU - najvisa pronadjena
+klint,Klint,5.49,EU - najvisa pronadjena
+kuma,KUMA,3.50,EU - najvisa pronadjena
+leo,LEO,4.49,EU - nov brend (2025), manje izvora
+lewa,LEWA,4.75,EU - nikotinska (Burn) linija
+loop,Loop,4.69,EU/PL - najvisa pronadjena (redovna cena, promo do 2.05 ignorisan)
+lumi,LUMI,1.83,UK pretezno - jedini nadjen podatak, nesigurno za kontinentalnu EU
+lundgrens,Lundgrens,4.59,EU - whitepouches.com (SnusCore diskont od 1.79 ignorisan)
+maggie,MAGGIE,3.67,UK cena konvertovana (nicpouches.com) - EU izvor (snussie.com) davao neobicno nisku cenu od 1.95, uzeta visa kao osnovna
+mynt,MYNT,3.69,EU - najvisa pronadjena
+neafs,NEAFS,6.00,EU - najvisa pronadjena redovna cena (promo do 1.95-2.49 ignorisan)
+nois,NOiS,5.29,EU - najvisa pronadjena
+nordic-spirit,Nordic Spirit,7.60,UK najvisa (konvertovano iz GBP); DE/AT ~6.14, EU prosek ~5.70
+nyytti,Nyytti,3.06,EU (FI)
+pablo,Pablo,8.00,EU - najvisa pronadjena (raspon 4-8 zavisi od jacine/prodavnice)
+pura,Pura,,nije pronadjeno nigde - koristi default_price
+rabbit,rabbit,2.99,EU - budzetski brend
+rave,RAVE,4.29,EU (PL proizvodjac)
+relx,RELX,4.00,nesigurno - samo zvanicni sajt u USD, ne standardni EU pouch retail
+royal-white,Royal White,4.00,EU - najvisa pronadjena
+siberia,Siberia,5.85,EU - najvisa pronadjena, premium/jak segment
+skruf,Skruf,4.49,EU
+smogen,Smögen,5.49,EU - najvisa pronadjena
+snoberg,SNOBERG,3.99,EU
+snowman,Snowman,5.49,EU - najvisa pronadjena
+stng,STNG,3.95,EU - samo jedan izvor
+tectonic,TECTONIC,,nije pronadjeno nigde - koristi default_price
+togo,TOGO,6.36,EU - najvisa pronadjena (SE proizvodjac)
+tyr,TYR,5.50,GR - samo jedan izvor (redovno bilo 6.00, ovo je vec sa popustom)
+valkyria,Valkyria,3.75,konvertovano iz USD - najvisa pronadjena, nesigurno za EU
+velo,VELO,5.23,EU - najvisa pronadjena (PL trziste), DE jeftinije (~3.80-4.90)
+vid,VID,3.50,UK/EU - najvisa pronadjena
+vika,VIKA,4.59,EU - najvisa pronadjena
+vozol,Vozol,,verovatno greska u bazi - Vozol je vape/e-cigareta brend, ne nicotine pouches
+white-fox,white-fox,4.79,EU - najvisa pronadjena (raspon 2.46-4.79)
+xo,XO,4.80,EU/UK - najvisa pronadjena
+xpct,XPCT,,ne prodaje standardnu limenku (mega-can 320-400 kesica za 39.99 USD) - nije uporedivo
+xqs,XQS,6.09,EU/UK - najvisa pronadjena
+zeronito,Zeronito,2.51,EU - PAZNJA: proizvod je BEZ nikotina (0mg)
+zeus,Zeus,4.99,EU - najvisa pronadjena (Estonija)
+zyn,zyn,4.99,DE/IT najvisa; PL 18-28 PLN (~4.20-6.50 EUR) - online prodaja u PL navodno ogranicena
+lyft,Lyft,4.99,vec postojeca cena iz prethodne skripte set_update_prices.py - nije deo ovog istrazivanja

@@ -17,7 +17,9 @@ products:
     pouches_per_can: 20
     manufacturer: BAT
 
-    price_amount: "24.90"
+    # 20 x VELO (5.23 EUR/limenka iz brand_prices_eu.csv) - 10% bundle popust = 94.14
+    # Videti product/scripts/set_mixpack_prices.py za automatsko preracunavanje.
+    price_amount: "94.14"
     currency: EUR
 
     # Za mix pack: stock/state u YAML-u se posle importa prepisuju iz komponenti.
@@ -50,7 +52,8 @@ products:
     net_weight_grams: 14.0
     pouches_per_can: 20
     manufacturer: BAT
-    price_amount: "26.90"
+    # 3 x VELO (5.23 EUR/limenka) - 10% bundle popust = 14.12
+    price_amount: "14.12"
     currency: EUR
     stock: 0
     state: in_stock
