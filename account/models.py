@@ -234,7 +234,6 @@ class PaymentDetails(models.Model):
     
 class TransportMethod(models.TextChoices):
     DHL_STANDARD = 'DHL Standard', _('DHL Standard')
-    POST_AT = 'Post - AT', _('Post - AT')
     DHL_EXPRESS_SAVER = 'DHL Express Saver', _('DHL Express Saver')
 
 class SubscriptionStatus(models.TextChoices):
@@ -257,7 +256,7 @@ class ProductSubscription(models.Model):
     status = models.CharField(max_length=20, choices=SubscriptionStatus.choices, default=SubscriptionStatus.ACTIVE)
     address = models.ForeignKey(AddressBook, on_delete=models.PROTECT, related_name='product_subscriptions')
     payment_method = models.CharField(max_length=20, choices=PaymentMethod.choices, default=PaymentMethod.COD)
-    transport_method = models.CharField(max_length=20, choices=TransportMethod.choices, default=TransportMethod.POST_AT)
+    transport_method = models.CharField(max_length=20, choices=TransportMethod.choices, default=TransportMethod.DHL_STANDARD)
     note = models.TextField(blank=True, null=True)
     next_order_at = models.DateTimeField()
     cancelled_at = models.DateTimeField(null=True, blank=True)

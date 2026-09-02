@@ -489,7 +489,7 @@ class OrderSerializer(serializers.ModelSerializer):
                 product_qty_for_sub[pid] = product_qty_for_sub.get(pid, 0) + int(oi.get('quantity', 1))
 
         use_points = validated_data.pop('use_points', False)
-        transport_method = validated_data.get('transport_method', TransportMethod.POST_AT)
+        transport_method = validated_data.get('transport_method', TransportMethod.DHL_STANDARD)
         currency = self.context.get('currency', DEFAULT_CURRENCY)
         points_spent = 0
 
@@ -537,16 +537,16 @@ class OrderSerializer(serializers.ModelSerializer):
                 )
 
             # Dodato ovde
-            # Usklađeno sa frontendom (global_const.freeShippingThreshold = 50): besplatna dostava od €50 međuzbira.
-            # Ispod praga: fiksno €20 za Post/DHL Standard (ranije težinski proračun ~€12).
+            # Usklađeno sa frontendom (global_const.freeShippingThreshold = 50): besplatna dostava od €50 međuzbira,
+            # ali SAMO za DHL Standard. DHL Express Saver se uvek naplaćuje, bez obzira na prag.
             free_subtotal_threshold = Decimal("50")
             flat_shipping_eur = Decimal("20")
             express_shipping_eur = Decimal("24.90")
 
-            if total_price.amount >= free_subtotal_threshold:
-                shipping_cost = Money(0, DEFAULT_CURRENCY)
-            elif transport_method == TransportMethod.DHL_EXPRESS_SAVER:
+            if transport_method == TransportMethod.DHL_EXPRESS_SAVER:
                 shipping_cost = Money(express_shipping_eur, DEFAULT_CURRENCY)
+            elif total_price.amount >= free_subtotal_threshold:
+                shipping_cost = Money(0, DEFAULT_CURRENCY)
             else:
                 shipping_cost = Money(flat_shipping_eur, DEFAULT_CURRENCY)
 
