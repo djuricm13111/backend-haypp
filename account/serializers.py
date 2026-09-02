@@ -518,7 +518,13 @@ class OrderSerializer(serializers.ModelSerializer):
                     if product.mix_lines.exists()
                     else global_d
                 )
-                unit_disc = product.price.amount * (Decimal(1) - line_d)
+                # Koristi discounted_price kao bazu ako je postavljen i niži od price
+                # (usklađeno sa frontend volumeAdjustedUnitPrice logikom)
+                if product.discounted_price and product.discounted_price < product.price:
+                    base_price = product.discounted_price.amount
+                else:
+                    base_price = product.price.amount
+                unit_disc = base_price * (Decimal(1) - line_d)
                 line_subtotal = Money(unit_disc * Decimal(quantity), DEFAULT_CURRENCY)
                 total_price += line_subtotal
 
