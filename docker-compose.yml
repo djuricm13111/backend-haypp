@@ -17,6 +17,7 @@ services:
       - "8000:8000"
     volumes:
       - ./:/app
+      - ../frontend-haypp/public:/frontend-haypp/public
     command: daphne -b 0.0.0.0 -p 8000 backend.asgi:application
     restart: always
     depends_on:
