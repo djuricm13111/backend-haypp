@@ -307,6 +307,9 @@ EMAIL_HOST_PASSWORD = env("MAILJET_SECRET_KEY") # was: <SendGrid key>
 
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 
+# Kome idu interna obaveštenja o novim porudžbinama/promocijama (odvojeno od mejla kupcu).
+ADMIN_NOTIFICATION_EMAIL = env("ADMIN_NOTIFICATION_EMAIL", default="snusco.com@gmail.com")
+
 
 # Celery podešavanja
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')

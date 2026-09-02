@@ -412,7 +412,7 @@ class OrderCreateView(generics.CreateAPIView):
             response = send_order_confirmation_email.delay(order.user.email, data, language)
             if response.ready():
                 result = response.get()
-                if result and result.get("status_code") == 202:
+                if result and result.get("sent"):
                     logger.info("Email sent successfully!")
                 else:
                     logger.error("Failed to send email: %s", result)

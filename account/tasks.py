@@ -1,3 +1,5 @@
+import logging
+
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -6,6 +8,50 @@ from celery import shared_task
 from backend.helpers import load_email_template
 from django.utils.translation import activate
 from django.core.mail import send_mail
+
+logger = logging.getLogger(__name__)
+
+
+def _send_admin_new_order_notification(data):
+    """
+    Interno obaveštenje adminu o novoj porudžbini — odvojeno od mejla kupcu
+    (drugi naslov/sadržaj, ne kopija customer mejla preko bcc-a).
+    """
+    address = data.get("address") or {}
+    address_line = ", ".join(
+        part
+        for part in [
+            address.get("street"),
+            address.get("street_number"),
+            address.get("city"),
+            address.get("postal_code"),
+            address.get("country"),
+        ]
+        if part
+    )
+    product_lines = "".join(
+        f"<li>{p.get('quantity')} x {p.get('name')} ({p.get('category')})</li>"
+        for p in data.get("products") or []
+    )
+    html = f"""
+    <h2>New order #{data.get('id')}</h2>
+    <p><strong>Customer:</strong> {data.get('first_name')} {data.get('last_name')} &lt;{data.get('customer_email')}&gt;</p>
+    <p><strong>Total:</strong> {data.get('total_price')} {data.get('currency')}
+      (subtotal {data.get('subtotal')}, shipping {data.get('shipping_cost')})</p>
+    <p><strong>Payment:</strong> {data.get('payment_method')} &mdash; <strong>Shipping:</strong> {data.get('transport_method')}</p>
+    <p><strong>Address:</strong> {address_line or '—'}</p>
+    <p><strong>Items:</strong></p>
+    <ul>{product_lines}</ul>
+    """
+    text = strip_tags(html)
+    msg = EmailMultiAlternatives(
+        subject=f"New order #{data.get('id')} — {data.get('total_price')} {data.get('currency')}",
+        body=text,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[settings.ADMIN_NOTIFICATION_EMAIL],
+    )
+    msg.attach_alternative(html, "text/html")
+    msg.send(fail_silently=False)
 
 
 def _email_subscription_freq_line(days, email_texts):
@@ -183,10 +229,16 @@ def send_order_confirmation_email(email, data, language='en'):
             body=text,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[email],
-            bcc=["snusco.com@gmail.com"],
         )
         msg.attach_alternative(html, "text/html")
         sent = msg.send(fail_silently=False)
+
+        try:
+            _send_admin_new_order_notification(data)
+        except Exception:
+            logger.exception(
+                "Failed to send admin new-order notification for order %s", data.get("id")
+            )
 
         return {"sent": sent}
     except Exception as e:

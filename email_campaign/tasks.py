@@ -42,7 +42,7 @@ def send_promotion_email_task(email, context, template_type):
     template_map = {
         'promo': 'promotion.html',
         'new_arrival': 'promotion.html',
-        'discount': 'new_order.html',
+        'discount': 'promotion.html',
     }
     template_path = template_map.get(template_type, 'promotion.html')
 
@@ -58,7 +58,7 @@ def send_promotion_email_task(email, context, template_type):
             body=text_content,
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=recipients,
-            bcc=["snusco.com@gmail.com"],
+            bcc=[settings.ADMIN_NOTIFICATION_EMAIL],
         )
         msg.attach_alternative(html_content, "text/html")
         sent = msg.send(fail_silently=False)
